@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn2xeevfa5hfg"]
+
+[ext_resource type="PackedScene" uid="uid://brihtjdvgvgum" path="res://scenes/player_building.tscn" id="1_nbj14"]
+[ext_resource type="PackedScene" uid="uid://ckaa2rdsscnmv" path="res://models/buildings/witch_hut/scene.gltf" id="2_1adj4"]
+[ext_resource type="Script" path="res://scripts/class_scripts/spawner_building.gd" id="3_dxjao"]
+[ext_resource type="PackedScene" uid="uid://b40e62ad27tfh" path="res://scenes/wizard.tscn" id="4_6f5f4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pc70b"]
+resource_local_to_scene = true
+size = Vector3(0.587265, 0.510425, 0.616394)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsfvg"]
+resource_local_to_scene = true
+size = Vector3(0.639771, 0.773059, 0.624573)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m027e"]
+viewport_path = NodePath("OverheadDisplay/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hbvx"]
+
+[node name="WizardTower" node_paths=PackedStringArray("extensions") instance=ExtResource("1_nbj14")]
+building_cost = {
+"fire_stone": 3,
+"stone": 20,
+"wood": 20
+}
+building_type = "wizard_tower"
+maxHealth = 200.0
+extensions = [NodePath("SpawnerBuilding")]
+
+[node name="hitboxShape" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00235748, 0.25981, -0.00479126)
+shape = SubResource("BoxShape3D_pc70b")
+
+[node name="tower" parent="." index="1" instance=ExtResource("2_1adj4")]
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0, 0.0132506, 0)
+
+[node name="Model" parent="." index="2"]
+visible = false
+
+[node name="MouseHitbox" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.092, 0)
+
+[node name="CollisionShape3D" parent="MouseHitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0126343, -0.71347, 0.00131226)
+shape = SubResource("BoxShape3D_qsfvg")
+
+[node name="OverheadDisplay" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52577, 0)
+texture = SubResource("ViewportTexture_m027e")
+
+[node name="SpawnerBuilding" type="Node3D" parent="." index="5" node_paths=PackedStringArray("spawnPoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0946, 0)
+script = ExtResource("3_dxjao")
+spawnPoint = NodePath("../SpawnPoint")
+spawnRate = 8.0
+maxChildren = 2
+childType = ExtResource("4_6f5f4")
+
+[node name="SpawnPoint" type="Area3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.749547, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint" index="0"]
+shape = SubResource("BoxShape3D_0hbvx")

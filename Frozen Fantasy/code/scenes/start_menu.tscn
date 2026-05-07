@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://do10nvxmvcsfr"]
+
+[ext_resource type="Script" path="res://scripts/main_scripts/start_menu.gd" id="1_xbag1"]
+[ext_resource type="Texture2D" uid="uid://coiw7b7uaup3e" path="res://textures/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg" id="2_dxupi"]
+[ext_resource type="Theme" uid="uid://dqmnjxq8gcdbs" path="res://scripts/label_theme.tres" id="2_tq1wq"]
+[ext_resource type="FontFile" uid="uid://bhndc0qikbuod" path="res://font/snow_kei/Snow Kei.ttf" id="3_rxf27"]
+[ext_resource type="Texture2D" uid="uid://dqiroxrwvxilg" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-026.png" id="3_ykeed"]
+[ext_resource type="Texture2D" uid="uid://crostxbl7gwvb" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-001.png" id="6_ylyqt"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbag1")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dxupi")
+expand_mode = 3
+
+[node name="BGborder" type="NinePatchRect" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ykeed")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.5
+offset_top = -117.915
+offset_right = 425.5
+offset_bottom = -8.91498
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tq1wq")
+theme_override_fonts/font = ExtResource("3_rxf27")
+theme_override_font_sizes/font_size = 90
+text = "Frozen Fantasy"
+
+[node name="OptionBorder" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = 80.47
+offset_right = 62.5
+offset_bottom = 120.47
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ylyqt")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="OptionButtons" type="VBoxContainer" parent="OptionBorder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -46.0
+offset_right = 62.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tq1wq")
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="OptionBorder/OptionButtons"]
+layout_mode = 2
+text = " = Start = "
+flat = true
+
+[node name="QuitButton" type="Button" parent="OptionBorder/OptionButtons"]
+layout_mode = 2
+text = " = Quit = "
+flat = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LoadingLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -53.53
+offset_right = 0.5
+offset_bottom = -30.53
+grow_horizontal = 2
+grow_vertical = 0
+text = "Loading..."

@@ -1,0 +1,21 @@
+doctype html
+html
+
+head
+    title Users
+    link(rel="stylesheet" type="text/css" href="/inputPageStyle.css")
+    link(rel="stylesheet" type="text/css" href="/userStyle.css")
+    link(rel="stylesheet" type="text/css" href="/resultStyle.css")
+
+body
+    if (loggedIn)
+        include ../../header/loggedIn.html
+    else
+        include ../../header/loggedOut.html
+
+    h1 Search results
+
+    ul(class="inputBox")
+        each user in results
+            li
+                a(href=user.username) #{user.username}

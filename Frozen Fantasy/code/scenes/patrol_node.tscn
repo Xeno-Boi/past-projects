@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmsck2bwm0125"]
+
+[ext_resource type="Script" path="res://scripts/patrol_node.gd" id="1_k5m5d"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_iok5h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuxpj"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="PatrolNode" type="Node3D"]
+script = ExtResource("1_k5m5d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_iok5h")
+surface_material_override/0 = SubResource("StandardMaterial3D_wuxpj")

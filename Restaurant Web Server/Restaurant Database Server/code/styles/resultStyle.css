@@ -1,0 +1,10 @@
+li {
+    border-top: 2px solid rgb(177, 177, 177);
+}
+
+.inputBox {
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 47px;
+}

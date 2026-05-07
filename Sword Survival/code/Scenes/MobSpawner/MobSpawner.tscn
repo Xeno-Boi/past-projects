@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/MobSpawner/MobSpawner.gd" type="Script" id=1]
+
+[node name="MobSpawner" type="Node2D"]
+script = ExtResource( 1 )
+max_spawn_radius = 100
+min_spawn_radius = 40
+spawn_rate = 100.0
+max_spawn_time = 30.0
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timers/SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

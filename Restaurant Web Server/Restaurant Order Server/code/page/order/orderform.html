@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order Page></title>
+    <link rel="stylesheet" type="text/css" href="orderStyle.css" />
+    <script src="client.js"></script>
+
+</head>
+
+<body onload="init()">
+    <header id="top">
+        Order Page
+    </header>
+    <div class="links">
+        <a href="/" onclick="return confirmation();" class="linkB">
+            Home
+        </a>
+        <a href="/statpage" onclick="return confirmation();" class="linkB">
+            Statistics Page
+        </a>
+    </div>
+    <div class="dd">
+        click to choose a restaurant<br>
+        <button onclick="showDD();" class="selectR">Select a Restaurant</button>
+        <div class="dbox" id="dbox">
+        </div>
+    </div>
+    <ul class="information">
+        <li id="rName">Choose a restaurant</li>
+        <li>Minimum Order: $
+            <div id="mFee">0.00</div>
+        </li>
+        <li>Delivery Fee: $
+            <div id="dFee">0.00</div>
+        </li>
+    </ul>
+    <br>
+    <div class="mainBody">
+        <ul class="categories" id="categories">
+            <li class="title"><strong>categories</strong></li><br>
+        </ul>
+        <ul class="menu" id="menu">
+            <li class="title"><strong>menu</strong></li><br>
+        </ul>
+        <ul class="checkout" id="checkout">
+            <li class="title"><strong>checkout</strong></li>
+            <ul class="cart" id="cart">
+            </ul>
+            <li>Subtotal: $
+                <div id="subtotal">0.00</div>
+            </li>
+            <li>Tax: $
+                <div id="tax">0.00</div>
+            </li>
+            <li>Delivery Fee: $
+                <div id="delivery">0.00</div>
+            </li>
+            <li>Total: $
+                <div id="total">0.00</div>
+            </li>
+            <br>
+            <li class="warning" id="warning"><strong>You must add $
+                <div id="addMore"></div> more before submitting.</strong></li>
+            <button class="submit" id="submit" onclick="submit();">Submit Order</button>
+        </ul>
+        <a class="return" href="#top">go to top</a>
+        <a class="goCheck" href="#checkout">check out</a> </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+doctype html
+html
+
+head
+    title Users
+    link(rel="stylesheet" type="text/css" href="inputPageStyle.css")
+    link(rel="stylesheet" type="text/css" href="userStyle.css")
+    script(src="user.js")
+
+body
+    if (loggedIn)
+        include ../header/loggedIn.html
+    else
+        include ../header/loggedOut.html
+
+    h1  User Search
+
+    div(class="inputBox")
+        p
+            input(class="textbox" id="search" type="text")
+        button(class="submit" onclick="search()") Search

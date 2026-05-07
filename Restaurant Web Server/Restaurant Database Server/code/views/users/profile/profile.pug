@@ -1,0 +1,44 @@
+doctype html
+html
+
+head
+    title Login Page
+    link(rel="stylesheet" type="text/css" href="/inputPageStyle.css")
+    link(rel="stylesheet" type="text/css" href="/profileStyle.css")
+    script(src="/profile.js")
+
+body
+    if (loggedIn)
+        include ../../header/loggedIn.html
+    else
+        include ../../header/loggedOut.html
+
+    h1 Profile
+        
+    div(class="inputBox")
+        p
+            div(class="Label") Username:
+            div(class="Txt")
+                |#{user.username}
+        if (ownsProfile)
+            p
+                div(class="Label") Status:
+                if (user.privacy)
+                    div(class="Txt") Private
+                else
+                    div(class="Txt") Public
+            if (user.privacy)
+                button(class="setPublic" onclick="setPublic()") Set to Public
+            else
+                button(class="setPrivate" onclick="setPrivate()") Set to Private
+        
+    h2 Orders
+    
+    ul(class="ordersBox")
+        each order in user.orders
+            li
+                |id: 
+                a(href="/orders/"+order) #{order}
+                hr
+        
+        

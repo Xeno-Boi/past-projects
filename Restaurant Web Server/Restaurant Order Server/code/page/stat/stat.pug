@@ -1,0 +1,18 @@
+doctype html
+html 
+    head 
+        link(rel="stylesheet" href="statStyle.css")
+
+    body
+        header Restaurant Statistics
+        div(class="links")
+            a(href="/" class="linkB") Home
+            a(href="/orderform" class="linkB") Order Page
+        ul(class="statList")
+            each data, restaurant in stat
+                li 
+                    b #{restaurant}
+                li Total number of orders: #{data["count"]}
+                li Average order total: $#{data["average"]}
+                li Best selling item (most sold): #{data["bestSeller"]}
+                hr

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://crhaypl7h4lah"]
+
+[ext_resource type="Script" path="res://scripts/class_scripts/dynamic_object.gd" id="1_nd11u"]
+[ext_resource type="Texture2D" uid="uid://buipuc811vala" path="res://textures/healthBars/healthBarBack.png" id="3_j5p5g"]
+[ext_resource type="Texture2D" uid="uid://bffqvo8u14dha" path="res://textures/healthBars/healthBarFrontUnit.png" id="4_gqd8g"]
+[ext_resource type="Texture2D" uid="uid://bisnp5x0deh5t" path="res://textures/healthBars/healthBarPlayer.png" id="5_av0as"]
+[ext_resource type="Texture2D" uid="uid://6t24neodp4jb" path="res://textures/healthBars/selectedMarker.png" id="5_jfrdd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x3ksr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kyiu4"]
+viewport_path = NodePath("OverheadDisplay/SubViewport")
+
+[node name="DynamicObject" type="CharacterBody3D" node_paths=PackedStringArray("mouseHitbox", "visionArea")]
+collision_layer = 97
+collision_mask = 97
+script = ExtResource("1_nd11u")
+mouseHitbox = NodePath("MouseHitbox")
+visionArea = NodePath("VisionArea")
+speed = 5.0
+attackRate = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_x3ksr")
+
+[node name="MouseHitbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="VisionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_path_custom_color = Color(0.806411, 0.245918, 0.33284, 1)
+
+[node name="OverheadDisplay" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47203, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_kyiu4")
+
+[node name="SubViewport" type="SubViewport" parent="OverheadDisplay"]
+transparent_bg = true
+size = Vector2i(256, 96)
+
+[node name="HealthBar" type="TextureProgressBar" parent="OverheadDisplay/SubViewport"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -40.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+texture_under = ExtResource("3_j5p5g")
+texture_over = ExtResource("4_gqd8g")
+texture_progress = ExtResource("5_av0as")
+
+[node name="SelectedIndicator" type="Sprite2D" parent="OverheadDisplay/SubViewport"]
+visible = false
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_jfrdd")
+offset = Vector2(370, 64)

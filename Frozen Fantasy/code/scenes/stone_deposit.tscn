@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6bfseabccyut"]
+
+[ext_resource type="Script" path="res://scripts/class_scripts/resource_deposit.gd" id="1_uga3u"]
+[ext_resource type="PackedScene" uid="uid://dler432f78dx0" path="res://models/recourses/dirty_stones_pile/dirty_stones_pile.glb" id="2_4g8q8"]
+[ext_resource type="Shader" path="res://shaders/buildings/effective_area.gdshader" id="3_u7e4v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3a51n"]
+size = Vector3(1.4445, 0.0651245, 0.909704)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dd2sh"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xje2u"]
+height = 1.00752
+radius = 1.00046
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_seqvb"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j756t"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_u7e4v")
+shader_parameter/color = Color(0.0901961, 0.933333, 0.607843, 0.294118)
+shader_parameter/fade_out_distance = 1.0
+shader_parameter/base_y = 0.0
+
+[node name="StoneDeposit" type="StaticBody3D" node_paths=PackedStringArray("mouseHitbox")]
+script = ExtResource("1_uga3u")
+resource_type = "stone"
+resource_count = 20
+mouseHitbox = NodePath("MouseHitbox")
+
+[node name="hitboxShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.805515, 0, -0.592576, 0, 1, 0, 0.592576, 0, 0.805515, -0.0208562, -0.212334, -0.0633111)
+shape = SubResource("BoxShape3D_3a51n")
+
+[node name="StonePile" parent="." instance=ExtResource("2_4g8q8")]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, -0.165118, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_dd2sh")
+
+[node name="MouseHitbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseHitbox"]
+shape = SubResource("CylinderShape3D_xje2u")
+
+[node name="StatusIndicator" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_seqvb")
+surface_material_override/0 = SubResource("ShaderMaterial_j756t")

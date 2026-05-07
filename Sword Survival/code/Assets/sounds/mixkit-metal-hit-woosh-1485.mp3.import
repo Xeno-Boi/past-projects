@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-metal-hit-woosh-1485.mp3-c17eb0702b415c52ba58b2756a41f083.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/mixkit-metal-hit-woosh-1485.mp3"
+dest_files=[ "res://.import/mixkit-metal-hit-woosh-1485.mp3-c17eb0702b415c52ba58b2756a41f083.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

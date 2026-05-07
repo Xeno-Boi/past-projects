@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://clmi8a10vicci"]
+
+[ext_resource type="PackedScene" uid="uid://big7ok12soeg5" path="res://scenes/enemy_building.tscn" id="1_v1unr"]
+[ext_resource type="PackedScene" uid="uid://dw436hnxh8i2m" path="res://models/buildings/medieval_slavic_cottage/scene.gltf" id="2_4wlx8"]
+[ext_resource type="Script" path="res://scripts/class_scripts/spawner_building.gd" id="2_5aaxt"]
+[ext_resource type="PackedScene" uid="uid://cpyc25twf20c1" path="res://scenes/enemy_warrior.tscn" id="3_72jii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0mj5"]
+resource_local_to_scene = true
+size = Vector3(0.82373, 0.283203, 0.985489)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sg7gi"]
+resource_local_to_scene = true
+size = Vector3(1.48486, 1.17975, 1.58562)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nfcbl"]
+viewport_path = NodePath("OverheadDisplay/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57pir"]
+
+[node name="EnemyWarriorHut" node_paths=PackedStringArray("extensions") instance=ExtResource("1_v1unr")]
+building_type = "enemy_warrior_hut"
+maxHealth = 120.0
+extensions = [NodePath("SpawnerBuilding")]
+
+[node name="hitboxShape" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0217285, 0.141602, 0.00528717)
+shape = SubResource("BoxShape3D_p0mj5")
+
+[node name="medieval_slavic_cottage" parent="." index="1" instance=ExtResource("2_4wlx8")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.371552, 0, 0)
+
+[node name="Model" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape3D" parent="MouseHitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0202637, 0.0264587, 0.0254936)
+shape = SubResource("BoxShape3D_sg7gi")
+
+[node name="OverheadDisplay" parent="." index="4"]
+texture = SubResource("ViewportTexture_nfcbl")
+
+[node name="SpawnerBuilding" type="Node3D" parent="." index="5" node_paths=PackedStringArray("spawnPoint")]
+script = ExtResource("2_5aaxt")
+spawnPoint = NodePath("../SpawnPoint")
+spawnRate = 5.0
+childType = ExtResource("3_72jii")
+
+[node name="SpawnPoint" type="Area3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint" index="0"]
+shape = SubResource("BoxShape3D_57pir")

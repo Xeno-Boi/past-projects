@@ -1,0 +1,35 @@
+res://addons/terrain_3d/src/asset_dock.tscn::b7704c69601bc74c7110d52cc727f446::1742011720::res://.godot/exported/133200997/export-86a9fabafe16d45125fdf6efd034fefa-asset_dock.scn
+res://addons/terrain_3d/src/bake_lod_dialog.tscn::dc0e705231b83d06fe63443be7d7791e::1742011720::res://.godot/exported/133200997/export-cfc8be8b54056f934ac89ec12c0e7534-bake_lod_dialog.scn
+res://addons/terrain_3d/src/channel_packer.tscn::63f6f2df6194c5c7162f523567d43c11::1742011720::res://.godot/exported/133200997/export-c51a7bbff6963e5e151a929b67ce23bf-channel_packer.scn
+res://addons/terrain_3d/src/directory_setup.tscn::fc91637546c7e90feafe5959692877ef::1742011720::res://.godot/exported/133200997/export-fe8734b9237564502cf0143df6e7c66c-directory_setup.scn
+res://addons/terrain_3d/tools/importer.tscn::b609af0db236e6f0f1cfd3f2bada1746::1742011720::res://.godot/exported/133200997/export-8d7f86d84d62e2824ed007f43c830738-importer.scn
+res://scenes/barrier.tscn::e7227fb55b1e5b4d0a284444602fc9c1::1744162010::res://.godot/exported/133200997/export-7e38edbc38cfe05d28845aa9cf0169b3-barrier.scn
+res://scenes/dynamic_object.tscn::5bced19866a2b57fd565ba827f4c0879::1744162009::res://.godot/exported/133200997/export-4b4d09eb2a899ba3e7084e8dad180c30-dynamic_object.scn
+res://scenes/enemy_beast.tscn::fdf162fb05d011e588fb2613603fa55a::1744162009::res://.godot/exported/133200997/export-558b209173585966adac6241d1a4a7a3-enemy_beast.scn
+res://scenes/enemy_beast_hut.tscn::5d5b5eb568f6c2f27ec739001fe8276d::1743841906::res://.godot/exported/133200997/export-51e176ee9386b05598d742d5cc9d704d-enemy_beast_hut.scn
+res://scenes/enemy_boss.tscn::520b6ac3458133eb3d8bafb44d17e4d0::1744162010::res://.godot/exported/133200997/export-9f9d44d2026c7d43c0928d8368908edf-enemy_boss.scn
+res://scenes/enemy_building.tscn::a72bfaf2b3e85604379f8f4898797b17::1743816149::res://.godot/exported/133200997/export-e18c262c35623a7323e22672fef38388-enemy_building.scn
+res://scenes/enemy_warrior.tscn::cb99756df846208779a8118b4b116dd1::1744162011::res://.godot/exported/133200997/export-54162b7d5886ef8d6fd0ce9b7ca338d9-enemy_warrior.scn
+res://scenes/enemy_warrior_hut.tscn::4c2ed3b73af2d616b0c40b809c389066::1743815809::res://.godot/exported/133200997/export-ecbd0c66f0ce91e64c70c4048dcaa140-enemy_warrior_hut.scn
+res://scenes/fire_stone_deposit.tscn::597e6e5326941d821365637fb0f1bc3c::1744162010::res://.godot/exported/133200997/export-62d4f1ddb5fe144c0b692da9a481f6bb-fire_stone_deposit.scn
+res://scenes/gatherer.tscn::0ff4e1ee968e17b5b8ef91031c20ce89::1743841906::res://.godot/exported/133200997/export-114d852b951c719a2e2d9f37be8089e5-gatherer.scn
+res://scenes/gatherer_campfire.tscn::1a828bebfd6f173a9185491d63021d29::1743841906::res://.godot/exported/133200997/export-9595263f03054cf9c8e753f7bc279691-gatherer_campfire.scn
+res://scenes/lose_menu.tscn::2710de388e09295f5767b7e3a4d83aaf::1744150119::res://.godot/exported/133200997/export-d59d32305dcd82f430f883ee4d7683c3-lose_menu.scn
+res://scenes/main.tscn::b9e2e375893f0f2d51ac63f5fdd29023::1744162431::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/new_fire_deposit.tscn::42c2db6e4fc62af7cefca1e3450ae058::1744162010::res://.godot/exported/133200997/export-ba172300f875702a5c9761b622a168b5-new_fire_deposit.scn
+res://scenes/patrol_node.tscn::6055d3f927bd7d59cec15f8051e6d62d::1744162009::res://.godot/exported/133200997/export-69beb96b1bdcc6979900d83903ac1e1f-patrol_node.scn
+res://scenes/player_building.tscn::fedcf28f9a5400644d34479cfc5b8bb8::1744162010::res://.godot/exported/133200997/export-2bfcd2b29cc4d0703f9d019574c981ae-player_building.scn
+res://scenes/pyre.tscn::c5d37d569caa388dd4c90c2223db8ba3::1744162010::res://.godot/exported/133200997/export-cb0f81470af1528dea7196e36b3c87e2-pyre.scn
+res://scenes/start_menu.tscn::410a40b7833916f340b22cb8ca6bfd75::1744162011::res://.godot/exported/133200997/export-88ae8cfda7038364875182e7cee054dd-start_menu.scn
+res://scenes/stone_deposit.tscn::d28415829b819235058aa6c69848bf7e::1744162010::res://.godot/exported/133200997/export-e3aaa55ad45d5a50b3ebbe26cdf6fe7b-stone_deposit.scn
+res://scenes/ui.tscn::603d2a11be85e74f622b845f129551a1::1744162010::res://.godot/exported/133200997/export-9211dc52ac9df169ba4fe77cbc1dc833-ui.scn
+res://scenes/warrior.tscn::bde5bfe4c765bfe431c4d64ab11d517e::1744162010::res://.godot/exported/133200997/export-d6a2988a07281a6a73e5d4e3a3fdefca-warrior.scn
+res://scenes/warrior_hut.tscn::bea6b657dc4621e04b9a6cb79aeb82bd::1744162011::res://.godot/exported/133200997/export-5ff30ea0bfe7f6a14e8f7886c9874c4c-warrior_hut.scn
+res://scenes/win_menu.tscn::fbd73c846a0efbf10befdfb4e230147c::1744150119::res://.godot/exported/133200997/export-9f491d241af774c2bab67d657e9898c5-win_menu.scn
+res://scenes/wizard.tscn::8b6081d51ce17da2c402f60181ba69fe::1744162011::res://.godot/exported/133200997/export-a40ebc88e3f85e8498ea6df8c36105b8-wizard.scn
+res://scenes/wizard_tower.tscn::5879c68eea10c5d2c4c354fad8293d52::1744162011::res://.godot/exported/133200997/export-765d598be4c65d1400423b052d71c8a0-wizard_tower.scn
+res://scenes/wood_deposit.tscn::f2d49768639f5c29e3034184a6659780::1744162010::res://.godot/exported/133200997/export-56c1698d180f56b72641cfcc1ce10415-wood_deposit.scn
+res://scenes/world_new_fire.tscn::6c7d553aeca3a023371ff488e4353fbb::1744150119::res://.godot/exported/133200997/export-6adc58a95dded44935d07a8ccd755f74-world_new_fire.scn
+res://scripts/label_theme.tres::10e65efb768c741f242c601386837af7::1744160149::res://.godot/exported/133200997/export-b6718be4b57160fb4fa3f42c2cd103b8-label_theme.res
+res://terrain data/terrain_assets.tres::daf66f9ccb9483088e4516470b2f62fd::1744162431::res://.godot/exported/133200997/export-1d03ffd92ac3740333844811fa7ef4d6-terrain_assets.res
+res://terrain data/terrain_material.tres::36680572e3d92982f1c773e08b41670a::1744162431::res://.godot/exported/133200997/export-4319f2b7c7c701704f6372a4783a7f8e-terrain_material.res

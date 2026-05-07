@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-ow-exclamation-of-pain-2204.mp3-4b73f0d98392d7d233e4d8dc1108799c.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/mixkit-ow-exclamation-of-pain-2204.mp3"
+dest_files=[ "res://.import/mixkit-ow-exclamation-of-pain-2204.mp3-4b73f0d98392d7d233e4d8dc1108799c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

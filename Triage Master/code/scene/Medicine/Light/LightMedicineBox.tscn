@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://media/medicine/lightMedicineBox.png" type="Texture" id=1]
+[ext_resource path="res://media/gobold/Gobold Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://media/medicine/lightMedicineBoxGlowing.png" type="Texture" id=3]
+[ext_resource path="res://scene/Medicine/Light/LightMedicineBox.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "normal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "glowing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 13
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[node name="LightMedicineBox" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="Texture" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "glowing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Pickup" type="Label" parent="."]
+margin_left = -63.0
+margin_top = -75.0
+margin_right = 67.0
+margin_bottom = -51.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Press 'F' to pick up"
+align = 1
+valign = 1

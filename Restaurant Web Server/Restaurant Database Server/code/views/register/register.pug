@@ -1,0 +1,27 @@
+doctype html
+html
+
+head
+    title Register
+    link(rel="stylesheet" type="text/css" href="/inputPageStyle.css")
+    link(rel="stylesheet" type="text/css" href="/loginStyle.css")
+    script(src="/register.js")
+
+body
+    if (loggedIn)
+        include ../header/loggedIn.html
+        div(class="box")
+            h1 You are logged in!
+    else
+        include ../header/loggedOut.html
+
+        h1  Register
+
+        div(class="inputBox")
+            p
+                div(class="Label") Username:
+                input(class="textbox" id="username" type="text")
+            p
+                div(class="Label") Password:
+                input(class="textbox" id="password" type="text")
+            button(class="submit" onclick="register()") Register

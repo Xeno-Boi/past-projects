@@ -1,0 +1,11 @@
+Model Information:
+* title:	Shrine to Odin
+* source:	https://sketchfab.com/3d-models/shrine-to-odin-4cb9b393d8004ae88234d9d7ef8943b6
+* author:	HenryBoadle (https://sketchfab.com/HenryBoadle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Shrine to Odin" (https://sketchfab.com/3d-models/shrine-to-odin-4cb9b393d8004ae88234d9d7ef8943b6) by HenryBoadle (https://sketchfab.com/HenryBoadle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

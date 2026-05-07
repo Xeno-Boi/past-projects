@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: Calibri, Helvetica, sans-serif;
+    color: rgb(15, 85, 85);
+    margin: 60px;
+}

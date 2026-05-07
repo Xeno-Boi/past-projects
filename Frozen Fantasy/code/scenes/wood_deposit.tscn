@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1uns5lcljqpu"]
+
+[ext_resource type="Script" path="res://scripts/class_scripts/resource_deposit.gd" id="1_10c88"]
+[ext_resource type="PackedScene" uid="uid://bqds27sfbgnvu" path="res://models/recourses/wood_pile/wood_pile.glb" id="1_xe5in"]
+[ext_resource type="Shader" path="res://shaders/buildings/effective_area.gdshader" id="3_jumw4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ua7s"]
+size = Vector3(0.842834, 0.0713808, 0.232635)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c3037"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5n30v"]
+height = 0.996005
+radius = 0.999321
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g6vo7"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8kyo"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_jumw4")
+shader_parameter/color = Color(0.0901961, 0.933333, 0.607843, 0.294118)
+shader_parameter/fade_out_distance = 1.0
+shader_parameter/base_y = 0.0
+
+[node name="WoodDeposit" type="StaticBody3D" node_paths=PackedStringArray("mouseHitbox")]
+script = ExtResource("1_10c88")
+resource_type = "wood"
+resource_count = 40
+mouseHitbox = NodePath("MouseHitbox")
+
+[node name="hitboxShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.44531, 0, -1.38242, 0, 2, 0, 1.38242, 0, 1.44531, -0.0582272, -0.428864, 0.0653795)
+shape = SubResource("BoxShape3D_1ua7s")
+
+[node name="WoodPile" parent="." instance=ExtResource("1_xe5in")]
+transform = Transform3D(0.140899, 0, 0.134806, 0, 0.195, 0, -0.134806, 0, 0.140899, -0.143816, -0.300658, -0.105564)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_c3037")
+
+[node name="MouseHitbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseHitbox"]
+shape = SubResource("CylinderShape3D_5n30v")
+
+[node name="StatusIndicator" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_g6vo7")
+surface_material_override/0 = SubResource("ShaderMaterial_j8kyo")

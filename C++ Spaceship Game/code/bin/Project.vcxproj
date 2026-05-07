@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C5F7FA5D-9E94-3F5C-8250-8877DF037131}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Project</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Project.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Project_d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Project.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Project</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Project.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Project</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Project.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Project</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glew32s.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glfw3.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/Debug/Project_d.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/Debug/Project_d.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glew32s.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glfw3.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/Release/Project.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/Release/Project.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glew32s.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glfw3.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/MinSizeRel/Project.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/MinSizeRel/Project.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\bin;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glew32s.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\glfw3.lib;C:\Users\XenoBoi\Desktop\Workstation\coding\OpenGL\Libraries\lib\SOIL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/RelWithDebInfo/Project.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/XenoBoi/Desktop/University Stuff/2023-2024/Winter/Comp 2501/Project/2501 project/code/bin/RelWithDebInfo/Project.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\config.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\file_utils.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game_object.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\player_game_object.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\shader.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\geometry.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_controller_object.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_tile_object.h" />
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_sprite.h" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\file_utils.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game_object.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\main.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\player_game_object.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\shader.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite.cpp" />
+    <None Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite_vertex_shader.glsl">
+    </None>
+    <None Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite_fragment_shader.glsl">
+    </None>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_controller_object.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_tile_object.cpp" />
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_sprite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

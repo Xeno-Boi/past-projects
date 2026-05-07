@@ -1,0 +1,402 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://media/gobold/Gobold Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://media/deathIndicator.png" type="Texture" id=2]
+[ext_resource path="res://media/sound effect/triage_master-soundtrack.mp3" type="AudioStream" id=3]
+[ext_resource path="res://media/sound effect/LoseSound.mp3" type="AudioStream" id=4]
+[ext_resource path="res://media/sound effect/WinSound.mp3" type="AudioStream" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+signal start_game
+
+# external nodes
+onready var main = get_parent().get_tree()
+onready var spawn = get_node(\"/root/Main/Spawn\")
+onready var player = get_node(\"/root/Main/stage/Player\")
+onready var bed = get_node(\"/root/Main/stage/Bed\")
+# internal nodes
+onready var HealedLabel = $in_game/HealedTitle/ScoreHealed
+onready var DeathIcon = $in_game/DeathIcon
+onready var StatHealedLabel = $menu/stat_sheet/HealedTitle/ScoreHealed
+onready var in_game = $in_game
+onready var menu = $menu
+onready var stat_sheet = $menu/stat_sheet
+onready var ShiftTime = $in_game/ShiftTimeLabel/shiftTime	# label
+onready var ShiftTimer = $in_game/ShiftTimeLabel/shiftTime/ShiftTimer
+
+
+# counters
+var healed = 0
+var death = 0
+export var shift_time: float = 3	# in minutes
+var timer
+
+# variables
+var start_position = Vector2(628,396)
+var loseSoundPlayed = false
+var instructionsOpen = false
+
+func _ready():
+	in_game.hide()
+	stat_sheet.hide()
+	timer = int(floor(shift_time * 60))
+	update_time(timer)
+	DeathIcon.animation = \"0\"
+
+func _process(delta):
+	if (!player.game_started):
+		if Input.is_action_just_pressed(\"instruction\"):
+			_on_Instructions_pressed()
+	HealedLabel.text = str(healed)
+	DeathIcon.animation = str(death)
+	if death >= 3:
+		if !loseSoundPlayed:
+			$LoseSound.play()
+			game_over(\"Game Over\")
+			loseSoundPlayed = true
+	elif timer == 0:
+		$WinSound.play()
+		game_over(\"You Win\")
+
+func healed_increase():
+	healed += 1
+
+func dead_increase():
+	death += 1
+
+func game_over(message):
+	$BGM.stop()
+	ShiftTimer.stop()
+	show_stat_sheet(message)
+	emit_signal(\"game_over\")
+	reset_game()
+
+func show_stat_sheet(message):
+	StatHealedLabel.text = str(healed)
+	in_game.hide()
+	show_message(message)
+	stat_sheet.show()
+	menu.show()
+	
+func reset_game():
+	healed = 0
+	death = 0
+	timer = int(floor(shift_time * 60))
+	main.call_group(\"patients\", \"despawn\")
+	spawn.stop()
+	player.reset()
+	for child in bed.get_children():
+		child.patient = null
+	
+func update_time(time):
+	var minute = floor(time/60)
+	var second = time % 60
+	if second < 10:
+		second = \"0\" + str(second)
+	else:
+		second = str(second)
+	ShiftTime.text = str(minute) + \":\" + second
+
+func _on_ShiftTimer_timeout():
+	timer -= 1
+	update_time(timer)
+
+func StartButton_pressed():
+	in_game.show()
+	menu.hide()
+	ShiftTimer.start()
+	update_time(timer)
+	emit_signal(\"start_game\")
+	player.game_started = true
+	player.position = start_position
+	$WinSound.stop()
+	loseSoundPlayed = false
+	$BGM.play()
+	instructionsOpen = true
+	_on_Instructions_pressed()
+	
+func show_message(text):
+	$menu/MessageLabel.text = text
+
+func _on_ExitArea_healed_patient_entered(body):
+	healed_increase()
+	main.call_group(\"patients\", \"exit_map\", body)
+
+func _on_ExitArea_patient_exited_screen(body):
+	main.call_group(\"patients\", \"despawn_after_leaving\", body)
+	
+func on_patient_death():
+	dead_increase()
+	spawn.patientSpawnCount -= 1
+
+
+
+func _on_Instructions_pressed():
+	# Instructions button is a toggle
+	if instructionsOpen:
+		# close them and toggle the boolean
+		$menu/TutorialBackground.hide()
+		$menu/TutorialBackground/TutorialText.hide()
+		instructionsOpen = !instructionsOpen
+	else:
+		# open them and toggle the boolean
+		$menu/TutorialBackground.show()
+		$menu/TutorialBackground/TutorialText.show()
+		instructionsOpen = !instructionsOpen
+"
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 192, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 128, 192, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 192, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 192, 192, 64 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 21
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=16]
+extra_spacing_space = 1
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="in_game" type="Node2D" parent="."]
+
+[node name="HealedTitle" type="Label" parent="in_game"]
+margin_left = 64.0
+margin_top = 752.0
+margin_right = 285.0
+margin_bottom = 792.0
+custom_fonts/font = SubResource( 10 )
+text = "Patients Healed: 	"
+
+[node name="ScoreHealed" type="Label" parent="in_game/HealedTitle"]
+margin_left = 216.0
+margin_right = 328.0
+margin_bottom = 40.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 2
+
+[node name="DeathIcon" type="AnimatedSprite" parent="in_game"]
+position = Vector2( 1088, 768 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 15 )
+animation = "0"
+playing = true
+
+[node name="ShiftTimeLabel" type="Label" parent="in_game"]
+margin_left = 536.0
+margin_top = 752.0
+margin_right = 677.0
+margin_bottom = 792.0
+custom_fonts/font = SubResource( 10 )
+text = "Shift Time:"
+
+[node name="shiftTime" type="Label" parent="in_game/ShiftTimeLabel"]
+margin_left = 152.0
+margin_right = 224.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 10 )
+text = "3:00"
+align = 2
+
+[node name="ShiftTimer" type="Timer" parent="in_game/ShiftTimeLabel/shiftTime"]
+process_mode = 0
+
+[node name="menu" type="Node2D" parent="."]
+
+[node name="Fade" type="ColorRect" parent="menu"]
+margin_right = 1280.0
+margin_bottom = 832.0
+color = Color( 0.227451, 0.356863, 0.745098, 0.835294 )
+
+[node name="MessageLabel" type="Label" parent="menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 226.0
+margin_right = 1280.0
+margin_bottom = 267.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Triage Master"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="menu"]
+margin_left = 552.0
+margin_top = 512.0
+margin_right = 729.0
+margin_bottom = 546.0
+rect_scale = Vector2( 0.996983, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Button" parent="menu"]
+margin_left = 552.0
+margin_top = 582.0
+margin_right = 729.0
+margin_bottom = 616.0
+rect_scale = Vector2( 0.996983, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Instructions"
+
+[node name="stat_sheet" type="Node2D" parent="menu"]
+
+[node name="HealedTitle" type="Label" parent="menu/stat_sheet"]
+margin_left = 512.0
+margin_top = 376.0
+margin_right = 658.0
+margin_bottom = 403.0
+custom_fonts/font = SubResource( 4 )
+text = "Patients Healed: 	"
+
+[node name="ScoreHealed" type="Label" parent="menu/stat_sheet/HealedTitle"]
+margin_left = 144.0
+margin_right = 256.0
+margin_bottom = 27.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 2
+
+[node name="TutorialBackground" type="ColorRect" parent="menu"]
+visible = false
+margin_left = 816.0
+margin_top = 8.0
+margin_right = 1272.0
+margin_bottom = 824.0
+color = Color( 0.12549, 0.109804, 0.109804, 0.454902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialText" type="RichTextLabel" parent="menu/TutorialBackground"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 440.0
+margin_bottom = 810.0
+custom_fonts/normal_font = SubResource( 16 )
+text = "Controls
+									Keyboard				Controller
+	Movement:			WASD / arrow keys		leftstick
+	Interact:				   F / space					 B / X
+	Sprint (hold):		  	  shift						  A
+	Restart game:				 R					 start button
+
+Intro
+
+	You are a Triage Nurse.
+	Your job is to treat as many patients as you can
+	during your shift time.
+	Be aware,
+	patients arrving won't last very long, save them!
+
+How to Play
+
+	Heal Patients:
+		- Put patients on their corresponding bed
+
+		- Apply corresponding medicine to the on-bed patients
+		  to start healing them
+			* When healing process starts,
+			   patient’s will stop dying
+
+	Extract Patients:
+		- Pickup the healed patients and place them 
+		  at the exit area to allow them to leave
+	
+	Aim:
+		- Treat and extract as many patients as you can
+		  during your shift
+		- Don’t let them die
+
+	* ICU bed can treat any patient type
+	  without the need for medicine!"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -30.0
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -30.0
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.839
+
+[connection signal="timeout" from="in_game/ShiftTimeLabel/shiftTime/ShiftTimer" to="." method="_on_ShiftTimer_timeout"]
+[connection signal="pressed" from="menu/StartButton" to="." method="StartButton_pressed"]
+[connection signal="pressed" from="menu/Instructions" to="." method="_on_Instructions_pressed"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk8j83r5jjf20"]
+
+[ext_resource type="Script" path="res://scripts/class_scripts/barrier.gd" id="1_jnrt5"]
+[ext_resource type="PackedScene" uid="uid://ldddhijwi3mj" path="res://models/buildings/ice_cluster_free/scene.gltf" id="2_wicyc"]
+[ext_resource type="PackedScene" uid="uid://bl8ox57tm2b4e" path="res://models/buildings/ice_cluster2_free/scene.gltf" id="3_qy1g0"]
+[ext_resource type="PackedScene" uid="uid://shh47qm26wrj" path="res://models/buildings/ice_cluster_3_free/ice_cluster_3_free.glb" id="4_5373a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7g06"]
+size = Vector3(0.716988, 0.146118, 0.528198)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aaxne"]
+size = Vector3(1, 1, 0.5)
+
+[node name="Barrier" type="StaticBody3D"]
+script = ExtResource("1_jnrt5")
+
+[node name="hitboxShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161629, -0.426941, -0.00567627)
+shape = SubResource("BoxShape3D_s7g06")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_aaxne")
+
+[node name="IceCluster" parent="." instance=ExtResource("2_wicyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, -0.045, 0.105)
+
+[node name="IceCluster2" parent="." instance=ExtResource("3_qy1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0561312, 0)
+visible = false
+
+[node name="IceCluster3" parent="." instance=ExtResource("4_5373a")]
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0.025, 0, -0.035)
+visible = false

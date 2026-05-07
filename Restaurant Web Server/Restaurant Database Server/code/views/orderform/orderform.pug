@@ -1,0 +1,52 @@
+doctype html
+html
+
+head
+    title Order Page
+    link(rel="stylesheet" type="text/css" href="orderformStyle.css")
+    script(src="orderform.js")
+
+body(onload="init()")
+    include ../header/loggedIn.html
+
+    div(class="dd")
+        |click to choose a restaurant
+        br
+        button(onclick="showDD();" class="selectR") select a restaurant
+        div(class="dbox" id="dbox")
+    
+    ul(class="information")
+        li(id="rName") Choose a restaurant
+        li Minimum Order: $
+            div(id="mFee") 0.00
+        li Delivery Fee: $
+            div(id="dFee") 0.00
+    br
+    
+    div(class="mainBody")
+        ul(class="categories" id="categories")
+            li(class="title")
+                strong categories
+            br
+        ul(class="menu" id="menu")
+            li(class="title")
+                strong menu
+            br
+        ul(class="checkout" id="checkout")
+            li(class="title")
+                strong checkout
+            ul(class="cart" id="cart")
+            li Subtotal: $
+                div(id="subtotal") 0.00
+            li Tax: $
+                div(id="tax") 0.00
+            li Delivery Fee: $
+                div(id="delivery") 0.00
+            li Total: $
+                div(id="total") 0.00
+            br
+            li(class="warning" id="warning")
+                strong You must add $
+                    div(id="addMore")
+                    | more before submitting
+            button(class="submit" id="submit" onclick="submit();") Submit Order

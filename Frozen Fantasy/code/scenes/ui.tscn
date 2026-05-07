@@ -1,0 +1,514 @@
+[gd_scene load_steps=20 format=3 uid="uid://ckad01sj0o28p"]
+
+[ext_resource type="Script" path="res://scripts/main_scripts/ui.gd" id="1_a8vo1"]
+[ext_resource type="Texture2D" uid="uid://do7yslksiv3i1" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-025.png" id="1_cpv2d"]
+[ext_resource type="Texture2D" uid="uid://b7sk1k0wjxhhi" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-000.png" id="2_kul3u"]
+[ext_resource type="Theme" uid="uid://dqmnjxq8gcdbs" path="res://scripts/label_theme.tres" id="3_2fr35"]
+[ext_resource type="Texture2D" uid="uid://dby76h15ecafq" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Divider Fade/divider-fade-005.png" id="3_sv4a0"]
+[ext_resource type="Script" path="res://scripts/main_scripts/goal_list.gd" id="4_bjaoo"]
+[ext_resource type="Texture2D" uid="uid://bqva24lln5rte" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-026.png" id="4_fh6p8"]
+[ext_resource type="Texture2D" uid="uid://cxb3tfui1j8pl" path="res://textures/tent_screenshot.png" id="5_k7phr"]
+[ext_resource type="Texture2D" uid="uid://bbeub71s1bibp" path="res://textures/tent_screenshot_selected.png" id="6_1nyoi"]
+[ext_resource type="Texture2D" uid="uid://buwueu2r2ujaq" path="res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-001.png" id="6_xxqsj"]
+[ext_resource type="Texture2D" uid="uid://cg46cqmddc0v3" path="res://textures/campfire_ss.png" id="7_tfdvt"]
+[ext_resource type="Texture2D" uid="uid://bdwbhrerwubb5" path="res://textures/wizard_hut_screenshot.png" id="8_2ng73"]
+[ext_resource type="Texture2D" uid="uid://b6y6plxuhnrs7" path="res://textures/campfire_ss_selected.png" id="8_d6j6q"]
+[ext_resource type="Texture2D" uid="uid://cem6wty3ofb1j" path="res://textures/wizard_hut_screenshot_selected.png" id="9_fo1yh"]
+[ext_resource type="Texture2D" uid="uid://4t0fh3gwlrd4" path="res://textures/pyre_ss.png" id="12_rdgcj"]
+[ext_resource type="Texture2D" uid="uid://byufdjawp1uof" path="res://textures/pyre_ss_selected.png" id="13_eeiyo"]
+[ext_resource type="Texture2D" uid="uid://4d5hscs2jpep" path="res://textures/WNF_ss.png" id="14_8tmyo"]
+[ext_resource type="Texture2D" uid="uid://6w0ysgpsrc83" path="res://textures/WNF_ss_selected.png" id="15_vb6hq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exwui"]
+bg_color = Color(1, 0.0313726, 0.270588, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_a8vo1")
+
+[node name="DebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.06
+offset_top = -102.045
+offset_right = -106.06
+offset_bottom = -79.045
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_2fr35")
+horizontal_alignment = 1
+
+[node name="ControlsHint" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="ControlsHintBG" type="NinePatchRect" parent="ControlsHint"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kul3u")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="ToggleControls" type="Label" parent="ControlsHint/ControlsHintBG"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 221.0
+offset_bottom = 31.0
+theme = ExtResource("3_2fr35")
+text = "Press [Tab] to toggle control guides"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsHint/ControlsHintBG"]
+layout_mode = 1
+offset_left = 10.485
+offset_top = 6.85
+offset_right = 274.485
+offset_bottom = 170.85
+theme = ExtResource("3_2fr35")
+
+[node name="CameraMove" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Move Camera:               [WASD]"
+
+[node name="CameraAcc" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Accelerate Camera:        Hold [Shift]"
+
+[node name="CameraRot" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Rotate Camera:              Hold [Right click]"
+
+[node name="CameraTrack" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Track unit:                      [Shift + Right click]"
+
+[node name="SelectSingle" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Select unit:                     [Left click]"
+
+[node name="SelectMutiple" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2fr35")
+text = "Select mutiple units:      [Space + Left click]"
+
+[node name="SelectDe" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Deselect Units:               [R]"
+
+[node name="SelectScreen" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Select Units On Screen: [CTRL]"
+
+[node name="SelectAll" type="Label" parent="ControlsHint/ControlsHintBG/VBoxContainer"]
+layout_mode = 2
+text = "Select All Units :             [T]"
+
+[node name="GoalList" type="Control" parent="."]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 0
+script = ExtResource("4_bjaoo")
+
+[node name="GoalListBG" type="NinePatchRect" parent="GoalList"]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("2_kul3u")
+region_rect = Rect2(0, 0, 48.6666, 48)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GoalList/GoalListBG"]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 6.0
+offset_right = 13.0
+offset_bottom = 6.0
+theme = ExtResource("3_2fr35")
+
+[node name="BottomPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="BottomPanelBG" type="NinePatchRect" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cpv2d")
+region_rect = Rect2(0, 0, 48.6666, 48)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="BuildingListBG" type="NinePatchRect" parent="BottomPanel"]
+visible = false
+layout_mode = 2
+offset_left = 452.98
+offset_top = 15.0
+offset_right = 709.98
+offset_bottom = 70.0
+size_flags_horizontal = 3
+texture = ExtResource("4_fh6p8")
+region_rect = Rect2(0, -0.0473204, 48.1049, 48.0473)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="BuildingList" type="GridContainer" parent="BottomPanel/BuildingListBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.335
+offset_top = 4.02
+offset_right = -10.4
+offset_bottom = -6.105
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03, 1.03)
+columns = 5
+
+[node name="GathererCampFireButton" type="TextureButton" parent="BottomPanel/BuildingListBG/BuildingList"]
+visible = false
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("7_tfdvt")
+texture_pressed = ExtResource("8_d6j6q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonBorder" type="NinePatchRect" parent="BottomPanel/BuildingListBG/BuildingList/GathererCampFireButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxqsj")
+
+[node name="WarriorsHutButton" type="TextureButton" parent="BottomPanel/BuildingListBG/BuildingList"]
+visible = false
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_k7phr")
+texture_pressed = ExtResource("6_1nyoi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonBorder" type="NinePatchRect" parent="BottomPanel/BuildingListBG/BuildingList/WarriorsHutButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxqsj")
+
+[node name="WizardTowerButton" type="TextureButton" parent="BottomPanel/BuildingListBG/BuildingList"]
+visible = false
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("8_2ng73")
+texture_pressed = ExtResource("9_fo1yh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonBorder" type="NinePatchRect" parent="BottomPanel/BuildingListBG/BuildingList/WizardTowerButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxqsj")
+
+[node name="PyreButton" type="TextureButton" parent="BottomPanel/BuildingListBG/BuildingList"]
+visible = false
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("12_rdgcj")
+texture_pressed = ExtResource("13_eeiyo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonBorder" type="NinePatchRect" parent="BottomPanel/BuildingListBG/BuildingList/PyreButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxqsj")
+
+[node name="WNFButton" type="TextureButton" parent="BottomPanel/BuildingListBG/BuildingList"]
+visible = false
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("14_8tmyo")
+texture_pressed = ExtResource("15_vb6hq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonBorder" type="NinePatchRect" parent="BottomPanel/BuildingListBG/BuildingList/WNFButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxqsj")
+
+[node name="ResourceList" type="VBoxContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 251.0
+offset_bottom = -10.0
+grow_vertical = 2
+
+[node name="Wood" type="HBoxContainer" parent="BottomPanel/ResourceList"]
+layout_mode = 2
+
+[node name="LeftDivider" type="TextureRect" parent="BottomPanel/ResourceList/Wood"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="WoodAmount" type="RichTextLabel" parent="BottomPanel/ResourceList/Wood"]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+theme = ExtResource("3_2fr35")
+theme_override_colors/default_color = Color(0.431373, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RightDivider" type="TextureRect" parent="BottomPanel/ResourceList/Wood"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
+
+[node name="Stone" type="HBoxContainer" parent="BottomPanel/ResourceList"]
+layout_mode = 2
+
+[node name="LeftDivider" type="TextureRect" parent="BottomPanel/ResourceList/Stone"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="StoneAmount" type="RichTextLabel" parent="BottomPanel/ResourceList/Stone"]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+theme = ExtResource("3_2fr35")
+theme_override_colors/default_color = Color(0.337255, 0.337255, 0.337255, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RightDivider" type="TextureRect" parent="BottomPanel/ResourceList/Stone"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
+
+[node name="ResourceList2" type="VBoxContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 221.335
+offset_top = 15.0
+offset_right = 454.335
+offset_bottom = -10.0
+grow_vertical = 2
+
+[node name="FireStone" type="HBoxContainer" parent="BottomPanel/ResourceList2"]
+layout_mode = 2
+
+[node name="LeftDivider" type="TextureRect" parent="BottomPanel/ResourceList2/FireStone"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FireStoneAmount" type="RichTextLabel" parent="BottomPanel/ResourceList2/FireStone"]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+theme = ExtResource("3_2fr35")
+theme_override_colors/default_color = Color(1, 0.121569, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RightDivider" type="TextureRect" parent="BottomPanel/ResourceList2/FireStone"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
+
+[node name="NewFire" type="HBoxContainer" parent="BottomPanel/ResourceList2"]
+layout_mode = 2
+
+[node name="LeftDivider" type="TextureRect" parent="BottomPanel/ResourceList2/NewFire"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="NewFireAmount" type="RichTextLabel" parent="BottomPanel/ResourceList2/NewFire"]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+theme = ExtResource("3_2fr35")
+theme_override_colors/default_color = Color(0, 0.333333, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RightDivider" type="TextureRect" parent="BottomPanel/ResourceList2/NewFire"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("3_sv4a0")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
+
+[node name="EventPanelBG" type="NinePatchRect" parent="BottomPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.62
+offset_top = -59.695
+offset_right = -63.62
+offset_bottom = -19.695
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_fh6p8")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="EventTextList" type="VBoxContainer" parent="BottomPanel/EventPanelBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResourceTooltipPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -25.0
+offset_right = -1202.0
+offset_bottom = -673.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_2fr35")
+
+[node name="ResourceTooltipLabel" type="Label" parent="ResourceTooltipPanel"]
+layout_mode = 1
+offset_left = 4.0
+offset_right = 5.0
+theme = ExtResource("3_2fr35")
+
+[node name="DebugToggle" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 199.35
+offset_right = 64.0
+offset_bottom = 222.35
+theme_override_styles/panel = SubResource("StyleBoxFlat_exwui")
+
+[node name="Label" type="Label" parent="DebugToggle"]
+layout_mode = 2
+text = "Debug"

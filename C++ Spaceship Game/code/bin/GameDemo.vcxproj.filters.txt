@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\file_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\player_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_controller_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_tile_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\file_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\player_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_controller_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\background_tile_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite_vertex_shader.glsl" />
+    <None Include="C:\Users\XenoBoi\Desktop\University Stuff\2023-2024\Winter\Comp 2501\Project\2501 project\code\sprite_fragment_shader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{BC4E0B3F-69A5-35FB-8DED-04E24555E016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F57D89EF-CC2F-30E0-8276-2C5938A2C1DA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

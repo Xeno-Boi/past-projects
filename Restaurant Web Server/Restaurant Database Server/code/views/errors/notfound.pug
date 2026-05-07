@@ -1,0 +1,14 @@
+doctype html
+html
+
+head
+    title Users
+    link(rel="stylesheet" type="text/css" href="/forbiddenStyle.css")
+
+body
+    if (loggedIn)
+        include ../header/loggedIn.html
+    else
+        include ../header/loggedOut.html
+
+    h1 Content not found!

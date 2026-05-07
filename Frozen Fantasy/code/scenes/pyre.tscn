@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://b50pj07wupskc"]
+
+[ext_resource type="PackedScene" uid="uid://brihtjdvgvgum" path="res://scenes/player_building.tscn" id="1_758vn"]
+[ext_resource type="Script" path="res://scripts/class_scripts/buildings/pyre.gd" id="2_72h84"]
+[ext_resource type="PackedScene" uid="uid://m3d33nrxe36r" path="res://models/buildings/evil_stone/evil_stone.glb" id="3_1e1eh"]
+[ext_resource type="Script" path="res://scripts/class_scripts/buildings/extensions/pyre_extension.gd" id="4_ttklc"]
+[ext_resource type="Shader" path="res://shaders/buildings/effective_area.gdshader" id="5_cffde"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4umrf"]
+resource_local_to_scene = true
+size = Vector3(1.89029, 0.388032, 1.92259)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t0gro"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkq4t"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrii8"]
+resource_local_to_scene = true
+size = Vector3(2.55323, 0.814453, 2.47113)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_klj26"]
+viewport_path = NodePath("OverheadDisplay/SubViewport")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n6j6x"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frv8j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_cffde")
+shader_parameter/color = Color(0.3, 0.2, 1, 0.5)
+shader_parameter/fade_out_distance = 1.0
+shader_parameter/base_y = 0.0
+
+[node name="Pyre" node_paths=PackedStringArray("extensions") instance=ExtResource("1_758vn")]
+script = ExtResource("2_72h84")
+effective_radius = 10.0
+building_cost = {
+"fire_stone": 10,
+"stone": 50,
+"wood": 30
+}
+building_type = "pyre"
+maxHealth = 500.0
+extensions = [NodePath("PyreExtension")]
+
+[node name="hitboxShape" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00926673, 0.194014, -0.000894308)
+shape = SubResource("BoxShape3D_4umrf")
+
+[node name="Model" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+visible = false
+mesh = SubResource("CylinderMesh_t0gro")
+surface_material_override/0 = SubResource("StandardMaterial3D_mkq4t")
+
+[node name="evil_stone" parent="." index="2" instance=ExtResource("3_1e1eh")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.115282, 0)
+
+[node name="MouseHitbox" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape3D" parent="MouseHitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172234, -1.60278, 0.0127869)
+shape = SubResource("BoxShape3D_rrii8")
+
+[node name="OverheadDisplay" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+texture = SubResource("ViewportTexture_klj26")
+
+[node name="PyreExtension" type="Node3D" parent="." index="5"]
+script = ExtResource("4_ttklc")
+
+[node name="EffectiveAreaMesh" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("CylinderMesh_n6j6x")
+surface_material_override/0 = SubResource("ShaderMaterial_frv8j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98241, 0)
+light_color = Color(1, 0.392157, 0.321569, 1)
+light_energy = 0.6
+omni_range = 10.0
+omni_attenuation = 0.4

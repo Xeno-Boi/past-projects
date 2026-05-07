@@ -1,0 +1,516 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://scene/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://scene/Medicine/medicine.tscn" type="PackedScene" id=2]
+[ext_resource path="res://media/character/character.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "grab_idle_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 35 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "grab_idle_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 21, 22, 21 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "grab_idle_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "grab_idle_up"
+length = 0.2
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 49 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "grab_run_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 37, 39, 40, 41, 38, 39, 40, 41 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "grab_run_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 25, 26, 27, 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "grab_run_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 11, 12, 13, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "grab_run_up"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 50, 51, 52, 53 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "idle_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 28 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "idle_up"
+length = 0.2
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 42 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "run_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 32, 33, 34, 31, 32, 33, 34 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "run_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 18, 19, 20, 17, 18, 19, 20 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "run_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 4, 5, 6, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "run_up"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 43, 44, 45, 46 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "grab_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "grab_idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "grab_idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "grab_idle_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=39]
+blend_point_0/node = SubResource( 35 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 36 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 37 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 38 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "grab_run_down"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "grab_run_right"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "grab_run_up"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "grab_run_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=44]
+blend_point_0/node = SubResource( 40 )
+blend_point_0/pos = Vector2( 0, 1.1 )
+blend_point_1/node = SubResource( 41 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 42 )
+blend_point_2/pos = Vector2( 0, -1.1 )
+blend_point_3/node = SubResource( 43 )
+blend_point_3/pos = Vector2( -1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "idle_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=17]
+blend_point_0/node = SubResource( 13 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 14 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 15 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 16 )
+blend_point_3/pos = Vector2( 0, 1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "run_left"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "run_right"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "run_down"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "run_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=22]
+blend_point_0/node = SubResource( 18 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 19 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 20 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 21 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachine" id=25]
+states/Grab_Idle/node = SubResource( 39 )
+states/Grab_Idle/position = Vector2( 488, 270 )
+states/Grab_Run/node = SubResource( 44 )
+states/Grab_Run/position = Vector2( 812, 270 )
+states/Idle/node = SubResource( 17 )
+states/Idle/position = Vector2( 488, 147 )
+states/Run/node = SubResource( 22 )
+states/Run/position = Vector2( 812, 147 )
+transitions = [ "Idle", "Run", SubResource( 23 ), "Run", "Idle", SubResource( 24 ), "Grab_Idle", "Idle", SubResource( 45 ), "Idle", "Grab_Idle", SubResource( 46 ), "Grab_Idle", "Grab_Run", SubResource( 47 ), "Grab_Run", "Grab_Idle", SubResource( 48 ), "Grab_Run", "Run", SubResource( 49 ), "Run", "Grab_Run", SubResource( 50 ) ]
+start_node = "Idle"
+graph_offset = Vector2( 0, 117.648 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+med_scene = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, -47 )
+texture = ExtResource( 5 )
+hframes = 7
+vframes = 8
+frame = 22
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -16 )
+rotation = -1.5708
+polygon = PoolVector2Array( -18, -9.00007, -18, 6.99994, -12.0001, 16, 5.99994, 16, 11, 10, 11, -9.99996, 6.00006, -16, -10.9999, -16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/grab_idle_down = SubResource( 31 )
+anims/grab_idle_left = SubResource( 27 )
+anims/grab_idle_right = SubResource( 28 )
+anims/grab_idle_up = SubResource( 33 )
+anims/grab_run_down = SubResource( 32 )
+anims/grab_run_left = SubResource( 29 )
+anims/grab_run_right = SubResource( 30 )
+anims/grab_run_up = SubResource( 34 )
+anims/idle_down = SubResource( 9 )
+anims/idle_left = SubResource( 6 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 10 )
+anims/run_down = SubResource( 12 )
+anims/run_left = SubResource( 7 )
+anims/run_right = SubResource( 5 )
+anims/run_up = SubResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 25 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 26 )
+parameters/Grab_Idle/blend_position = Vector2( 0.00158477, 0.00232017 )
+parameters/Grab_Run/blend_position = Vector2( 0.00158477, 0.00296497 )
+parameters/Idle/blend_position = Vector2( 0.1, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+
+[node name="direction" type="Position2D" parent="."]
+position = Vector2( 0, -38 )
+
+[node name="detector" type="Area2D" parent="direction"]
+position = Vector2( -10, -2 )
+scale = Vector2( 2, 60 )
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="direction/detector"]
+position = Vector2( -3, 0 )
+scale = Vector2( 0.96875, 1 )
+polygon = PoolVector2Array( 1, 0.666667, 21, 0.666667, 35.0968, 0.233333, 35.0968, -0.25, 21, -0.666667, 1, -0.666667 )
+
+[node name="Labels" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="direction/detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="direction/detector" to="." method="_on_detector_body_exited"]

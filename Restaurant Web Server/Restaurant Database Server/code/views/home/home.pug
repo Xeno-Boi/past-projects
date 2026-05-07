@@ -1,0 +1,14 @@
+doctype html
+html
+
+head
+    title Home
+    link(rel="stylesheet" type="text/css" href="homeStyle.css")
+
+body
+    if (loggedIn)
+        include ../header/loggedIn.html
+    else
+        include ../header/loggedOut.html
+
+    h1 Welcome

@@ -1,0 +1,658 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Melee/spear.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/skeleton/skeleton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Weapons/Melee/greatsword.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/MobSpawner/MobSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Weapons/Melee/longsword.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/slime/slime.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Weapons/Weapon_Type.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Map/Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enemies/Mob_Type.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/red_slime/red_slime.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/sounds/Danny Bale - Fern Music (Extended).mp3" type="AudioStream" id=15]
+[ext_resource path="res://Scenes/Weapons/Melee/holy_blade.tscn" type="PackedScene" id=16]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 9 )
+weapon_despawn_time = 10
+max_wandering_mobs = 8
+
+[node name="Map" parent="." instance=ExtResource( 3 )]
+
+[node name="MobSpawner" parent="." instance=ExtResource( 6 )]
+spawn_rate = 1.0
+
+[node name="Stage" type="YSort" parent="."]
+
+[node name="TreeMap" type="YSort" parent="Stage"]
+
+[node name="Tree" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -4, -8 )
+
+[node name="Tree2" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -94, -12 )
+
+[node name="Tree3" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 28, -148 )
+
+[node name="Tree4" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 242, -121 )
+
+[node name="Tree5" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 358, -89 )
+
+[node name="Tree6" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 562, 119 )
+
+[node name="Tree7" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 424, 91 )
+
+[node name="Tree8" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 350, 150 )
+
+[node name="Tree9" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 522, 151 )
+
+[node name="Tree10" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 720, -31 )
+
+[node name="Tree11" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 467, -154 )
+
+[node name="Tree12" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 433, -175 )
+
+[node name="Tree13" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 400, -159 )
+
+[node name="Tree14" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 379, -190 )
+
+[node name="Tree15" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 412, -212 )
+
+[node name="Tree16" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 449, -228 )
+
+[node name="Tree17" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 525, -212 )
+
+[node name="Tree19" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 405, -253 )
+
+[node name="Tree20" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 356, -231 )
+
+[node name="Tree21" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 344, -185 )
+
+[node name="Tree22" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 319, -218 )
+
+[node name="Tree23" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 458, -263 )
+
+[node name="Tree24" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 548, -157 )
+
+[node name="Tree25" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 586, -205 )
+
+[node name="Tree26" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 570, -266 )
+
+[node name="Tree97" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 665, -383 )
+
+[node name="Tree98" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 688, -460 )
+
+[node name="Tree99" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 621, -467 )
+
+[node name="Tree100" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 747, -504 )
+
+[node name="Tree27" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 494, -292 )
+
+[node name="Tree28" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 488, -336 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree29" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 434, -372 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree30" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 437, -448 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree31" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 343, -456 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree32" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 281, -379 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree33" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 205, -378 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree34" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 219, -479 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree35" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 41, -421 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree36" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -42, -383 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree37" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 3, -259 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree38" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 47, -198 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree39" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 105, -264 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree40" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 125, -231 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree41" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -252, -114 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree42" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -222, -107 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree43" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -255, -35 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree44" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -318, -7 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree45" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -169, 95 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree46" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -139, 140 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree47" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -298, 280 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree48" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -346, 265 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree49" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -354, 297 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree50" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -375, 330 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree51" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -414, 325 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree52" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -397, 295 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree53" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -376, 266 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree54" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -391, 233 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree55" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -424, 212 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree56" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -416, 251 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree57" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -436, 281 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree58" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -472, 302 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree59" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -437, 317 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree60" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -458, 256 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree61" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -450, 209 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree62" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -465, 188 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree63" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -423, 474 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree64" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -397, 487 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree65" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -361, 476 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree66" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -414, 529 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree67" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -381, 554 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree68" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -421, 556 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree69" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -339, 523 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree70" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -236, 543 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree71" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -190, 562 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree72" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -159, 480 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree73" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -222, 477 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree74" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -94, 514 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree75" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -114, 574 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree76" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -79, 574 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree77" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 57, 601 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree78" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -173, 638 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree79" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -395, 644 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree80" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 615, 391 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree81" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 339, 460 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree82" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 311, 358 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree83" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 84, 349 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree84" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 83, 422 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree85" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 146, 427 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree86" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 143, 382 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree87" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 88, 476 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree88" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 193, 516 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree89" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 251, 590 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree90" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 340, 644 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree91" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 261, 640 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree92" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 635, 214 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree93" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 336, 243 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree94" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 173, 249 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree95" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 0, 248 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree96" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( -49, 188 )
+offset = Vector2( -38, -27 )
+
+[node name="Tree18" parent="Stage/TreeMap" instance=ExtResource( 11 )]
+position = Vector2( 499, -177 )
+
+[node name="Player" parent="Stage" instance=ExtResource( 2 )]
+position = Vector2( 118, 68 )
+
+[node name="Slime" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 153, 160 )
+hp = 6
+
+[node name="Slime2" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -195, 202 )
+
+[node name="Slime3" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -76, 412 )
+
+[node name="Slime4" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -357, 401 )
+
+[node name="Slime5" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 220, 327 )
+
+[node name="Slime6" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 207, 466 )
+
+[node name="Slime7" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 556, 623 )
+
+[node name="Slime8" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 548, 481 )
+
+[node name="Slime9" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 670, 411 )
+
+[node name="Slime10" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 551, 308 )
+
+[node name="Slime11" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 337, 189 )
+
+[node name="Slime12" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 670, 56 )
+
+[node name="Slime13" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 343, 55 )
+
+[node name="Slime14" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 626, -168 )
+
+[node name="Slime15" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 365, -364 )
+
+[node name="Slime16" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 735, -502 )
+
+[node name="Slime17" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 638, -452 )
+
+[node name="Slime18" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 49, -456 )
+
+[node name="Slime19" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -417, -351 )
+
+[node name="Slime20" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -217, -475 )
+
+[node name="Slime21" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -257, -229 )
+
+[node name="Slime22" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -58, -189 )
+
+[node name="Slime23" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -363, -115 )
+
+[node name="Slime24" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -484, -94 )
+
+[node name="Slime25" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -375, 605 )
+
+[node name="Slime26" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -57, 485 )
+
+[node name="Slime27" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -25, 601 )
+
+[node name="Slime28" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 624, 415 )
+
+[node name="Slime29" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 521, 371 )
+
+[node name="Slime30" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 402, -188 )
+
+[node name="Slime31" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 449, -256 )
+
+[node name="Slime32" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 355, -255 )
+
+[node name="Slime33" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 525, -237 )
+
+[node name="Slime34" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 550, -183 )
+
+[node name="Slime35" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 342, -212 )
+
+[node name="Slime36" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( 155, -322 )
+
+[node name="Slime37" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -429, 473 )
+
+[node name="Slime38" parent="Stage" instance=ExtResource( 8 )]
+position = Vector2( -440, 525 )
+
+[node name="holy_blade" parent="Stage" instance=ExtResource( 16 )]
+position = Vector2( 575, 376 )
+status = 0
+
+[node name="holy_blade2" parent="Stage" instance=ExtResource( 16 )]
+position = Vector2( 691, -432 )
+status = 0
+
+[node name="longsword" parent="Stage" instance=ExtResource( 7 )]
+position = Vector2( 289, 447 )
+despawnable = false
+status = 0
+
+[node name="spear" parent="Stage" instance=ExtResource( 1 )]
+position = Vector2( -318, -548 )
+despawnable = false
+
+[node name="spear2" parent="Stage" instance=ExtResource( 1 )]
+position = Vector2( -416, 483 )
+despawnable = false
+
+[node name="greatsword" parent="Stage" instance=ExtResource( 5 )]
+position = Vector2( 410, -232 )
+despawnable = false
+status = 0
+
+[node name="Skeleton" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 562, 401 )
+
+[node name="Skeleton2" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 598, 427 )
+
+[node name="Skeleton8" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 622, 312 )
+
+[node name="Skeleton9" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 684, 478 )
+
+[node name="Skeleton3" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 252, 537 )
+
+[node name="Skeleton4" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( -385, 517 )
+
+[node name="Skeleton5" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 183, -247 )
+
+[node name="Skeleton6" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 220, -443 )
+
+[node name="Skeleton10" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 451, -458 )
+
+[node name="Skeleton11" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 614, -490 )
+
+[node name="Skeleton12" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 494, -350 )
+
+[node name="Skeleton13" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( 495, -282 )
+
+[node name="Skeleton7" parent="Stage" instance=ExtResource( 4 )]
+position = Vector2( -376, -220 )
+
+[node name="Red_Slime" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( -355, 61 )
+
+[node name="Red_Slime2" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 472, -218 )
+
+[node name="Red_Slime3" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 513, 434 )
+
+[node name="Red_Slime17" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 624, 474 )
+
+[node name="Red_Slime18" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 629, 349 )
+
+[node name="Red_Slime19" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 675, 364 )
+
+[node name="Red_Slime4" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 104, 465 )
+
+[node name="Red_Slime5" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 66, 247 )
+
+[node name="Red_Slime6" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( -203, -40 )
+
+[node name="Red_Slime7" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( -104, -344 )
+
+[node name="Red_Slime8" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 107, -101 )
+
+[node name="Red_Slime9" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 519, -462 )
+
+[node name="Red_Slime10" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 628, -400 )
+
+[node name="Red_Slime20" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 556, -425 )
+
+[node name="Red_Slime21" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 550, -338 )
+
+[node name="Red_Slime11" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 474, -416 )
+
+[node name="Red_Slime12" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 693, -280 )
+
+[node name="Red_Slime13" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 529, -17 )
+
+[node name="Red_Slime14" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 420, 527 )
+
+[node name="Red_Slime15" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( 687, 571 )
+
+[node name="Red_Slime16" parent="Stage" instance=ExtResource( 14 )]
+position = Vector2( -261, 316 )
+
+[node name="Weapon_Type" parent="." instance=ExtResource( 10 )]
+
+[node name="Mob_Type" parent="." instance=ExtResource( 13 )]
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -25.0
+autoplay = true

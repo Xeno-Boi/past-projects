@@ -1,0 +1,14 @@
+.inputBox {
+    margin-top: 0px;
+}
+
+.searchBox {
+    height: 200px;
+}
+
+.textbox {
+    width: 450px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+}

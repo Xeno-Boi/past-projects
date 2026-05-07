@@ -1,0 +1,579 @@
+[gd_scene load_steps=62 format=2]
+
+[ext_resource path="res://media/character/patientLight.png" type="Texture" id=1]
+[ext_resource path="res://scene/Entry_Exit/Spawn.gd" type="Script" id=2]
+[ext_resource path="res://scene/Patient/lightPatient/LightPatient.gd" type="Script" id=3]
+[ext_resource path="res://scene/Patient/DeathTimer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://media/gobold/Gobold Regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://media/sound effect/PatientDeath.mp3" type="AudioStream" id=6]
+
+[sub_resource type="CapsuleShape2D" id=101]
+radius = 18.0
+height = 52.0
+
+[sub_resource type="Animation" id=150]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=182]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 43, 44, 45, 46 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "despawn"
+} ]
+}
+
+[sub_resource type="Animation" id=151]
+resource_name = "healed_idle_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14 ]
+}
+
+[sub_resource type="Animation" id=152]
+resource_name = "healed_idle_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=153]
+resource_name = "healed_idle_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=154]
+resource_name = "healed_idle_up"
+length = 0.2
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
+}
+
+[sub_resource type="Animation" id=155]
+resource_name = "healed_in_bed_waiting"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14 ]
+}
+
+[sub_resource type="Animation" id=156]
+resource_name = "healed_picked_up"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 26 ]
+}
+
+[sub_resource type="Animation" id=157]
+resource_name = "healed_run_up"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 22, 23, 24, 25 ]
+}
+
+[sub_resource type="Animation" id=158]
+resource_name = "idle_down"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14 ]
+}
+
+[sub_resource type="Animation" id=159]
+resource_name = "idle_left"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=160]
+resource_name = "idle_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=161]
+resource_name = "idle_up"
+length = 0.2
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
+}
+
+[sub_resource type="Animation" id=162]
+resource_name = "in_bed_treating"
+length = 5.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_treating"
+} ]
+}
+
+[sub_resource type="Animation" id=163]
+resource_name = "in_bed_waiting"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14 ]
+}
+
+[sub_resource type="Animation" id=164]
+resource_name = "picked_up"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 26 ]
+}
+
+[sub_resource type="Animation" id=165]
+resource_name = "run_right"
+length = 1.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 4, 5, 6, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=188]
+animation = "healed_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id=189]
+animation = "healed_idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=190]
+animation = "healed_idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id=191]
+animation = "healed_idle_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=66]
+blend_point_0/node = SubResource( 188 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 189 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 190 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 191 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=192]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=193]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=194]
+animation = "idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id=195]
+animation = "idle_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=17]
+blend_point_0/node = SubResource( 192 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 193 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 194 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 195 )
+blend_point_3/pos = Vector2( 0, 1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=183]
+animation = "die"
+
+[sub_resource type="AnimationNodeAnimation" id=67]
+animation = "healed_in_bed_waiting"
+
+[sub_resource type="AnimationNodeAnimation" id=83]
+animation = "healed_picked_up"
+
+[sub_resource type="AnimationNodeAnimation" id=68]
+animation = "healed_run_up"
+
+[sub_resource type="AnimationNodeAnimation" id=51]
+animation = "in_bed_treating"
+
+[sub_resource type="AnimationNodeAnimation" id=52]
+animation = "in_bed_waiting"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "picked_up"
+
+[sub_resource type="AnimationNodeAnimation" id=125]
+animation = "run_right"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=98]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=99]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=100]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=126]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=147]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=184]
+priority = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=185]
+priority = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=186]
+priority = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=187]
+priority = 0
+
+[sub_resource type="AnimationNodeStateMachine" id=174]
+states/Healed_Idle/node = SubResource( 66 )
+states/Healed_Idle/position = Vector2( 1008.25, 147 )
+states/Idle/node = SubResource( 17 )
+states/Idle/position = Vector2( 421, 147 )
+states/die/node = SubResource( 183 )
+states/die/position = Vector2( 421, 261.581 )
+states/healed_in_bed_waiting/node = SubResource( 67 )
+states/healed_in_bed_waiting/position = Vector2( 888.247, 365.204 )
+states/healed_picked_up/node = SubResource( 83 )
+states/healed_picked_up/position = Vector2( 888.247, 261.581 )
+states/healed_run_up/node = SubResource( 68 )
+states/healed_run_up/position = Vector2( 1158.25, 261.581 )
+states/in_bed_treating/node = SubResource( 51 )
+states/in_bed_treating/position = Vector2( 754, 458.204 )
+states/in_bed_waiting/node = SubResource( 52 )
+states/in_bed_waiting/position = Vector2( 638, 365.204 )
+states/picked_up/node = SubResource( 47 )
+states/picked_up/position = Vector2( 638, 261.581 )
+states/run_right/node = SubResource( 125 )
+states/run_right/position = Vector2( 210.247, 261.581 )
+transitions = [ "Idle", "picked_up", SubResource( 48 ), "picked_up", "Idle", SubResource( 49 ), "picked_up", "in_bed_waiting", SubResource( 53 ), "in_bed_waiting", "in_bed_treating", SubResource( 55 ), "in_bed_treating", "healed_in_bed_waiting", SubResource( 69 ), "Healed_Idle", "healed_run_up", SubResource( 73 ), "healed_picked_up", "Healed_Idle", SubResource( 98 ), "Healed_Idle", "healed_picked_up", SubResource( 99 ), "healed_in_bed_waiting", "healed_picked_up", SubResource( 100 ), "run_right", "Idle", SubResource( 126 ), "Idle", "run_right", SubResource( 147 ), "run_right", "die", SubResource( 184 ), "Idle", "die", SubResource( 185 ), "picked_up", "die", SubResource( 186 ), "in_bed_waiting", "die", SubResource( 187 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -86.4203, 116.281 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=175]
+
+[sub_resource type="DynamicFont" id=196]
+size = 13
+outline_size = 1
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=197]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="LightPatient" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3, -47 )
+texture = ExtResource( 1 )
+hframes = 7
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, -40 )
+shape = SubResource( 101 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 150 )
+anims/die = SubResource( 182 )
+anims/healed_idle_down = SubResource( 151 )
+anims/healed_idle_left = SubResource( 152 )
+anims/healed_idle_right = SubResource( 153 )
+anims/healed_idle_up = SubResource( 154 )
+anims/healed_in_bed_waiting = SubResource( 155 )
+anims/healed_picked_up = SubResource( 156 )
+anims/healed_run_up = SubResource( 157 )
+anims/idle_down = SubResource( 158 )
+anims/idle_left = SubResource( 159 )
+anims/idle_right = SubResource( 160 )
+anims/idle_up = SubResource( 161 )
+anims/in_bed_treating = SubResource( 162 )
+anims/in_bed_waiting = SubResource( 163 )
+anims/picked_up = SubResource( 164 )
+anims/run_right = SubResource( 165 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 174 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 175 )
+parameters/Healed_Idle/blend_position = Vector2( 0.148702, 0.154078 )
+parameters/Idle/blend_position = Vector2( 0.0348653, 0.0258621 )
+
+[node name="Vision" type="RayCast2D" parent="."]
+position = Vector2( 1, -29 )
+enabled = true
+cast_to = Vector2( 60, 0 )
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="WaitingTimer" type="Timer" parent="."]
+
+[node name="DeathTimer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -104.5 )
+scale = Vector2( 0.609375, 0.609375 )
+
+[node name="Pickup" type="Label" parent="."]
+margin_left = -61.0
+margin_top = -149.0
+margin_right = 69.0
+margin_bottom = -125.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 196 )
+text = "Press 'F' to pick up"
+align = 1
+valign = 1
+
+[node name="HealStatus" type="Label" parent="."]
+margin_left = -61.0
+margin_top = -118.0
+margin_right = 69.0
+margin_bottom = -91.0
+custom_colors/font_color = Color( 0.0352941, 1, 0, 1 )
+custom_fonts/font = SubResource( 197 )
+text = "HEALED!"
+align = 1
+valign = 1
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
+
+[connection signal="patient_dies" from="DeathTimer" to="." method="_on_DeathTimer_patient_dies"]

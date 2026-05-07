@@ -1,0 +1,17 @@
+####################
+#TTTT...........T..#
+#T.GT..TTTTTTT..T..#
+#...D....T......T..#
+#TTTTTTTTTTT.TTTT..#
+#..........T......T#
+#.TTTTTTT..T.TT...T#
+#.T........T....TTT#
+#.T.TTTT...T.TTTTTT#
+#.T.T......T.......#
+#KT.TTTTT..TTTT.TTT#
+#TT.TTTST.....T..T.#
+#TT...T.TTTTTTT..T.#
+#.....T.......T..T.#
+#..TTTT.TTTTTTT.TT.#
+#..................#
+####################

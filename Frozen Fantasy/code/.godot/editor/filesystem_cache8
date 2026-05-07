@@ -1,0 +1,361 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1755795271
+defs.gd::GDScript::-1::1744150119::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::3177378534102422737::1741814634::1741814695::1::::<><>::
+README.txt::TextFile::-1::1744150119::0::1::::<><>::
+::res://addons/::1755794548
+::res://addons/terrain_3d/::1755794548
+editor.gd::GDScript::-1::1742011720::0::1::::<>EditorPlugin<>::
+LICENSE.txt::TextFile::-1::1742011720::0::1::::<><>::
+plugin.cfg::TextFile::-1::1742011720::0::1::::<><>::
+README.md::TextFile::-1::1742011720::0::1::::<><>::
+terrain.gdextension::GDExtension::-1::1742011720::0::1::::<><>::
+::res://addons/terrain_3d/bin/::1755795265
+::res://addons/terrain_3d/bin/libterrain.macos.debug.framework/::1755794548
+::res://addons/terrain_3d/bin/libterrain.macos.release.framework/::1755794548
+::res://addons/terrain_3d/extras/::1755794548
+import_sgt.gd::GDScript::-1::1742011720::0::1::::<>Terrain3D<>::
+minimum.gdshader::Shader::-1::1742011720::0::1::::<><>::
+project_on_terrain3d.gd::GDScript::-1::1742011720::0::1::::<>RefCounted<>::
+::res://addons/terrain_3d/icons/::1755794548
+autoshader.svg::CompressedTexture2D::2643274391178341217::1742011720::1742011735::1::::<><>::
+color_paint.svg::CompressedTexture2D::738037264959165742::1742011720::1742011735::1::::<><>::
+height_add.svg::CompressedTexture2D::2551661123966185934::1742011720::1742011735::1::::<><>::
+height_div.svg::CompressedTexture2D::7186582126980917722::1742011720::1742011735::1::::<><>::
+height_flat.svg::CompressedTexture2D::5986190407186579724::1742011720::1742011735::1::::<><>::
+height_mul.svg::CompressedTexture2D::3849017924698988715::1742011720::1742011735::1::::<><>::
+height_slope.svg::CompressedTexture2D::1759090111221642070::1742011720::1742011735::1::::<><>::
+height_smooth.svg::CompressedTexture2D::5299361044254028739::1742011720::1742011735::1::::<><>::
+height_sub.svg::CompressedTexture2D::872880673408351296::1742011720::1742011735::1::::<><>::
+holes.svg::CompressedTexture2D::3674633701816631779::1742011720::1742011735::1::::<><>::
+layers.svg::CompressedTexture2D::6090583645565862918::1742011720::1742011735::1::::<><>::
+multimesh.svg::CompressedTexture2D::5427391786099256013::1742011720::1742011735::1::::<><>::
+navigation.svg::CompressedTexture2D::409684150827103899::1742011720::1742011735::1::::<><>::
+picker_checked.svg::CompressedTexture2D::2877130841666407487::1742011720::1742011735::1::::<><>::
+region_add.svg::CompressedTexture2D::6567628363799703520::1742011720::1742011735::1::::<><>::
+region_remove.svg::CompressedTexture2D::4874899699697418333::1742011720::1742011735::1::::<><>::
+terrain3d.svg::CompressedTexture2D::3337497743794818701::1742011720::1742011735::1::::<><>::
+texture_paint.svg::CompressedTexture2D::8593981392022078875::1742011720::1742011735::1::::<><>::
+texture_spray.svg::CompressedTexture2D::1890372997461750014::1742011720::1742011735::1::::<><>::
+wetness.svg::CompressedTexture2D::2539594556547046321::1742011720::1742011735::1::::<><>::
+::res://addons/terrain_3d/src/::1755794548
+asset_dock.gd::GDScript::-1::1742011720::0::1::::<>PanelContainer<>::
+asset_dock.tscn::PackedScene::7865110026461604383::1742011720::0::1::::<><>::res://addons/terrain_3d/src/asset_dock.gd
+baker.gd::GDScript::-1::1742011720::0::1::::<>Node<>::
+bake_lod_dialog.gd::GDScript::-1::1742011720::0::1::::<>ConfirmationDialog<>::
+bake_lod_dialog.tscn::PackedScene::2922157702694130781::1742011720::0::1::::<><>::res://addons/terrain_3d/src/bake_lod_dialog.gd
+channel_packer.gd::GDScript::-1::1742011720::0::1::::<>RefCounted<>::
+channel_packer.tscn::PackedScene::953980224932829149::1742011720::0::1::::<><>::
+channel_packer_dragdrop.gd::GDScript::-1::1742011720::0::1::::<>Button<>::
+channel_packer_import_template.txt::TextFile::-1::1742011720::0::1::::<><>::
+directory_setup.gd::GDScript::-1::1742011720::0::1::::<>Node<>::
+directory_setup.tscn::PackedScene::4129394475485463890::1742011720::0::1::::<><>::
+double_slider.gd::GDScript::-1::1742011720::0::1::::DoubleSlider<>Control<>::
+gradient_operation_builder.gd::GDScript::-1::1742011720::0::1::::<>RefCounted<>::
+multi_picker.gd::GDScript::-1::1742011720::0::1::::<>HBoxContainer<>::
+operation_builder.gd::GDScript::-1::1742011720::0::1::::<>RefCounted<>::
+region_gizmo.gd::GDScript::-1::1742011720::0::1::::<>EditorNode3DGizmo<>::
+terrain_menu.gd::GDScript::-1::1742011720::0::1::::<>HBoxContainer<>::
+toolbar.gd::GDScript::-1::1742011720::0::1::::<>VFlowContainer<>::
+tool_settings.gd::GDScript::-1::1742011720::0::1::::<>PanelContainer<>::
+ui.gd::GDScript::-1::1742011720::0::1::::<>Node<>::
+::res://addons/terrain_3d/tools/::1755794548
+importer.gd::GDScript::-1::1742011720::0::1::::<>Terrain3D<>::
+importer.tscn::PackedScene::3158990868267418980::1742011720::0::1::::<><>::res://addons/terrain_3d/tools/importer.gd
+::res://addons/terrain_3d/utils/::1755794548
+terrain_3d_objects.gd::GDScript::-1::1742011720::0::1::::Terrain3DObjects<>Node3D<>::
+transform_changed_notifier.gd::GDScript::-1::1742011720::0::1::::<>Node3D<>::
+::res://data/::1755794548
+::res://font/::1755794548
+license.txt::TextFile::-1::1743688417::0::1::::<><>::
+::res://font/snow_kei/::1755794548
+Snow Kei.ttf::FontFile::6250208432918072891::1743688417::1743688462::1::::<><>::
+::res://models/::1755794549
+license.txt::TextFile::-1::1743841906::0::1::::<><>::
+::res://models/buildings/::1755794548
+::res://models/buildings/campfire/::1755794548
+license.txt::TextFile::-1::1743841906::0::1::::<><>::
+scene.gltf::PackedScene::9047053507092842391::1743841906::1743854816::1::::<><>::uid://07ckcyanhs30::::res://models/buildings/campfire/textures/Campfire_MAT_baseColor.jpeg<>uid://4p1bwk5yxesq::::res://models/buildings/campfire/textures/Campfire_MAT_metallicRoughness.png<>uid://pty2w5jnvvio::::res://models/buildings/campfire/textures/Campfire_MAT_normal.jpeg<>uid://dgay57yjj1653::::res://models/buildings/campfire/textures/Campfire_fire_MAT_baseColor.png<>uid://cpktctfwkf6ep::::res://models/buildings/campfire/textures/Campfire_fire_MAT_emissive.png
+::res://models/buildings/campfire/textures/::1755794548
+Campfire_fire_MAT_baseColor.png::CompressedTexture2D::7581907612795554708::1743841906::1743854825::1::::<><>::
+Campfire_fire_MAT_emissive.png::CompressedTexture2D::5847476000628508251::1743841906::1743854825::1::::<><>::
+Campfire_MAT_baseColor.jpeg::CompressedTexture2D::1820920613144979873::1743841906::1743854825::1::::<><>::
+Campfire_MAT_metallicRoughness.png::CompressedTexture2D::2068023731777460092::1743841906::1743854825::1::::<><>::
+Campfire_MAT_normal.jpeg::CompressedTexture2D::1093562458444425610::1743841906::1743854825::1::::<><>::
+::res://models/buildings/evil_stone/::1755794548
+evil_stone.glb::PackedScene::4147251438892384023::1743688417::1743688468::1::::<><>::uid://cbw8wvhbx6q7l::::res://models/buildings/evil_stone/evil_stone_0.png<>uid://b2egv7n88iep4::::res://models/buildings/evil_stone/evil_stone_1.png<>uid://cychj5hygbm0h::::res://models/buildings/evil_stone/evil_stone_2.png<>uid://rsxye12xtrgo::::res://models/buildings/evil_stone/evil_stone_3.png
+evil_stone_0.png::CompressedTexture2D::4890490583722143699::1743688417::1743688463::1::::<><>::
+evil_stone_1.png::CompressedTexture2D::4290180478938265819::1743688417::1743688463::1::::<><>::
+evil_stone_2.png::CompressedTexture2D::6461945048914265649::1743688417::1743688463::1::::<><>::
+evil_stone_3.png::CompressedTexture2D::1231808742823546886::1743688417::1743688463::1::::<><>::
+::res://models/buildings/ice_cluster2_free/::1755794548
+license.txt::TextFile::-1::1742000169::0::1::::<><>::
+scene.gltf::PackedScene::8242574496010913923::1742000169::1742002967::1::::<><>::uid://ps44lkaewu7c::::res://models/buildings/ice_cluster2_free/textures/Material.001_baseColor.png<>uid://dvqrrqp80or24::::res://models/buildings/ice_cluster2_free/textures/Material.001_metallicRoughness.png
+::res://models/buildings/ice_cluster2_free/textures/::1755794548
+Material.001_baseColor.png::CompressedTexture2D::1091804628168161154::1742000169::1742002966::1::::<><>::
+Material.001_metallicRoughness.png::CompressedTexture2D::8667321223995369559::1742000169::1742002966::1::::<><>::
+Material.001_specularf0.png::CompressedTexture2D::8540926935586160850::1742000169::1742002966::1::::<><>::
+::res://models/buildings/ice_cluster_3_free/::1755794548
+ice_cluster_3_free.glb::PackedScene::7252386065185643688::1742000169::1742002967::1::::<><>::uid://nteu73no4jii::::res://models/buildings/ice_cluster_3_free/ice_cluster_3_free_0.png
+ice_cluster_3_free_0.png::CompressedTexture2D::951958453082968484::1742000169::1742002966::1::::<><>::
+::res://models/buildings/ice_cluster_free/::1755794548
+license.txt::TextFile::-1::1742000169::0::1::::<><>::
+scene.gltf::PackedScene::630837986234991986::1742000169::1742002967::1::::<><>::uid://ce5mw6ah7ngts::::res://models/buildings/ice_cluster_free/textures/Material.001_baseColor.png
+::res://models/buildings/ice_cluster_free/textures/::1755794548
+Material.001_baseColor.png::CompressedTexture2D::5116297594524413944::1742000169::1742002966::1::::<><>::
+Material.001_clearcoat.png::CompressedTexture2D::8511452499386603553::1742000169::1742002966::1::::<><>::
+::res://models/buildings/medieval_slavic_cottage/::1755794548
+license.txt::TextFile::-1::1743815808::0::1::::<><>::
+scene.gltf::PackedScene::3704007677302690137::1743815808::1743815841::1::::<><>::uid://o0lifjd3tara::::res://models/buildings/medieval_slavic_cottage/textures/matRoof_baseColor.jpeg<>uid://bb6nop4cc07rk::::res://models/buildings/medieval_slavic_cottage/textures/matWood1Plaski_baseColor.jpeg<>uid://bbdfum8urqjqv::::res://models/buildings/medieval_slavic_cottage/textures/matWall2_baseColor.jpeg
+::res://models/buildings/medieval_slavic_cottage/textures/::1755794548
+matRoof_baseColor.jpeg::CompressedTexture2D::1034935704750079546::1743815808::1743815844::1::::<><>::
+matWall2_baseColor.jpeg::CompressedTexture2D::2463142643626056489::1743815808::1743815844::1::::<><>::
+matWood1Plaski_baseColor.jpeg::CompressedTexture2D::2521420392471762996::1743815808::1743815844::1::::<><>::
+::res://models/buildings/orc_house/::1755794548
+orc_house.glb::PackedScene::6472240142568928877::1743815809::1743815842::1::::<><>::uid://cwlgb5x60kxr4::::res://models/buildings/orc_house/orc_house_0.jpg<>uid://bvrwqyuylqcda::::res://models/buildings/orc_house/orc_house_1.png<>uid://cr676afh5ultw::::res://models/buildings/orc_house/orc_house_2.png<>uid://bbv82h13nkrrm::::res://models/buildings/orc_house/orc_house_3.jpg<>uid://dnnd1gmnarjrs::::res://models/buildings/orc_house/orc_house_4.png<>uid://clwxl7iwq8ddh::::res://models/buildings/orc_house/orc_house_5.png<>uid://deahubyac7e43::::res://models/buildings/orc_house/orc_house_6.jpg<>uid://bfvklvbplq0pr::::res://models/buildings/orc_house/orc_house_7.png<>uid://hpgbiaeygr6y::::res://models/buildings/orc_house/orc_house_8.png<>uid://cf7cpi66mbxo7::::res://models/buildings/orc_house/orc_house_9.jpg
+orc_house_0.jpg::CompressedTexture2D::6340071783141408443::1743815809::1743815844::1::::<><>::
+orc_house_1.png::CompressedTexture2D::3896846461016410782::1743815809::1743815844::1::::<><>::
+orc_house_2.png::CompressedTexture2D::6032045731071143912::1743815809::1743815844::1::::<><>::
+orc_house_3.jpg::CompressedTexture2D::2502013746481457586::1743815809::1743815844::1::::<><>::
+orc_house_4.png::CompressedTexture2D::8098782845065421472::1743815809::1743815844::1::::<><>::
+orc_house_5.png::CompressedTexture2D::5591752786688357185::1743815809::1743815844::1::::<><>::
+orc_house_6.jpg::CompressedTexture2D::7440478250061488038::1743815809::1743815844::1::::<><>::
+orc_house_7.png::CompressedTexture2D::2781344753611183555::1743815809::1743815844::1::::<><>::
+orc_house_8.png::CompressedTexture2D::522654079928498474::1743815809::1743815844::1::::<><>::
+orc_house_9.jpg::CompressedTexture2D::5189994364100721856::1743815809::1743815844::1::::<><>::
+::res://models/buildings/shrine_to_odin/::1755794548
+license.txt::TextFile::-1::1743688417::0::1::::<><>::
+scene.gltf::PackedScene::957768456382515815::1743688417::1743688464::1::::<><>::uid://b3akopkcqe77e::::res://models/buildings/shrine_to_odin/textures/lambert4_baseColor.png<>uid://dkm5kloxqbtna::::res://models/buildings/shrine_to_odin/textures/lambert5_baseColor.png<>uid://5khd1ydv7yq6::::res://models/buildings/shrine_to_odin/textures/lambert5_emissive.png
+::res://models/buildings/shrine_to_odin/textures/::1755794548
+lambert4_baseColor.png::CompressedTexture2D::4352341280011084836::1743688417::1743688463::1::::<><>::
+lambert5_baseColor.png::CompressedTexture2D::7887762988680958446::1743688417::1743688463::1::::<><>::
+lambert5_emissive.png::CompressedTexture2D::2126740865860714319::1743688417::1743688489::1::::<><>::
+::res://models/buildings/tent/::1755794548
+tent.glb::PackedScene::7682641044579445850::1742000169::1742002967::1::::<><>::uid://circwwy7nterl::::res://models/buildings/tent/tent_0.jpg<>uid://xyg2eb2wfe4r::::res://models/buildings/tent/tent_1.png<>uid://qcktxcvhoo1a::::res://models/buildings/tent/tent_2.jpg<>uid://ce2f4mc8ok6tm::::res://models/buildings/tent/tent_3.png<>uid://xbgcnfejttui::::res://models/buildings/tent/tent_4.jpg<>uid://2kevcltur1d8::::res://models/buildings/tent/tent_5.png<>uid://bi715ai3m7aqb::::res://models/buildings/tent/tent_6.png
+tent_0.jpg::CompressedTexture2D::5369608453821985093::1742000169::1742002966::1::::<><>::
+tent_1.png::CompressedTexture2D::1664301201058773411::1742000169::1742002966::1::::<><>::
+tent_2.jpg::CompressedTexture2D::1127792565819223084::1742000169::1742002966::1::::<><>::
+tent_3.png::CompressedTexture2D::5109690949173337694::1742000169::1742002966::1::::<><>::
+tent_4.jpg::CompressedTexture2D::1616776345695325284::1742000169::1742002966::1::::<><>::
+tent_5.png::CompressedTexture2D::1916023048340787799::1742000169::1742002966::1::::<><>::
+tent_6.png::CompressedTexture2D::3015623750204269409::1742000169::1742002966::1::::<><>::
+::res://models/buildings/witch_hut/::1755794548
+license.txt::TextFile::-1::1742157257::0::1::::<><>::
+scene.gltf::PackedScene::4482018333669854901::1742157257::1742157516::1::::<><>::uid://jv30igd6vfhp::::res://models/buildings/witch_hut/textures/aiAmbientOcclusion1_baseColor.jpeg<>uid://cffx7uobf3uny::::res://models/buildings/witch_hut/textures/aiAmbientOcclusion1_metallicRoughness.png
+::res://models/buildings/witch_hut/textures/::1755794548
+aiAmbientOcclusion1_baseColor.jpeg::CompressedTexture2D::676796675856821897::1742157257::1742157517::1::::<><>::
+aiAmbientOcclusion1_metallicRoughness.png::CompressedTexture2D::5135562182732754162::1742157257::1742157517::1::::<><>::
+::res://models/recourses/::1755794549
+::res://models/recourses/crystal_stone_rock/::1755794549
+::res://models/recourses/dirty_stones_pile/::1755794549
+dirty_stones_pile.glb::PackedScene::7940682331648934811::1742000169::1742002970::1::::<><>::uid://b7eylgpvck671::::res://models/recourses/dirty_stones_pile/dirty_stones_pile_0.jpg<>uid://cw2ipllmxd00q::::res://models/recourses/dirty_stones_pile/dirty_stones_pile_1.jpg<>uid://d2sawsgv1ufpj::::res://models/recourses/dirty_stones_pile/dirty_stones_pile_2.jpg
+dirty_stones_pile_0.jpg::CompressedTexture2D::4642198381955139110::1742000169::1742002966::1::::<><>::
+dirty_stones_pile_1.jpg::CompressedTexture2D::6373247244959042318::1742000169::1742002966::1::::<><>::
+dirty_stones_pile_2.jpg::CompressedTexture2D::9091559872023971323::1742000169::1742002966::1::::<><>::
+::res://models/recourses/magic_crystals/::1755794549
+magic_crystals.glb::PackedScene::6757825883691658962::1743688417::1743688464::1::::<><>::uid://c2wqdmdyjqv8j::::res://models/recourses/magic_crystals/magic_crystals_0.jpg<>uid://pj4gj2ej337i::::res://models/recourses/magic_crystals/magic_crystals_1.png<>uid://clbe2a4s8hq4y::::res://models/recourses/magic_crystals/magic_crystals_2.jpg<>uid://btg6jb3hd3p0u::::res://models/recourses/magic_crystals/magic_crystals_3.png
+magic_crystals_0.jpg::CompressedTexture2D::6714333921486116111::1743688417::1743688463::1::::<><>::
+magic_crystals_1.png::CompressedTexture2D::1073184076525453800::1743688417::1743688463::1::::<><>::
+magic_crystals_2.jpg::CompressedTexture2D::5547274155226675578::1743688417::1743688463::1::::<><>::
+magic_crystals_3.png::CompressedTexture2D::3734293374362028946::1743688417::1743688463::1::::<><>::
+::res://models/recourses/red_crystals/::1755794549
+red_crystals.glb::PackedScene::3288742970210439967::1742000169::1742002968::1::::<><>::uid://dihlexwnr1d86::::res://models/recourses/red_crystals/red_crystals_0.png<>uid://dt6bdoern7li1::::res://models/recourses/red_crystals/red_crystals_1.png<>uid://b8lh3uadn6kc6::::res://models/recourses/red_crystals/red_crystals_2.jpg<>uid://b7crqaqdlxdvh::::res://models/recourses/red_crystals/red_crystals_3.png
+red_crystals_0.png::CompressedTexture2D::7735899717195186573::1742000169::1742002966::1::::<><>::
+red_crystals_1.png::CompressedTexture2D::8556912607249417670::1742000169::1742002966::1::::<><>::
+red_crystals_2.jpg::CompressedTexture2D::4725836750843441203::1742000169::1742002966::1::::<><>::
+red_crystals_3.png::CompressedTexture2D::4637653222066549925::1742000169::1742002966::1::::<><>::
+red_crystals_4.png::CompressedTexture2D::1858630120479859488::1742000169::1742002966::1::::<><>::
+::res://models/recourses/wood_pile/::1755794549
+wood_pile.glb::PackedScene::2978459626395320205::1742000169::1742002967::1::::<><>::uid://dbmoum3sf7vct::::res://models/recourses/wood_pile/wood_pile_0.png
+wood_pile_0.png::CompressedTexture2D::7255109855903408059::1742000169::1742002966::1::::<><>::
+::res://models/units/::1755794549
+::res://models/units/enemy_beast/::1755794549
+Mutant.fbx::PackedScene::5985935134316819986::1743688417::1743688467::1::::<><>::uid://b057uxcwot7m4::::res://models/units/enemy_beast/Mutant_0.png<>uid://dujiyra18w04l::::res://models/units/enemy_beast/Mutant_1.png
+Mutant_0.png::CompressedTexture2D::4205052979058063085::1743688417::1743688463::1::::<><>::
+Mutant_1.png::CompressedTexture2D::8582147812745605193::1743688417::1743688463::1::::<><>::
+::res://models/units/enemy_boss/::1755794549
+::res://models/units/enemy_boss/snow_dragon/::1755794549
+license.txt::TextFile::-1::1743688417::0::1::::<><>::
+scene.gltf::PackedScene::799900082938813865::1743688417::1743688464::1::::<><>::uid://bn10ylahvgydg::::res://models/units/enemy_boss/snow_dragon/textures/zq127_binglong_1_baseColor.png
+::res://models/units/enemy_boss/snow_dragon/textures/::1755794549
+zq127_binglong_1_baseColor.png::CompressedTexture2D::3354110834569181612::1743688417::1743688463::1::::<><>::
+::res://models/units/enemy_warrior/::1755794549
+Vampire A Lusth.fbx::PackedScene::8331150562265719464::1743688417::1743688465::1::::<><>::uid://dnk86kpyd6475::::res://models/units/enemy_warrior/Vampire A Lusth_0.png<>uid://cubifacm5283u::::res://models/units/enemy_warrior/Vampire A Lusth_2.png<>uid://cwybsty4yp3uk::::res://models/units/enemy_warrior/Vampire A Lusth_4.png<>uid://c072ikka8s85q::::res://models/units/enemy_warrior/Vampire A Lusth_1.png
+Vampire A Lusth_0.png::CompressedTexture2D::8094420365787946938::1743688417::1743688463::1::::<><>::
+Vampire A Lusth_1.png::CompressedTexture2D::6595276732349249584::1743688417::1743688463::1::::<><>::
+Vampire A Lusth_2.png::CompressedTexture2D::6179177286488590088::1743688417::1743688463::1::::<><>::
+Vampire A Lusth_3.png::CompressedTexture2D::7457990516752981212::1743688417::1743688463::1::::<><>::
+Vampire A Lusth_4.png::CompressedTexture2D::6366634891172684474::1743688417::1743688463::1::::<><>::
+::res://models/units/fuse_warrior/::1755794549
+::res://models/units/fuse_warrior/textures/::1755794549
+::res://models/units/gatherer/::1755794549
+Erika Archer.fbx::PackedScene::902094903601100003::1743841906::1743854818::1::::<><>::uid://c0ii50crclvj3::::res://models/units/gatherer/Erika Archer_0.png<>uid://dwys6dx760pyc::::res://models/units/gatherer/Erika Archer_1.png<>uid://seq4gsn4mi32::::res://models/units/gatherer/Erika Archer_2.png<>uid://b8qhhaqu7edcj::::res://models/units/gatherer/Erika Archer_3.png<>uid://bsbwvcdnwrrb0::::res://models/units/gatherer/Erika Archer_4.png
+Erika Archer_0.png::CompressedTexture2D::6544618107077662778::1743841906::1743854825::1::::<><>::
+Erika Archer_1.png::CompressedTexture2D::8754110137291211110::1743841906::1743854825::1::::<><>::
+Erika Archer_2.png::CompressedTexture2D::1272680299984803907::1743841906::1743854825::1::::<><>::
+Erika Archer_3.png::CompressedTexture2D::4736120112988328313::1743841906::1743854825::1::::<><>::
+Erika Archer_4.png::CompressedTexture2D::3653257632746470087::1743841906::1743854825::1::::<><>::
+::res://models/units/pbr_shadowkin_mage_rigged/::1755794549
+::res://models/units/skeleton_lord/::1755794549
+::res://models/units/warrior/::1755794549
+Paladin WProp J Nordstrom.fbx::PackedScene::1336773644324643071::1743688417::1743688468::1::::<><>::uid://dl0ofg51swsc8::::res://models/units/warrior/Paladin WProp J Nordstrom_0.png<>uid://bqyybxsgkcnjc::::res://models/units/warrior/Paladin WProp J Nordstrom_2.png
+Paladin WProp J Nordstrom_0.png::CompressedTexture2D::7983808104507902781::1743688417::1743688462::1::::<><>::
+Paladin WProp J Nordstrom_1.png::CompressedTexture2D::245079564761478064::1743688417::1743688463::1::::<><>::
+Paladin WProp J Nordstrom_2.png::CompressedTexture2D::3560447477748956504::1743688417::1743688462::1::::<><>::
+::res://models/units/warrior_-_hand_painted_characters/::1755794549
+::res://models/units/warrior_-_hand_painted_characters/textures/::1755794549
+::res://models/units/wizard/::1755794549
+Knight D Pelegrini.fbx::PackedScene::2351976998031708944::1743688417::1743688466::1::::<><>::uid://b46pvdv80kt3k::::res://models/units/wizard/Knight D Pelegrini_0.png<>uid://cw1qmiq8w6qx0::::res://models/units/wizard/Knight D Pelegrini_2.png
+Knight D Pelegrini_0.png::CompressedTexture2D::4486841307679529550::1743688417::1743688462::1::::<><>::
+Knight D Pelegrini_1.png::CompressedTexture2D::2592229843654310046::1743688417::1743688463::1::::<><>::
+Knight D Pelegrini_2.png::CompressedTexture2D::6371663096873268831::1743688417::1743688462::1::::<><>::
+::res://scenes/::1755794549
+barrier.tscn::PackedScene::7929881835768288667::1744164795::0::1::::<><>::res://scripts/class_scripts/barrier.gd<>uid://ldddhijwi3mj::::res://models/buildings/ice_cluster_free/scene.gltf<>uid://bl8ox57tm2b4e::::res://models/buildings/ice_cluster2_free/scene.gltf<>uid://shh47qm26wrj::::res://models/buildings/ice_cluster_3_free/ice_cluster_3_free.glb
+dynamic_object.tscn::PackedScene::5980546018872429771::1744164795::0::1::::<><>::res://scripts/class_scripts/dynamic_object.gd<>uid://buipuc811vala::::res://textures/healthBars/healthBarBack.png<>uid://bffqvo8u14dha::::res://textures/healthBars/healthBarFrontUnit.png<>uid://bisnp5x0deh5t::::res://textures/healthBars/healthBarPlayer.png<>uid://6t24neodp4jb::::res://textures/healthBars/selectedMarker.png
+enemy_beast.tscn::PackedScene::7455719336675170444::1744164795::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>uid://b7hi66agbd3lc::::res://models/units/enemy_beast/Mutant.fbx<>res://scripts/class_scripts/humanoid_unit.gd<>res://scripts/behavioural_scripts/actionSets/enemy_unit.gd<>res://scripts/behavioural_scripts/attacks/normal_attack.gd<>uid://du3b0oovvnsbv::::res://textures/healthBars/healthBarEnemy.png<>uid://d08i04mjgve0w::::res://textures/attack particles/bloodEffect.png
+enemy_beast_hut.tscn::PackedScene::3166522172095790248::1743841906::0::1::::<><>::uid://big7ok12soeg5::::res://scenes/enemy_building.tscn<>uid://dslllb7jn8jgw::::res://models/buildings/orc_house/orc_house.glb<>res://scripts/class_scripts/spawner_building.gd<>uid://dehuuxb66c2aa::::res://scenes/enemy_beast.tscn
+enemy_boss.tscn::PackedScene::5924798066420306388::1744164795::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>uid://fyf8ga6vi3me::::res://models/units/enemy_boss/snow_dragon/scene.gltf<>res://scripts/class_scripts/humanoid_unit.gd<>res://scripts/behavioural_scripts/actionSets/enemy_unit.gd<>uid://84c4oj042v55::::res://textures/attack particles/dragonBreath.png<>uid://du3b0oovvnsbv::::res://textures/healthBars/healthBarEnemy.png<>res://scripts/behavioural_scripts/attacks/area_attack.gd
+enemy_building.tscn::PackedScene::2962286210854696042::1743816149::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>res://scripts/class_scripts/enemy_building.gd<>uid://bef32v24ooui4::::res://textures/healthBars/healthBarEnemy.png
+enemy_warrior.tscn::PackedScene::5875390344534227050::1744164795::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>res://scripts/behavioural_scripts/actionSets/enemy_unit.gd<>uid://buxj50ognsa4s::::res://models/units/enemy_warrior/Vampire A Lusth.fbx<>res://scripts/class_scripts/humanoid_unit.gd<>res://scripts/behavioural_scripts/attacks/normal_attack.gd<>uid://du3b0oovvnsbv::::res://textures/healthBars/healthBarEnemy.png<>uid://d08i04mjgve0w::::res://textures/attack particles/bloodEffect.png
+enemy_warrior_hut.tscn::PackedScene::-1::1743815809::0::1::::<><>::
+fire_stone_deposit.tscn::PackedScene::6229225985591245674::1744162010::0::1::::<><>::res://scripts/class_scripts/resource_deposit.gd<>uid://bm4dd7mhww3ux::::res://models/recourses/red_crystals/red_crystals.glb<>res://shaders/buildings/effective_area.gdshader
+gatherer.tscn::PackedScene::5329880446687043442::1743841906::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>uid://ck222o5mnj0oy::::res://models/units/gatherer/Erika Archer.fbx<>res://scripts/class_scripts/humanoid_unit.gd<>res://scripts/behavioural_scripts/actionSets/player_unit.gd<>res://scripts/behavioural_scripts/attacks/normal_attack.gd
+gatherer_campfire.tscn::PackedScene::8940810515564577280::1743841906::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>uid://v85lvx7qvpfw::::res://models/buildings/campfire/scene.gltf<>res://scripts/class_scripts/spawner_building.gd<>uid://ch63l8g5tnbig::::res://scenes/gatherer.tscn
+lose_menu.tscn::PackedScene::2160073554398831821::1744150119::0::1::::<><>::uid://cw1oad3vw16tr::::res://scenes/win_menu.tscn
+main.tscn::PackedScene::1777193723249052762::1744164795::0::1::::<><>::res://scripts/main_scripts/main.gd<>res://scripts/main_scripts/camera.gd<>res://scripts/main_scripts/world_event_manager.gd<>uid://ckad01sj0o28p::::res://scenes/ui.tscn<>res://scripts/class_scripts/terrain.gd<>uid://blwhm1rn4yvcn::::res://terrain data/terrain_material.tres<>uid://cbvecqo1jvqy3::::res://textures/snowflake.png<>uid://bymwdly4a7c80::::res://terrain data/terrain_assets.tres<>res://scripts/class_scripts/floor.gd<>uid://c6bfseabccyut::::res://scenes/stone_deposit.tscn<>uid://b1uns5lcljqpu::::res://scenes/wood_deposit.tscn<>uid://cu0qpa2x86ll7::::res://scenes/fire_stone_deposit.tscn<>uid://dk8j83r5jjf20::::res://scenes/barrier.tscn<>uid://dl2by4jjenfib::::res://scenes/new_fire_deposit.tscn<>uid://b50pj07wupskc::::res://scenes/pyre.tscn<>uid://dehuuxb66c2aa::::res://scenes/enemy_beast.tscn<>uid://cqoas8wp5o7qe::::res://scenes/enemy_boss.tscn<>uid://cmsck2bwm0125::::res://scenes/patrol_node.tscn<>uid://clmi8a10vicci::::res://scenes/enemy_warrior_hut.tscn<>uid://ch63l8g5tnbig::::res://scenes/gatherer.tscn<>uid://bld5fmd7a2wbw::::res://scenes/enemy_beast_hut.tscn
+new_fire_deposit.tscn::PackedScene::7987182643998932397::1744164795::0::1::::<><>::res://scripts/class_scripts/resource_deposit.gd<>uid://bfa7wa4tu5w1c::::res://models/recourses/magic_crystals/magic_crystals.glb<>res://shaders/buildings/effective_area.gdshader
+patrol_node.tscn::PackedScene::5652407003232135844::1744162009::0::1::::<><>::res://scripts/patrol_node.gd
+player_building.tscn::PackedScene::3596605474913247540::1744162010::0::1::::<><>::res://scripts/class_scripts/player_building.gd<>uid://b4nr6k2ymo88o::::res://textures/healthBars/healthBarBack.png<>uid://bic3tvvuuoq83::::res://textures/healthBars/healthBarFrontBuilding.png<>uid://dq5l25edqg5sb::::res://textures/healthBars/healthBarPlayer.png
+pyre.tscn::PackedScene::4544623627266619670::1744164795::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>res://scripts/class_scripts/buildings/pyre.gd<>uid://m3d33nrxe36r::::res://models/buildings/evil_stone/evil_stone.glb<>res://scripts/class_scripts/buildings/extensions/pyre_extension.gd<>res://shaders/buildings/effective_area.gdshader
+start_menu.tscn::PackedScene::8197121962851478307::1744164795::0::1::::<><>::res://scripts/main_scripts/start_menu.gd<>uid://coiw7b7uaup3e::::res://textures/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg<>uid://dqmnjxq8gcdbs::::res://scripts/label_theme.tres<>uid://bhndc0qikbuod::::res://font/snow_kei/Snow Kei.ttf<>uid://dqiroxrwvxilg::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-026.png<>uid://crostxbl7gwvb::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-001.png
+stone_deposit.tscn::PackedScene::6951095837315001963::1744162010::0::1::::<><>::res://scripts/class_scripts/resource_deposit.gd<>uid://dler432f78dx0::::res://models/recourses/dirty_stones_pile/dirty_stones_pile.glb<>res://shaders/buildings/effective_area.gdshader
+ui.tscn::PackedScene::5474957993448940797::1744164795::0::1::::<><>::res://scripts/main_scripts/ui.gd<>uid://do7yslksiv3i1::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-025.png<>uid://b7sk1k0wjxhhi::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-000.png<>uid://dqmnjxq8gcdbs::::res://scripts/label_theme.tres<>uid://dby76h15ecafq::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Divider Fade/divider-fade-005.png<>res://scripts/main_scripts/goal_list.gd<>uid://bqva24lln5rte::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-026.png<>uid://cxb3tfui1j8pl::::res://textures/tent_screenshot.png<>uid://bbeub71s1bibp::::res://textures/tent_screenshot_selected.png<>uid://buwueu2r2ujaq::::res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-001.png<>uid://cg46cqmddc0v3::::res://textures/campfire_ss.png<>uid://bdwbhrerwubb5::::res://textures/wizard_hut_screenshot.png<>uid://b6y6plxuhnrs7::::res://textures/campfire_ss_selected.png<>uid://cem6wty3ofb1j::::res://textures/wizard_hut_screenshot_selected.png<>uid://4t0fh3gwlrd4::::res://textures/pyre_ss.png<>uid://byufdjawp1uof::::res://textures/pyre_ss_selected.png<>uid://4d5hscs2jpep::::res://textures/WNF_ss.png<>uid://6w0ysgpsrc83::::res://textures/WNF_ss_selected.png
+warrior.tscn::PackedScene::5211825315447358864::1744164795::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>res://scripts/behavioural_scripts/actionSets/player_unit.gd<>uid://dmbhfxd3cppq3::::res://models/units/warrior/Paladin WProp J Nordstrom.fbx<>res://scripts/behavioural_scripts/attacks/normal_attack.gd<>res://scripts/class_scripts/humanoid_unit.gd<>uid://d08i04mjgve0w::::res://textures/attack particles/bloodEffect.png
+warrior_hut.tscn::PackedScene::6333293307366269303::1744164795::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>res://scripts/class_scripts/spawner_building.gd<>uid://cgiwabyq0pbae::::res://scenes/warrior.tscn<>uid://cugjeash2siv4::::res://models/buildings/tent/tent.glb
+win_menu.tscn::PackedScene::6371519988736375011::1744150119::0::1::::<><>::uid://do10nvxmvcsfr::::res://scenes/start_menu.tscn<>uid://dqmnjxq8gcdbs::::res://scripts/label_theme.tres<>uid://bhndc0qikbuod::::res://font/snow_kei/Snow Kei.ttf
+wizard.tscn::PackedScene::4473806238933773325::1744164795::0::1::::<><>::uid://crhaypl7h4lah::::res://scenes/dynamic_object.tscn<>uid://ithmxdkjk1u7::::res://models/units/wizard/Knight D Pelegrini.fbx<>res://scripts/behavioural_scripts/actionSets/player_unit.gd<>res://scripts/behavioural_scripts/attacks/normal_attack.gd<>res://scripts/class_scripts/humanoid_unit.gd<>uid://b3k1kvdjd0oqv::::res://textures/attack particles/fireParticle.png
+wizard_tower.tscn::PackedScene::3356017727119042076::1744164795::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>uid://ckaa2rdsscnmv::::res://models/buildings/witch_hut/scene.gltf<>res://scripts/class_scripts/spawner_building.gd<>uid://b40e62ad27tfh::::res://scenes/wizard.tscn
+wood_deposit.tscn::PackedScene::4253441231358686922::1744164795::0::1::::<><>::res://scripts/class_scripts/resource_deposit.gd<>uid://bqds27sfbgnvu::::res://models/recourses/wood_pile/wood_pile.glb<>res://shaders/buildings/effective_area.gdshader
+world_new_fire.tscn::PackedScene::8996664624596904697::1744150119::0::1::::<><>::uid://brihtjdvgvgum::::res://scenes/player_building.tscn<>uid://b4hi8jmle01o8::::res://models/buildings/shrine_to_odin/scene.gltf<>res://scripts/class_scripts/buildings/end_building.gd<>uid://b3k1kvdjd0oqv::::res://textures/attack particles/fireParticle.png
+::res://scripts/::1755794549
+label_theme.tres::Theme::8307862709649039824::1744160149::0::1::::<><>::
+patrol_node.gd::GDScript::-1::1743688428::0::1::::PatrolNode<>Node3D<>::
+::res://scripts/behavioural_scripts/::1755794549
+action_set.gd::GDScript::-1::1743688417::0::1::::ActionSet<>Node<>::
+attacks.gd::GDScript::-1::1743841906::0::1::::AttackType<>Node<>::
+world_event.gd::GDScript::-1::1744150119::0::1::::<>Node<>::
+::res://scripts/behavioural_scripts/actionSets/::1755794549
+enemy_unit.gd::GDScript::-1::1743688417::0::1::::EnemyUnit<>ActionSet<>::
+player_unit.gd::GDScript::-1::1743688428::0::1::::PlayerUnit<>ActionSet<>::
+::res://scripts/behavioural_scripts/attacks/::1755794549
+area_attack.gd::GDScript::-1::1743841906::0::1::::AreaAttack<>AttackType<>::
+normal_attack.gd::GDScript::-1::1743841906::0::1::::NormalAttack<>TargetedAttack<>::
+recruiting_attack.gd::GDScript::-1::1743841906::0::1::::RecruitingAttack<>TargetedAttack<>::
+targeted_attack.gd::GDScript::-1::1741954966::0::1::::TargetedAttack<>AttackType<>::
+::res://scripts/class_scripts/::1755794549
+aoe_building.gd::GDScript::-1::1741814634::0::1::::AOEBuilding<>BuildingExtension<>::
+area_building.gd::GDScript::-1::1741814634::0::1::::<>Node<>::
+barrier.gd::GDScript::-1::1743688428::0::1::::Barrier<>WorldObj<>::
+building_extension.gd::GDScript::-1::1743688428::0::1::::BuildingExtension<>Node3D<>::
+building_object.gd::GDScript::-1::1743815809::0::1::::BuildingObj<>StaticObj<>::
+dynamic_object.gd::GDScript::-1::1743817891::0::1::::DynamicObj<>CharacterBody3D<>::
+enemy_building.gd::GDScript::-1::1741814634::0::1::::EnemyBuilding<>BuildingObj<>::
+floor.gd::GDScript::-1::1743688417::0::1::::<>Terrain3D<>::
+humanoid_unit.gd::GDScript::-1::1743688417::0::1::::Humanoid<>Node3D<>::
+nonhuman_unit.gd::GDScript::-1::1741814634::0::1::::NonHumanoid<>MeshInstance3D<>::
+player_building.gd::GDScript::-1::1743841906::0::1::::PlayerBuilding<>BuildingObj<>::
+resource_deposit.gd::GDScript::-1::1744150119::0::1::::ResourceDep<>WorldObj<>::
+spawner_building.gd::GDScript::-1::1743841906::0::1::::SpawnerBuilding<>BuildingExtension<>::
+static_obj.gd::GDScript::-1::1743688428::0::1::::StaticObj<>Node3D<>::
+terrain.gd::GDScript::-1::1743688417::0::1::::Terrain<>WorldObj<>::
+world_object.gd::GDScript::-1::1743688428::0::1::::WorldObj<>StaticObj<>::
+::res://scripts/class_scripts/buildings/::1755794549
+end_building.gd::GDScript::-1::1744001657::0::1::::EndBuilding<>BuildingExtension<>::
+pyre.gd::GDScript::-1::1743815809::0::1::::<>PlayerBuilding<>::
+::res://scripts/class_scripts/buildings/extensions/::1755794549
+pyre_extension.gd::GDScript::-1::1743688417::0::1::::PyreBuilding<>BuildingExtension<>::
+::res://scripts/class_scripts/units/::1743687393
+::res://scripts/main_scripts/::1755794549
+camera.gd::GDScript::-1::1743505688::0::1::::<>Camera3D<>::
+goal_list.gd::GDScript::-1::1743841906::0::1::::<>Control<>::
+main.gd::GDScript::-1::1744164795::0::1::::<>Node3D<>::
+start_menu.gd::GDScript::-1::1743816149::0::1::::<>Control<>::
+ui.gd::GDScript::-1::1744150119::0::1::::<>Control<>::
+world_event_manager.gd::GDScript::-1::1744150119::0::1::::<>Node3D<>::
+::res://shaders/::1755794549
+unit_shader.gdshader::Shader::-1::1743688417::0::1::::<><>::
+::res://shaders/buildings/::1755794549
+effective_area.gdshader::Shader::-1::1743688460::0::1::::<><>::
+pyre_effective_area.gdshader::Shader::-1::1744164851::0::1::::<><>::
+::res://terrain data/::1755794549
+terrain3d-01-01.res::Terrain3DRegion::3996348106295253706::1743841906::0::1::::<><>::
+terrain3d-01-02.res::Terrain3DRegion::7149587088589882147::1743495993::0::1::::<><>::
+terrain3d-01_00.res::Terrain3DRegion::4638074919929518177::1743816085::0::1::::<><>::
+terrain3d-01_01.res::Terrain3DRegion::165742079934884256::1743495993::0::1::::<><>::
+terrain3d-02-01.res::Terrain3DRegion::3155221385112675402::1743495911::0::1::::<><>::
+terrain3d-02-02.res::Terrain3DRegion::3975914225182779249::1742158651::0::1::::<><>::
+terrain3d-02_00.res::Terrain3DRegion::669233967361746389::1743495993::0::1::::<><>::
+terrain3d-02_01.res::Terrain3DRegion::3701733442777831576::1742158651::0::1::::<><>::
+terrain3d_00-01.res::Terrain3DRegion::518079289713563981::1743841906::0::1::::<><>::
+terrain3d_00-02.res::Terrain3DRegion::5295269275403818298::1743495993::0::1::::<><>::
+terrain3d_00_00.res::Terrain3DRegion::4276274153899122568::1743816085::0::1::::<><>::
+terrain3d_00_01.res::Terrain3DRegion::2052500362789995796::1743495993::0::1::::<><>::
+terrain3d_01-01.res::Terrain3DRegion::2342795399686406509::1743495993::0::1::::<><>::
+terrain3d_01-02.res::Terrain3DRegion::4569541889793664295::1743495993::0::1::::<><>::
+terrain3d_01_00.res::Terrain3DRegion::792154996637278870::1743495993::0::1::::<><>::
+terrain3d_01_01.res::Terrain3DRegion::348028720553001312::1742158651::0::1::::<><>::
+terrain_assets.tres::Terrain3DAssets::4097067211428218531::1744164795::0::1::::<><>::uid://b6cgna8bx347j::::res://textures/snow2/snow_02_diff_4k - Pure.png<>uid://qf1m032qeipg::::res://textures/snow2/snow_02_nor_gl_4k.png<>uid://tymkp1b6llel::::res://textures/rock face/rock_face_03_diff_4k.png<>uid://do5esclyctltj::::res://textures/rock face/rock_face_03_nor_gl_4k.png<>uid://n2cxaou8td2f::::res://textures/brick path/brick_pavement_02_diff_4k.png<>uid://f3xigv0pfwgj::::res://textures/brick path/brick_pavement_02_nor_gl_4k.png<>uid://dv6ry4adlp7xd::::res://textures/rocky grass/rocky_terrain_02_diff_4k.jpg<>uid://b6t8t8ycc55r6::::res://textures/rocky grass/rocky_terrain_02_nor_gl_4k.png<>uid://c3r5uhe5dkupr::::res://textures/rubble/rubble_diff_4k.png<>uid://ge85jlnapvs8::::res://textures/rubble/rubble_nor_gl_4k.png
+terrain_material.tres::Terrain3DMaterial::3204362115276157077::1744162431::0::1::::<><>::
+::res://textures/::1755794550
+campfire_ss.png::CompressedTexture2D::1801747986540955493::1743841906::1743854815::1::::<><>::
+campfire_ss_selected.png::CompressedTexture2D::3855358239656702341::1743841906::1743854815::1::::<><>::
+license.txt::TextFile::-1::1743688417::0::1::::<><>::
+pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg::CompressedTexture2D::7505183704401371832::1743688417::1743688463::1::::<><>::
+pyre_ss.png::CompressedTexture2D::7229141376124787868::1743688417::1743688463::1::::<><>::
+pyre_ss_selected.png::CompressedTexture2D::173672638736943788::1743688417::1743688463::1::::<><>::
+snowflake.png::CompressedTexture2D::8727102833179945609::1743688417::1743688462::1::::<><>::
+tent_screenshot.png::CompressedTexture2D::8362389493070466114::1743688417::1743688464::1::::<><>::
+tent_screenshot_selected.png::CompressedTexture2D::8322539172967911235::1743688417::1743688464::1::::<><>::
+wizard_hut_screenshot.png::CompressedTexture2D::8385918875763570525::1743688417::1743688463::1::::<><>::
+wizard_hut_screenshot_selected.png::CompressedTexture2D::6981994573433042210::1743688417::1743688463::1::::<><>::
+WNF_ss.png::CompressedTexture2D::7996563835475702078::1743688417::1743688463::1::::<><>::
+WNF_ss_selected.png::CompressedTexture2D::8933059254450565438::1743688417::1743688463::1::::<><>::
+::res://textures/attack particles/::1755794549
+bloodEffect.png::CompressedTexture2D::5920711206288623554::1743841906::1743854825::1::::<><>::
+dragonBreath.png::CompressedTexture2D::4518891929229583149::1743841906::1743854825::1::::<><>::
+fireParticle.png::CompressedTexture2D::8796597490829190046::1744150119::1744160048::1::::<><>::
+::res://textures/brick path/::1755794549
+brick_pavement_02_diff_4k.png::CompressedTexture2D::3109879847914186136::1743688417::1743688462::1::::<><>::
+brick_pavement_02_nor_gl_4k.png::CompressedTexture2D::8114594768329438293::1743688417::1743688462::1::::<><>::
+::res://textures/healthBars/::1755794550
+healthBarBack.png::CompressedTexture2D::4449822176537195364::1743688417::1743688462::1::::<><>::
+healthBarEnemy.png::CompressedTexture2D::2679247385285404589::1743688417::1743688462::1::::<><>::
+healthBarFront.png::CompressedTexture2D::4916508707351065625::1743688417::1743688462::1::::<><>::
+healthBarFrontBuilding.png::CompressedTexture2D::2953795330554384558::1743688417::1743688462::1::::<><>::
+healthBarFrontUnit.png::CompressedTexture2D::403846378644619724::1743688417::1743688462::1::::<><>::
+healthBarPlayer.png::CompressedTexture2D::8344932567303158637::1743688417::1743688462::1::::<><>::
+selectedMarker.png::CompressedTexture2D::4795287240406439245::1743688417::1743688463::1::::<><>::
+::res://textures/kenney_fantasy-ui-borders/::1755794550
+License.txt::TextFile::-1::1742137302::0::1::::<><>::
+::res://textures/kenney_fantasy-ui-borders/PNG/::1755794550
+::res://textures/kenney_fantasy-ui-borders/PNG/Default/::1755794550
+::res://textures/kenney_fantasy-ui-borders/PNG/Default/Border/::1755794550
+panel-border-001.png::CompressedTexture2D::7884797793836883838::1742137302::1742137319::1::::<><>::
+panel-border-026.png::CompressedTexture2D::7466862526065404462::1742137302::1742137319::1::::<><>::
+::res://textures/kenney_fantasy-ui-borders/PNG/Default/Divider Fade/::1755794550
+divider-fade-005.png::CompressedTexture2D::7669602425500055229::1742137302::1742137319::1::::<><>::
+::res://textures/kenney_fantasy-ui-borders/PNG/Default/Transparent center/::1755794550
+panel-transparent-center-000.png::CompressedTexture2D::7311446726183039712::1743688417::1743688463::1::::<><>::
+panel-transparent-center-025.png::CompressedTexture2D::1808686771364435400::1742137302::1742137319::1::::<><>::
+::res://textures/rock face/::1755794550
+rock_face_03_diff_4k.png::CompressedTexture2D::307486084951785024::1743688417::1743688463::1::::<><>::
+rock_face_03_nor_gl_4k.png::CompressedTexture2D::8771169609052704378::1743688417::1743688463::1::::<><>::
+::res://textures/rocky grass/::1755794550
+rocky_terrain_02_diff_4k.jpg::CompressedTexture2D::6241509627042497084::1743688417::1743688463::1::::<><>::
+rocky_terrain_02_nor_gl_4k.png::CompressedTexture2D::5744646149801334376::1743688417::1743688463::1::::<><>::
+::res://textures/rubble/::1755794550
+rubble_diff_4k.png::CompressedTexture2D::5133966588806439960::1743688417::1743688463::1::::<><>::
+rubble_nor_gl_4k.png::CompressedTexture2D::8274713565642836290::1743688417::1743688463::1::::<><>::
+::res://textures/snow2/::1755794550
+snow_02_diff_4k - Pure.png::CompressedTexture2D::5927032225706494820::1743688417::1743688463::1::::<><>::
+snow_02_nor_gl_4k.png::CompressedTexture2D::5043685567016872543::1743688417::1743688463::1::::<><>::

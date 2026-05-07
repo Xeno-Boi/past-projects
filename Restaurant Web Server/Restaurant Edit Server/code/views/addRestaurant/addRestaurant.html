@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UFT-8">
+    <title>Add a Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="header.css" />
+    <link rel="stylesheet" type="text/css" href="addRestaurant.css" />
+    <script src="addRestaurant.js"></script>
+</head>
+
+<body>
+    <header id="top">
+        Add a Restaurant
+    </header>
+    <div class="links">
+        <a href="/" onclick="return confirmation();" class="linkB">
+            Home
+        </a>
+        <a href="/restaurants" onclick="return confirmation();" class="linkB">
+            Restaurants
+        </a>
+    </div>
+    <form>
+        <label>Restaurant Name: </label>
+        <input type="text" id="rName" placeholder="kfc"><br>
+        <label>Delivery Fee: </label>
+        <input type="text" id="dFee" placeholder="2.33"><br>
+        <label>Minimum Order: </label>
+        <input type="text" id="mFee" placeholder="50">
+    </form>
+    <button class="submitB" onclick="submit();">Submit</button>
+</body>

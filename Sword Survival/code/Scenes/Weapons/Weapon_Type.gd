@@ -1,0 +1,32 @@
+extends Node2D
+
+enum TYPE{
+	MELEE,
+	RANGED,
+	MAGIC
+}
+
+enum ATTACK_TYPE{
+	SWEEP,
+	BIG_SWEEP,
+	SPIN,
+	PIERCE
+}
+
+enum MELEE{
+	SINGLE_HANDED_SWORD,
+	LONGSWORD,
+	GREATSWORD,
+	AXE,
+	SPEAR,
+	SWORD_AND_SHIELD,
+	HOLY_BLADE
+}
+
+enum RANGED{
+	
+}
+
+enum MAGIC{
+	
+}

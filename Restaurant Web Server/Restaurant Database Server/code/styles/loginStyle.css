@@ -1,0 +1,11 @@
+.inputBox {
+    height: 200px;
+}
+
+.box {
+    margin: 50px;
+    text-align: center;
+    font-size: xx-large;
+    color: rgb(15, 85, 85);
+    font-family: Calibri, Helvetica, sans-serif;
+}

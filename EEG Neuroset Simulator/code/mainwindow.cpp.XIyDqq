@@ -1,0 +1,68 @@
+#include "mainwindow.h"
+#include "testui.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    //button creation
+    headsetButton=new QPushButton("Headset UI",this);
+    computerButton=new QPushButton("Computer UI",this);
+    newSessionButton=new QPushButton("New Session",this);
+    sessionLogButton=new QPushButton("Session Log",this);
+    timeButton=new QPushButton("Time and Date",this);
+
+    //place buttons
+    headsetButton->setGeometry(225, 200, 200, 100);
+    computerButton->setGeometry(475, 200, 200, 100);
+    newSessionButton->setGeometry(50, 200, 200, 100);
+    sessionLogButton->setGeometry(300, 200, 200, 100);
+    timeButton->setGeometry(550, 200, 200, 100);
+
+    //connect buttons to associated functions
+    connect(headsetButton, &QPushButton::clicked, this, &MainWindow::headsetClick);
+    connect(newSessionButton, &QPushButton::clicked, this, &MainWindow::newSessionClick);
+    connect(sessionLogButton, &QPushButton::clicked, this, &MainWindow::sessionLogClick);
+    connect(timeButton, &QPushButton::clicked, this, &MainWindow::timeAndDateClick);
+
+    //set buttons not visible by deafult to hide
+    newSessionButton->hide();
+    sessionLogButton->hide();
+    timeButton->hide();
+}
+
+void MainWindow::headsetClick()
+{
+    //hides ui choice buttons
+    headsetButton->hide();
+    computerButton->hide();
+
+    //shows buttons under headset UI choice
+    newSessionButton->show();
+    sessionLogButton->show();
+    timeButton->show();
+}
+
+void MainWindow::newSessionClick()
+{
+    // Implement New Session functionality here
+}
+
+void MainWindow::sessionLogClick()
+{
+    // Implement Session History functionality here
+}
+
+void MainWindow::timeAndDateClick()
+{
+    // Implement Time and Date functionality here
+}
+
+//destructor for the UI
+MainWindow::~MainWindow()
+{
+    delete ui;
+}

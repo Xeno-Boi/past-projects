@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bld5fmd7a2wbw"]
+
+[ext_resource type="PackedScene" uid="uid://big7ok12soeg5" path="res://scenes/enemy_building.tscn" id="1_mkwvy"]
+[ext_resource type="PackedScene" uid="uid://dslllb7jn8jgw" path="res://models/buildings/orc_house/orc_house.glb" id="2_33gxl"]
+[ext_resource type="Script" path="res://scripts/class_scripts/spawner_building.gd" id="3_toth6"]
+[ext_resource type="PackedScene" uid="uid://dehuuxb66c2aa" path="res://scenes/enemy_beast.tscn" id="4_xled3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8xv1"]
+resource_local_to_scene = true
+size = Vector3(1.48529, 0.295288, 1.44678)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0ywu"]
+resource_local_to_scene = true
+size = Vector3(2.13374, 1.61646, 2.16312)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdlec"]
+viewport_path = NodePath("OverheadDisplay/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gnm5c"]
+
+[node name="EnemyBeastHut" node_paths=PackedStringArray("extensions") instance=ExtResource("1_mkwvy")]
+building_type = "enemy_beast_hut"
+maxHealth = 140.0
+extensions = [NodePath("SpawnerBuilding")]
+
+[node name="hitboxShape" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0127869, 0.147644, -0.00561523)
+shape = SubResource("BoxShape3D_q8xv1")
+
+[node name="Sketchfab_Scene" parent="." index="1" instance=ExtResource("2_33gxl")]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0)
+
+[node name="Model" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape3D" parent="MouseHitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00538254, 0.308228, -0.0296669)
+shape = SubResource("BoxShape3D_d0ywu")
+
+[node name="OverheadDisplay" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80203, 0)
+texture = SubResource("ViewportTexture_mdlec")
+
+[node name="SpawnerBuilding" type="Node3D" parent="." index="5" node_paths=PackedStringArray("spawnPoint")]
+script = ExtResource("3_toth6")
+spawnPoint = NodePath("../SpawnPoint")
+spawnRate = 5.0
+maxChildren = 3
+childType = ExtResource("4_xled3")
+
+[node name="SpawnPoint" type="Area3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint" index="0"]
+shape = SubResource("BoxShape3D_gnm5c")

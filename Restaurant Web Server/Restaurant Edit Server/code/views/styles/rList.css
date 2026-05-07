@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none;
+    line-height: 0;
+}
+
+h1 {
+    line-height: 60px;
+}
+
+.rB {
+    display: inline-block;
+    width: 70%;
+    min-width: fit-content;
+    max-width: 400px;
+    line-height: 50px;
+    font-size: x-large;
+    text-decoration: none;
+    background-color: aliceblue;
+    border-bottom: 2px solid rgb(207, 218, 228);
+    color: black;
+    margin-top: 0;
+    font-family: Calibri, Helvetica, sans-serif;
+}
+
+.rB:hover {
+    background-color: rgb(229, 230, 231);
+    border-bottom: 2px solid rgb(187, 196, 204);
+}
+
+.rB:active {
+    background-color: rgb(196, 196, 196);
+    border-bottom: 2px solid rgb(177, 186, 194);
+}

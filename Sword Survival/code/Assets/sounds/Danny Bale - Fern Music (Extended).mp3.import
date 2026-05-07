@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Danny Bale - Fern Music (Extended).mp3-70ff8098b90ba51e7d2e23284c40f455.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Danny Bale - Fern Music (Extended).mp3"
+dest_files=[ "res://.import/Danny Bale - Fern Music (Extended).mp3-70ff8098b90ba51e7d2e23284c40f455.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,71 @@
+doctype html
+html
+    head
+        link(rel="stylesheet" type="text/css" href="../header.css")
+        link(rel="stylesheet" type="text/css" href="../rInfo.css")
+        script(src="../restaurantInfo.js")
+        title Restaurants Information
+    body(onload="init()")
+        header Restaurants List
+        div(class="links")
+            a(href="/" class="linkB" onclick="return confirmation()") Home
+            a(href="/restaurants" class="linkB" onclick="return confirmation()") Restaurant
+            a(href="/addrestaurant" class="linkB" onclick="return confirmation()") Add Restaurant
+
+        input(type="text" value=restaurant["name"] placeholder=restaurant["name"] id="rName" class="rName")
+        ul(class="information")
+            li
+                div(class="infoLabel") Minimum Order:
+                |$ 
+                input(type="text" value=restaurant["min_order"] placeholder=restaurant["min_order"] id="mFee")
+            li
+                div(class="infoLabel") Delivery Fee:
+                |$ 
+                input(type="text" value=restaurant["delivery_fee"] placeholder=restaurant["delivery_fee"] id="dFee")
+        button(class="update" onclick="submit()") Update
+        br
+        button(class="addC" onclick="showBox('cBox')") Add a Category
+        br
+        div(class="cBox" id="cBox")
+            p Category Name: 
+                input(type="text" class="name" id="cName" placeholder="chicken combos") 
+            button(class="addC" onclick="addCategory()") Add
+        button(class="addItem" onclick="showBox('iBox')") Add an Item
+        br
+        div(class="iBox" id="iBox")
+            p(id="first") Category: 
+                select(id="ddList")
+            div(class="right")
+                p 
+                    div(class="addILabel") Item Name: 
+                    |
+                    input(type="text" class="name" id="iName" placeholder="burger") 
+                p
+                    div(class="addILabel") Description: 
+                    |
+                    input(type="text" class="name" id="description" placeholder="very tasty")
+                p
+                    div(class="addILabel") Price: 
+                    |$
+                    input(type="text" class="name" id="price" placeholder="420.69")  
+            button(class="addItem" onclick="addItem()") Add
+
+        - const c = Object.keys(restaurant["menu"])
+        ul(class="menu" id="menu")
+            li(class="title")
+                strong Menu
+            hr
+            each category in c
+                li
+                    strong #{category}
+                    br
+                    ul(id=category)
+                        each item in Object.keys(restaurant["menu"][category])
+                            li(class="left")
+                                ul
+                                    li 
+                                        strong Id: #{item}
+                                    li Name: #{restaurant["menu"][category][item]["name"]}
+                                    li Description: #{restaurant["menu"][category][item]["description"]}
+                                    li Price: $ #{restaurant["menu"][category][item]["price"]}
+                hr

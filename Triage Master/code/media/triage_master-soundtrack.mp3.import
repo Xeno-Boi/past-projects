@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/triage_master-soundtrack.mp3-7711ba8de336ba9f02674c80b0f98342.mp3str"
+
+[deps]
+
+source_file="res://media/triage_master-soundtrack.mp3"
+dest_files=[ "res://.import/triage_master-soundtrack.mp3-7711ba8de336ba9f02674c80b0f98342.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,104 @@
+h2 {
+    font-size: 30px;
+    font-family: Calibri, Helvetica, sans-serif;
+    color: rgb(15, 85, 85);
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 1px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.inputBox {
+    height: fit-content;
+    line-height: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 500px;
+}
+
+.Label {
+    width: 50px;
+}
+
+.Txt {
+    display: inline-block;
+    width: 400px;
+    text-align: right;
+}
+
+.infoLabel {
+    display: inline-block;
+    width: 200px;
+}
+
+.infoTxt {
+    display: inline-block;
+    width: 300px;
+}
+
+.cartName {
+    display: inline-block;
+    width: 320px;
+}
+
+.cartQty {
+    display: inline-block;
+    width: 70px;
+}
+
+.cartPrice {
+    display: inline-block;
+    width: 70px;
+}
+
+.cart {
+    background-color: white;
+    width: 485px;
+    min-height: fit-content;
+    max-height: 300px;
+    overflow-y: scroll;
+    font-size: 20px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.cartCategory {
+    font-size: 23px;
+}
+
+.summaryBox {
+    width: 400px;
+    height: fit-content;
+    color: rgb(40, 63, 63);
+    font-family: Calibri, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    background-color: rgb(245, 209, 165);
+    padding: 10px;
+    line-height: 30px;
+}
+
+.summaryLabel {
+    text-align: left;
+    display: inline-block;
+    width: 200px;
+}
+
+.summaryTxt {
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+}
+
+.black {
+    background-color: black;
+}

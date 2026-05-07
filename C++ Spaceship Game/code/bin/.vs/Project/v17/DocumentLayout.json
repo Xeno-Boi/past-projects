@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\bin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F7FA5D-9E94-3F5C-8250-8877DF037131}|Project.vcxproj|C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 186,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "game.cpp",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.cpp",
+              "RelativeDocumentMoniker": "..\\game.cpp",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.cpp",
+              "RelativeToolTip": "..\\game.cpp",
+              "ViewState": "AQIAANoAAAAAAAAAAADwv+cAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T21:49:17.859Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "background_sprite.cpp",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.cpp",
+              "RelativeDocumentMoniker": "..\\background_sprite.cpp",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.cpp",
+              "RelativeToolTip": "..\\background_sprite.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-26T02:10:54.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "background_controller_object.cpp",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.cpp",
+              "RelativeDocumentMoniker": "..\\background_controller_object.cpp",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.cpp",
+              "RelativeToolTip": "..\\background_controller_object.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T21:49:41.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "background_tile_object.cpp",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.cpp",
+              "RelativeDocumentMoniker": "..\\background_tile_object.cpp",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.cpp",
+              "RelativeToolTip": "..\\background_tile_object.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T21:49:41.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "game_object.cpp",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.cpp",
+              "RelativeDocumentMoniker": "..\\game_object.cpp",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.cpp",
+              "RelativeToolTip": "..\\game_object.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T21:49:23.51Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 214,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "game.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.h",
+              "RelativeDocumentMoniker": "..\\game.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game.h",
+              "RelativeToolTip": "..\\game.h",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAGcAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T21:49:15.058Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "config.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\config.h",
+              "RelativeDocumentMoniker": "..\\config.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\config.h",
+              "RelativeToolTip": "..\\config.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-26T02:43:43.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "game_object.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.h",
+              "RelativeDocumentMoniker": "..\\game_object.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\game_object.h",
+              "RelativeToolTip": "..\\game_object.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T21:49:14.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "background_controller_object.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.h",
+              "RelativeDocumentMoniker": "..\\background_controller_object.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_controller_object.h",
+              "RelativeToolTip": "..\\background_controller_object.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T21:49:33.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "background_sprite.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.h",
+              "RelativeDocumentMoniker": "..\\background_sprite.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_sprite.h",
+              "RelativeToolTip": "..\\background_sprite.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-26T02:10:52.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "background_tile_object.h",
+              "DocumentMoniker": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.h",
+              "RelativeDocumentMoniker": "..\\background_tile_object.h",
+              "ToolTip": "C:\\Users\\XenoBoi\\Desktop\\University Stuff\\2023-2024\\Winter\\Comp 2501\\Project\\2501 project\\code\\background_tile_object.h",
+              "RelativeToolTip": "..\\background_tile_object.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T21:49:34.186Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

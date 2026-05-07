@@ -1,0 +1,86 @@
+#include "Sessions.h"
+#include <iostream>
+
+//constructor / destructors
+
+Sessions::Sessions() : timeAndDate() {
+    for (int i = 0; i < 21; ++i) {
+        sites[i] = new EEGSensor();
+    }
+
+    // connects
+    connect(&pause_timer, SIGNAL(timeout()), this, SLOT(pauseTimerTimeout()));
+}
+
+Sessions::~Sessions() {
+    for (auto* i : sites){
+        delete i;
+    }
+}
+
+//connects headset
+void Sessions::connect(){
+    headset_connected = true;
+    if (session_started){
+        // starts handling session
+        sessionHandle();
+    }
+}
+
+//headset loses connection
+void Sessions::connectionLost() {
+    headset_connected = false;
+    sessionPaused();
+    //placeholder
+    std::cout << "Connection lost." << std::endl;
+}
+
+//user pauses session
+void Sessions::sessionPaused() {
+    pause_timer.start(5 * 60);
+    //placeholder
+    std::cout << "Session paused." << std::endl;
+}
+
+//resumes the session from either connection lost or pause
+void Sessions::sessionResume() {
+    pause_timer.stop();
+    //placeholder
+    std::cout << "Session resumed." << std::endl;
+}
+
+//starts a session. begins working through all 21 sites, calling prebaseline, postbaseline, gets each site baseline... etc
+void Sessions::sessionStart() {
+    pre_baseline = 0;
+    post_baseline = 0;
+    session_started = true;
+    if (headset_connected){
+        // starts handling session
+        sessionHandle();
+    }
+}
+
+//adds a session to the log. this should be automatic after session completion.
+void Sessions::addToSessionLog(const TimeAndDate) {
+    //this->timeAndDate = timeAndDate;
+}
+
+//displays session history on the headset - so just time and date is displayed on the headset
+void Sessions::sessionHistoryHeadsetUI() {
+    //placeholder
+    std::cout << "Displaying session history on headset UI." << std::endl;
+}
+
+//displays session history on the computer - so time and date plus the pre and post overall baselines are displayed
+void Sessions::sessionHistoryComputerUI() {
+    //placeholder
+    std::cout << "Displaying session history on computer UI." << std::endl;
+}
+
+// Helpers
+
+// slots
+void Sessions::pauseTimerTimeout(){
+    session_started = false;
+    cout<<"session timed out"<<endl;
+}

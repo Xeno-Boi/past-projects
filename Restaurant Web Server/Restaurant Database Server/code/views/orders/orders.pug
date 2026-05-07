@@ -1,0 +1,60 @@
+doctype html
+html
+
+head
+    title Login Page
+    link(rel="stylesheet" type="text/css" href="/inputPageStyle.css")
+    link(rel="stylesheet" type="text/css" href="/orderStyle.css")
+    script(src="/profile.js")
+
+body
+    if (loggedIn)
+        include ../header/loggedIn.html
+    else
+        include ../header/loggedOut.html
+
+    h1 Order
+        
+    div(class="inputBox")
+        p
+            div(class="Label") ID:
+            div(class="Txt") #{order.id}
+        hr
+        p
+            div(class="infoLabel") Restautant:
+            div(class="infoTxt") #{order.restaurant}
+            br
+            br
+            div(class="infoLabel") Ordered by:
+            div(class="infoTxt") #{order.username}
+        hr
+        br
+        |cart
+        ul(class="cart")
+            li
+                div(class="cartName") Item name
+                div(class="cartQty") Qty
+                div(class="cartPrice") Price
+                hr
+            each category in Object.keys(order.cart)
+                li(class="cartCategory")
+                    strong #{category}
+                each itemID in Object.keys(order.cart[category])
+                    li
+                    div(class="cartName") #{order.cart[category][itemID].name}
+                    div(class="cartQty") x #{order.cart[category][itemID].q}
+                    div(class="cartPrice") $ #{restaurant.menu[category][itemID]["price"].toFixed(2)}
+                hr
+        
+        div(class="summaryBox")
+            div(class="summaryLabel") subtotal
+            div(class="summaryTxt") $ #{order.subtotal.toFixed(2)}
+            br
+            div(class="summaryLabel") tax
+            div(class="summaryTxt") $ #{(order.subtotal*0.1).toFixed(2)}
+            br
+            div(class="summaryLabel") delivery fee
+            div(class="summaryTxt") $ #{(restaurant.delivery_fee).toFixed(2)}
+            hr(class="black")
+            div(class="summaryLabel") total
+            div(class="summaryTxt") $ #{(order.total).toFixed(2)}

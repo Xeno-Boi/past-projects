@@ -1,0 +1,75 @@
+#ifndef CONFIG_H_
+#define CONFIG_H_
+
+// All defines
+
+//Global
+
+
+// Solution
+
+// MENU defines
+#define EXIT_PROGRAM 0
+#define CLEAR_SCREEN 1
+#define RENDER_WIREFRAME 2
+#define RENDER_FILLED	3
+
+// emit particles menu
+#define RENDER_POINT_EMIT_PARTICLES 100
+#define RENDER_PLANE_EMIT_PARTICLES 101
+#define RENDER_CUBE_EMIT_PARTICLES 102
+#define RENDER_FLAME_EMIT_PARTICLES 103
+#define RENDER_SMOKE_EMIT_PARTICLES 104
+
+#define TOGGLE_PARTICLES 105
+
+// particle rotation menu
+#define PARTICLE_ROTATE_UP 106
+#define PARTICLE_ROTATE_UP_RIGHT 107
+#define PARTICLE_ROTATE_RIGHT 108
+#define PARTICLE_ROTATE_DOWN_RIGHT 109
+#define PARTICLE_ROTATE_DOWN 110
+
+// particle scale menu
+#define PARTICLE_SCALE_SMALL 111
+#define PARTICLE_SCALE_NORMAL 112
+#define PARTICLE_SCALE_LARGE 113
+
+// cube
+#define TOGGLE_CUBE 114
+
+// cube translation menu
+#define CUBE_MOVE_CENTER 115
+#define CUBE_MOVE_RIGHT_1 116
+#define CUBE_MOVE_RIGHT_2 117
+#define CUBE_MOVE_RIGHT_3 118
+#define CUBE_MOVE_FRONT_1 119
+#define CUBE_MOVE_FRONT_2 120
+#define CUBE_MOVE_FRONT_3 121
+#define CUBE_MOVE_BACK_1 122
+#define CUBE_MOVE_BACK_2 123
+#define CUBE_MOVE_BACK_3 124
+
+#define NORMAL_SPEED 20
+#define MAX_SPEED 2.0
+
+#define UPDATE_RENDERRED_OBJECTS 1000
+#define FRAME_TIME 30	// in milliseconds
+
+
+// GraphicsObject
+#define RENDER_COLOR 10
+#define RENDER_TEXTURE 11
+
+
+// Particles
+#define RENDER_POINTS 12
+#define RENDER_TRIANGLES 13
+
+
+// Particle physics
+#define LINEAR_ACCELERATION 10
+#define OVAL_DECELERATION 11
+
+
+#endif

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Witch Hut
+* source:	https://sketchfab.com/3d-models/witch-hut-89b6f92f774b4fac81a7ff5f74e66fe1
+* author:	Jesse (https://sketchfab.com/Leviiossa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Witch Hut" (https://sketchfab.com/3d-models/witch-hut-89b6f92f774b4fac81a7ff5f74e66fe1) by Jesse (https://sketchfab.com/Leviiossa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

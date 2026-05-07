@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        link(rel="stylesheet" type="text/css" href="header.css")
+        link(rel="stylesheet" type="text/css" href="rList.css")
+        title Restaurants List
+    body
+        header Restaurants List
+        div(class="links")
+            a(href="/" class="linkB") Home
+            a(href="/addrestaurant" class="linkB") Add Restaurant
+        h1 List of Restaurants
+        ul
+            each r in restaurants
+                li 
+                    - url = "restaurants/" + r.id
+                    a(href=url class="rB") #{r.name}
+                br

@@ -1,0 +1,67 @@
+[gd_resource type="Terrain3DAssets" load_steps=19 format=3 uid="uid://bymwdly4a7c80"]
+
+[ext_resource type="Texture2D" uid="uid://b6cgna8bx347j" path="res://textures/snow2/snow_02_diff_4k - Pure.png" id="1_2ltoa"]
+[ext_resource type="Texture2D" uid="uid://qf1m032qeipg" path="res://textures/snow2/snow_02_nor_gl_4k.png" id="2_y1rbx"]
+[ext_resource type="Texture2D" uid="uid://tymkp1b6llel" path="res://textures/rock face/rock_face_03_diff_4k.png" id="5_hn83x"]
+[ext_resource type="Texture2D" uid="uid://do5esclyctltj" path="res://textures/rock face/rock_face_03_nor_gl_4k.png" id="6_yyeb6"]
+[ext_resource type="Texture2D" uid="uid://n2cxaou8td2f" path="res://textures/brick path/brick_pavement_02_diff_4k.png" id="7_nbwq1"]
+[ext_resource type="Texture2D" uid="uid://f3xigv0pfwgj" path="res://textures/brick path/brick_pavement_02_nor_gl_4k.png" id="8_d20bb"]
+[ext_resource type="Texture2D" uid="uid://dv6ry4adlp7xd" path="res://textures/rocky grass/rocky_terrain_02_diff_4k.jpg" id="9_fi6ao"]
+[ext_resource type="Texture2D" uid="uid://b6t8t8ycc55r6" path="res://textures/rocky grass/rocky_terrain_02_nor_gl_4k.png" id="10_3tc26"]
+[ext_resource type="Texture2D" uid="uid://c3r5uhe5dkupr" path="res://textures/rubble/rubble_diff_4k.png" id="11_a4sl7"]
+[ext_resource type="Texture2D" uid="uid://ge85jlnapvs8" path="res://textures/rubble/rubble_nor_gl_4k.png" id="12_7orhv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aiy1w"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 85.0
+distance_fade_max_distance = 75.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_lxina"]
+material_override = SubResource("StandardMaterial3D_aiy1w")
+generated_type = 1
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_f8ttu"]
+name = "rocky_terrain_02_diff_4k"
+albedo_texture = ExtResource("1_2ltoa")
+normal_texture = ExtResource("2_y1rbx")
+uv_scale = 0.027
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_yggq4"]
+name = "rock face 2"
+id = 1
+albedo_texture = ExtResource("5_hn83x")
+normal_texture = ExtResource("6_yyeb6")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_368uq"]
+name = "rock_face_03_diff_4k"
+id = 2
+albedo_texture = ExtResource("5_hn83x")
+normal_texture = ExtResource("6_yyeb6")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ngupb"]
+name = "Brick Path"
+id = 3
+albedo_texture = ExtResource("7_nbwq1")
+normal_texture = ExtResource("8_d20bb")
+uv_scale = 0.4
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_dfyvf"]
+name = "rocky_terrain_02_diff_4k"
+id = 4
+albedo_texture = ExtResource("9_fi6ao")
+normal_texture = ExtResource("10_3tc26")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_empfu"]
+name = "rubble"
+id = 5
+albedo_texture = ExtResource("11_a4sl7")
+normal_texture = ExtResource("12_7orhv")
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_lxina")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_f8ttu"), SubResource("Terrain3DTextureAsset_yggq4"), SubResource("Terrain3DTextureAsset_368uq"), SubResource("Terrain3DTextureAsset_ngupb"), SubResource("Terrain3DTextureAsset_dfyvf"), SubResource("Terrain3DTextureAsset_empfu")])
