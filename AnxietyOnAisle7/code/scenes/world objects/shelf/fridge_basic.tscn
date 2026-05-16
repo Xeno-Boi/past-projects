@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://csp2y7p0ccrnp"]
+
+[ext_resource type="PackedScene" uid="uid://byxd7es53km2i" path="res://scenes/world objects/shelf/shelf.tscn" id="1_ao50g"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="2_i716o"]
+[ext_resource type="Texture2D" uid="uid://bwxltcrbiwbwx" path="res://assets/tiles/refrigerator_map.png" id="3_q23ks"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4n6u"]
+resource_local_to_scene = true
+shader = ExtResource("2_i716o")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao50g"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i716o"]
+resource_local_to_scene = true
+size = Vector2(64, 12)
+
+[node name="Shelf3" instance=ExtResource("1_ao50g")]
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_w4n6u")
+position = Vector2(0, -64)
+texture = ExtResource("3_q23ks")
+hframes = 2
+
+[node name="Hitbox" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ao50g")
+
+[node name="IndicatorArrow" parent="." index="2"]
+position = Vector2(0, -117)
+
+[node name="Hitbox" parent="SelectHitbox" index="0"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_i716o")
+
+[node name="Cross" parent="." index="4"]
+position = Vector2(0, -43.7)
+scale = Vector2(0.8, 1.16562)

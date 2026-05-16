@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cx367p3tbnar2"]
+
+[ext_resource type="PackedScene" uid="uid://xv0owinh3omm" path="res://scenes/world objects/selectable_object.tscn" id="1_8a06h"]
+[ext_resource type="Script" uid="uid://cod0wr4pbucu5" path="res://scripts/world objects/checkout_machine.gd" id="2_jwlsf"]
+[ext_resource type="Texture2D" uid="uid://chlynteyshupx" path="res://assets/tiles/checkout.png" id="2_tl6j2"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="3_5ip6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwlsf"]
+size = Vector2(128, 128)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2ei4"]
+resource_local_to_scene = true
+shader = ExtResource("3_5ip6m")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ip6m"]
+size = Vector2(128, 128)
+
+[node name="Checkout_Machine" groups=["minigame_task", "task_object"] instance=ExtResource("1_8a06h")]
+script = ExtResource("2_jwlsf")
+minigame = 2
+active = false
+has_minigame = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jwlsf")
+
+[node name="Sprite" parent="." index="1"]
+material = SubResource("ShaderMaterial_j2ei4")
+position = Vector2(0, -64)
+texture = ExtResource("2_tl6j2")
+
+[node name="IndicatorArrow" parent="." index="2"]
+position = Vector2(0, -106)
+
+[node name="SelectHitbox" parent="." index="3"]
+position = Vector2(-64, 0)
+
+[node name="Hitbox" type="CollisionShape2D" parent="SelectHitbox" index="0"]
+position = Vector2(64, -64)
+shape = SubResource("RectangleShape2D_5ip6m")
+
+[node name="Cross" parent="." index="4"]
+position = Vector2(0, -56)
+scale = Vector2(1.5, 1.5)

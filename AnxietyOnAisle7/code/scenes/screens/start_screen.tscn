@@ -1,0 +1,398 @@
+[gd_scene load_steps=10 format=3 uid="uid://4ye45wvxugqj"]
+
+[ext_resource type="Script" uid="uid://bdu46foffd5p5" path="res://scripts/screens/start_screen.gd" id="1_h42cu"]
+[ext_resource type="Texture2D" uid="uid://rhd826hc71ph" path="res://assets/tiles/shelves_bottomup.png" id="2_bq4jh"]
+[ext_resource type="Texture2D" uid="uid://bk4j3hgd1twhd" path="res://assets/tiles/shelves_bottomup_dark.png" id="2_hx2x4"]
+[ext_resource type="Texture2D" uid="uid://cu384k2epe5e8" path="res://assets/other/notebook.png" id="3_outs3"]
+[ext_resource type="Theme" uid="uid://blvhkq53li83s" path="res://assets/themes/anxous-ui_theme.tres" id="3_qw0xr"]
+[ext_resource type="Texture2D" uid="uid://dfr1c6brdrhp1" path="res://assets/ui/Keyboard Letters and Symbols.png" id="4_5m0to"]
+[ext_resource type="Texture2D" uid="uid://c8765w8e1vmcn" path="res://assets/other/panel-border-001.png" id="4_eqau5"]
+[ext_resource type="Texture2D" uid="uid://g4r2ixsp3bdl" path="res://assets/ui/Keyboard Extras.png" id="5_1mk5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx2x4"]
+bg_color = Color(0.94902, 0.988235, 0.580392, 1)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(1, 0.54902, 0.223529, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_right = 25.0
+
+[node name="Start_Screen" type="Node2D"]
+script = ExtResource("1_h42cu")
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.0836, 18.0551)
+color = Color(0, 1, 1, 1)
+
+[node name="IntroScreen" type="TextureRect" parent="."]
+visible = false
+offset_top = -68.0
+offset_right = 1297.0
+offset_bottom = 725.0
+texture = ExtResource("2_hx2x4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.089
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_top = 16.423
+offset_right = -827.0
+offset_bottom = -498.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("3_outs3")
+region_rect = Rect2(0, 0, 192, 192)
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 1
+
+[node name="Description" type="RichTextLabel" parent="IntroScreen/NinePatchRect"]
+layout_mode = 0
+offset_left = 20.6667
+offset_top = 25.3333
+offset_right = 1833.67
+offset_bottom = 1718.33
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "You’ve been asked to grab a few things from the grocery store.
+It should be simple—but as you stand at the entrance, your heart’s already racing.
+The shelves stretch endlessly, the crowd feels loud, and every step feels heavier than it should.
+People brush past you. What if they’re watching? Judging?
+
+But it’s okay.
+You’ve done this before.
+Take a breath. You just need to get what’s on the list, check out, and leave.
+You’ve got this."
+
+[node name="Line2D" type="Line2D" parent="IntroScreen/NinePatchRect"]
+position = Vector2(-12, 0)
+points = PackedVector2Array(212, 28, 212, 190)
+width = 2.0
+default_color = Color(0.340339, 0.340339, 0.340339, 1)
+metadata/_edit_lock_ = true
+
+[node name="Movement" type="Control" parent="IntroScreen/NinePatchRect"]
+anchors_preset = 0
+offset_left = 214.667
+offset_top = 25.6667
+offset_right = 347.667
+offset_bottom = 65.6667
+
+[node name="Up" type="Sprite2D" parent="IntroScreen/NinePatchRect/Movement"]
+position = Vector2(65, 12.3333)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 38
+
+[node name="Down" type="Sprite2D" parent="IntroScreen/NinePatchRect/Movement"]
+position = Vector2(65, 33.6667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 34
+
+[node name="Left" type="Sprite2D" parent="IntroScreen/NinePatchRect/Movement"]
+position = Vector2(43.6667, 33.6667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 16
+
+[node name="Right" type="Sprite2D" parent="IntroScreen/NinePatchRect/Movement"]
+position = Vector2(86.3334, 33.6667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 19
+
+[node name="Label" type="Label" parent="IntroScreen/NinePatchRect/Movement"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 16.3333
+offset_right = 591.0
+offset_bottom = 181.333
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "to Move"
+
+[node name="Label2" type="Label" parent="IntroScreen/NinePatchRect/Movement"]
+layout_mode = 0
+offset_left = -5.66664
+offset_top = 16.3333
+offset_right = 484.333
+offset_bottom = 181.333
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Press"
+
+[node name="Sprint" type="Control" parent="IntroScreen/NinePatchRect"]
+anchors_preset = 0
+offset_left = 214.667
+offset_top = 73.6667
+offset_right = 347.667
+offset_bottom = 113.667
+
+[node name="Label" type="Label" parent="IntroScreen/NinePatchRect/Sprint"]
+layout_mode = 0
+offset_left = 95.6667
+offset_top = 7.0
+offset_right = 595.667
+offset_bottom = 172.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "to Sprint"
+
+[node name="Label2" type="Label" parent="IntroScreen/NinePatchRect/Sprint"]
+layout_mode = 0
+offset_left = 5.33334
+offset_top = 10.6667
+offset_right = 495.333
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Hold"
+
+[node name="Shift" type="Sprite2D" parent="IntroScreen/NinePatchRect/Sprint"]
+position = Vector2(63.6667, 17.6667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_1mk5y")
+hframes = 4
+vframes = 8
+frame = 4
+
+[node name="Select" type="Control" parent="IntroScreen/NinePatchRect"]
+anchors_preset = 0
+offset_left = 220.0
+offset_top = 100.333
+offset_right = 353.0
+offset_bottom = 140.333
+
+[node name="F" type="Sprite2D" parent="IntroScreen/NinePatchRect/Select"]
+position = Vector2(58.6667, 21.3333)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 21
+
+[node name="Label" type="Label" parent="IntroScreen/NinePatchRect/Select"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 10.6667
+offset_right = 575.0
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "to Select"
+
+[node name="Label2" type="Label" parent="IntroScreen/NinePatchRect/Select"]
+layout_mode = 0
+offset_left = 5.33333
+offset_top = 10.6667
+offset_right = 495.333
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Press"
+
+[node name="Breath" type="Control" parent="IntroScreen/NinePatchRect"]
+anchors_preset = 0
+offset_left = 220.0
+offset_top = 127.0
+offset_right = 353.0
+offset_bottom = 167.0
+
+[node name="B" type="Sprite2D" parent="IntroScreen/NinePatchRect/Breath"]
+position = Vector2(58.6667, 21.3333)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5m0to")
+hframes = 8
+vframes = 14
+frame = 17
+
+[node name="Label" type="Label" parent="IntroScreen/NinePatchRect/Breath"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 10.6667
+offset_right = 575.0
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "to Breath"
+
+[node name="Label2" type="Label" parent="IntroScreen/NinePatchRect/Breath"]
+layout_mode = 0
+offset_left = 5.33333
+offset_top = 10.6667
+offset_right = 495.333
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Press"
+
+[node name="QuitMinigame" type="Control" parent="IntroScreen/NinePatchRect"]
+anchors_preset = 0
+offset_left = 220.0
+offset_top = 153.667
+offset_right = 353.0
+offset_bottom = 193.667
+
+[node name="Ecs" type="Sprite2D" parent="IntroScreen/NinePatchRect/QuitMinigame"]
+position = Vector2(32, 21.3333)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_1mk5y")
+hframes = 4
+vframes = 8
+frame = 1
+
+[node name="Label" type="Label" parent="IntroScreen/NinePatchRect/QuitMinigame"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 10.6667
+offset_right = 1055.0
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "to Quit Minigame"
+
+[node name="Label2" type="Label" parent="IntroScreen/NinePatchRect/QuitMinigame"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 10.6667
+offset_right = 474.0
+offset_bottom = 175.667
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Press"
+
+[node name="StartButton" type="Button" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.817
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 513.0
+offset_top = 21.119
+offset_right = -498.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Start Game"
+
+[node name="Decoration" type="NinePatchRect" parent="IntroScreen/StartButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -190.0
+offset_bottom = -64.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_eqau5")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_lock_ = true
+
+[node name="InitialScreen" type="TextureRect" parent="."]
+offset_top = -68.0
+offset_right = 1297.0
+offset_bottom = 725.0
+texture = ExtResource("2_bq4jh")
+
+[node name="MarginContainer" type="MarginContainer" parent="InitialScreen"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_top = 68.0
+offset_right = 1280.0
+offset_bottom = 788.0
+
+[node name="PanelContainer" type="PanelContainer" parent="InitialScreen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hx2x4")
+
+[node name="Label" type="Label" parent="InitialScreen/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("3_qw0xr")
+theme_override_colors/font_color = Color(1, 0.701961, 0.2, 1)
+theme_override_colors/font_outline_color = Color(1, 0.54902, 0.223529, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "Anxiety on Aisle 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FakeStartButton" type="Button" parent="InitialScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.085
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 556.595
+offset_right = -498.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Start Game"
+
+[node name="Decoration" type="NinePatchRect" parent="InitialScreen/FakeStartButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -200.0
+offset_bottom = -69.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_eqau5")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="IntroScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="InitialScreen/FakeStartButton" to="." method="_on_fake_start_button_pressed"]

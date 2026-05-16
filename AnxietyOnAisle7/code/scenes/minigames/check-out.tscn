@@ -1,0 +1,300 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvuey1vpdkicj"]
+
+[ext_resource type="Script" uid="uid://cf4u4y4n8w87y" path="res://scripts/minigames/check_out.gd" id="1_veytd"]
+[ext_resource type="Texture2D" uid="uid://d0a8k2e24ya0l" path="res://assets/tiles/floor.png" id="2_l4icw"]
+[ext_resource type="Texture2D" uid="uid://dpick6g3spxso" path="res://assets/tiles/shelves.png" id="3_pfee0"]
+[ext_resource type="Texture2D" uid="uid://dv6q42l04mww8" path="res://assets/items/item1_side1.png" id="3_veytd"]
+[ext_resource type="Texture2D" uid="uid://chlynteyshupx" path="res://assets/tiles/checkout.png" id="4_8hvl4"]
+[ext_resource type="Theme" uid="uid://blvhkq53li83s" path="res://assets/themes/anxous-ui_theme.tres" id="5_h274k"]
+[ext_resource type="Texture2D" uid="uid://bgayo8djmmd2t" path="res://assets/ui/rotate_left_arrow.png" id="6_khdmu"]
+[ext_resource type="Texture2D" uid="uid://bvwtgwatvk6m4" path="res://assets/ui/rotate_up_arrow.png" id="7_vnrva"]
+[ext_resource type="Texture2D" uid="uid://cxhpky0fk4a2j" path="res://assets/ui/rotate_down_arrow.png" id="8_b5nhg"]
+[ext_resource type="Texture2D" uid="uid://dgnbfik0pwc6r" path="res://assets/ui/rotate_right_arrow.png" id="9_hdrr2"]
+[ext_resource type="Texture2D" uid="uid://dfr1c6brdrhp1" path="res://assets/ui/Keyboard Letters and Symbols.png" id="11_vnrva"]
+[ext_resource type="Texture2D" uid="uid://g4r2ixsp3bdl" path="res://assets/ui/Keyboard Extras.png" id="12_b5nhg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h274k"]
+bg_color = Color(0.94902, 0.988235, 0.580392, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.54902, 0.223529, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Check_Out" type="Node2D"]
+script = ExtResource("1_veytd")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="floor" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_l4icw")
+stretch_mode = 1
+
+[node name="shelving" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(5.6, 5.6)
+texture = ExtResource("3_pfee0")
+stretch_mode = 1
+
+[node name="checkout-machine" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+size_flags_vertical = 3
+texture = ExtResource("4_8hvl4")
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 45.0
+offset_top = -5.0
+offset_right = 1145.0
+offset_bottom = 715.0
+theme = ExtResource("5_h274k")
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ui-item" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/ui-item"]
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_veytd")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ui-actions" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/ui-actions"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_h274k")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="left-arrow" type="TextureRect" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture = ExtResource("6_khdmu")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="up-arrow" type="TextureRect" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture = ExtResource("7_vnrva")
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="down-arrow" type="TextureRect" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture = ExtResource("8_b5nhg")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="right-arrow" type="TextureRect" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+texture = ExtResource("9_hdrr2")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="arrows" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/arrows"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.54902, 0.223529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 46
+text = "
+
+to rotate item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Up" type="Sprite2D" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/arrows"]
+position = Vector2(162, 17)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("11_vnrva")
+hframes = 8
+vframes = 14
+frame = 38
+
+[node name="Down" type="Sprite2D" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/arrows"]
+position = Vector2(162, 104)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("11_vnrva")
+hframes = 8
+vframes = 14
+frame = 34
+
+[node name="Left" type="Sprite2D" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/arrows"]
+position = Vector2(65, 105)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("11_vnrva")
+hframes = 8
+vframes = 14
+frame = 16
+
+[node name="Right" type="Sprite2D" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/arrows"]
+position = Vector2(256, 103)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("11_vnrva")
+hframes = 8
+vframes = 14
+frame = 19
+
+[node name="space" type="MarginContainer" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/space"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.54902, 0.223529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 46
+text = "
+to scan item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scan" type="Button" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/space"]
+visible = false
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "SCAN"
+
+[node name="Space" type="Sprite2D" parent="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/space"]
+position = Vector2(145, 52)
+scale = Vector2(6.36838, 5.03125)
+texture = ExtResource("12_b5nhg")
+hframes = 4
+vframes = 8
+frame = 10
+
+[node name="Label" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 1103.0
+offset_right = 500.0
+offset_bottom = 1129.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(125, 1017)
+text = "Everyone is Waiting..."
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ui-actions/PanelContainer/MarginContainer/VBoxContainer/space/scan" to="." method="_on_button_pressed"]

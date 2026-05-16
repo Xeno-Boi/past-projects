@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://byxd7es53km2i"]
+
+[ext_resource type="PackedScene" uid="uid://xv0owinh3omm" path="res://scenes/world objects/selectable_object.tscn" id="1_5fquf"]
+[ext_resource type="Script" uid="uid://bjx8nwmhygtoh" path="res://scripts/world objects/shelf.gd" id="2_2vi4i"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="3_nymdl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwh2j"]
+resource_local_to_scene = true
+shader = ExtResource("3_nymdl")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fquf"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vi4i"]
+resource_local_to_scene = true
+size = Vector2(64, 20)
+
+[node name="Shelf" instance=ExtResource("1_5fquf")]
+script = ExtResource("2_2vi4i")
+containing_item = false
+minigame = 3
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_dwh2j")
+position = Vector2(-32, 0)
+
+[node name="Hitbox" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_5fquf")
+
+[node name="IndicatorArrow" parent="." index="2"]
+position = Vector2(32, -64)
+
+[node name="Hitbox" type="CollisionShape2D" parent="SelectHitbox" index="0"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_2vi4i")
+
+[node name="Cross" parent="." index="4"]
+scale = Vector2(0.8, 0.8)

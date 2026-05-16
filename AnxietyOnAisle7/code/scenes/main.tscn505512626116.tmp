@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3mt7y1hlm12j"]
+
+[ext_resource type="Script" uid="uid://b3vjgfbjh7inu" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dfck3y220xan6" path="res://scenes/ui.tscn" id="2_sugp2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="UI" parent="." instance=ExtResource("2_sugp2")]
+
+[node name="PassiveAnxietyTimer" type="Timer" parent="."]
+
+[connection signal="anxietyBarFull" from="UI" to="." method="_on_anxiety_bar_full"]
+[connection signal="timeout" from="PassiveAnxietyTimer" to="." method="_on_passive_anxiety_timer_timeout"]

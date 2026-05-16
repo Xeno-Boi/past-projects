@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://xv0owinh3omm"]
+
+[ext_resource type="Script" uid="uid://ghy8uswg8pig" path="res://scripts/world objects/selectable_object.gd" id="1_mkjoq"]
+[ext_resource type="PackedScene" uid="uid://capifbhgpubyp" path="res://scenes/helpers/indicator_arrow.tscn" id="2_tdarf"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="2_wvv3l"]
+[ext_resource type="Texture2D" uid="uid://cnu8us5i7i77s" path="res://assets/other/cross.png" id="4_3nbry"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nbry"]
+resource_local_to_scene = true
+shader = ExtResource("2_wvv3l")
+shader_parameter/highlight = false
+
+[node name="Selectable_Object" type="StaticBody2D" groups=["navigation"]]
+y_sort_enabled = true
+script = ExtResource("1_mkjoq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3nbry")
+
+[node name="IndicatorArrow" parent="." instance=ExtResource("2_tdarf")]
+visible = false
+
+[node name="SelectHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Cross" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -32)
+texture = ExtResource("4_3nbry")
+
+[node name="CrossTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="CrossTimer" to="." method="_on_cross_timer_timeout"]

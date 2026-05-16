@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://btc7yt52jut0h"]
+
+[ext_resource type="PackedScene" uid="uid://xv0owinh3omm" path="res://scenes/world objects/selectable_object.tscn" id="1_1lgob"]
+[ext_resource type="Script" uid="uid://bwv5i6e4b8cpc" path="res://scripts/world objects/exit.gd" id="2_koaok"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="3_g6f3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koaok"]
+size = Vector2(128, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifd3x"]
+resource_local_to_scene = true
+shader = ExtResource("3_g6f3u")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lgob"]
+size = Vector2(128, 33)
+
+[node name="Exit" groups=["task_object"] instance=ExtResource("1_1lgob")]
+script = ExtResource("2_koaok")
+active = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_koaok")
+
+[node name="Sprite" parent="." index="1"]
+material = SubResource("ShaderMaterial_ifd3x")
+
+[node name="IndicatorArrow" parent="." index="2"]
+position = Vector2(0, -32)
+
+[node name="Exit" type="Area2D" parent="." index="3"]
+position = Vector2(0, 17)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Hitbox" type="CollisionShape2D" parent="Exit" index="0"]
+shape = SubResource("RectangleShape2D_1lgob")
+
+[node name="SelectHitbox" parent="." index="4"]
+collision_layer = 0
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

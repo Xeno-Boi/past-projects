@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnpshelemo1xw"]
+
+[ext_resource type="Script" uid="uid://bkj417k8kw8kv" path="res://scripts/minigames/breathing.gd" id="1_cauym"]
+[ext_resource type="Texture2D" uid="uid://dtnxnpx7pd24x" path="res://assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="1_cerrf"]
+[ext_resource type="Texture2D" uid="uid://8fp0cefo32ot" path="res://assets/other/lung_spreadsheet.png" id="3_f3toj"]
+[ext_resource type="Texture2D" uid="uid://dfr1c6brdrhp1" path="res://assets/ui/Keyboard Letters and Symbols.png" id="4_0hub4"]
+[ext_resource type="Texture2D" uid="uid://g4r2ixsp3bdl" path="res://assets/ui/Keyboard Extras.png" id="5_6puiw"]
+
+[sub_resource type="Animation" id="Animation_d4rae"]
+resource_name = "LungsBreatheIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00833332, 0.35, 0.583333, 0.85, 1.18333, 1.45, 1.675, 1.98333, 2.175, 2.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_f3toj"]
+resource_name = "LunbsBreatheOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.341667, 0.575, 0.841667, 1.2, 1.44167, 1.66667, 1.975, 2.16667, 2.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_0hub4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hub4"]
+_data = {
+&"LungsBreatheIn": SubResource("Animation_d4rae"),
+&"LungsBreatheOut": SubResource("Animation_f3toj"),
+&"RESET": SubResource("Animation_0hub4")
+}
+
+[node name="BreathingGame" type="Node2D"]
+script = ExtResource("1_cauym")
+success_anxiety_change = -12
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1400.0
+offset_bottom = 900.0
+texture = ExtResource("1_cerrf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 94.0
+offset_top = 338.0
+offset_right = 1043.0
+offset_bottom = 353.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1043.0
+offset_top = 326.0
+offset_right = 1051.0
+offset_bottom = 366.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 86.0
+offset_top = 326.0
+offset_right = 94.0
+offset_bottom = 366.0
+
+[node name="breatheMover" type="ColorRect" parent="."]
+offset_left = 100.0
+offset_top = 326.0
+offset_right = 114.0
+offset_bottom = 366.0
+color = Color(0.576471, 0.956863, 0.92549, 1)
+
+[node name="breatheClickIn" type="ColorRect" parent="."]
+offset_left = 549.0
+offset_top = 317.0
+offset_right = 589.0
+offset_bottom = 375.0
+color = Color(0.741176, 0.831373, 0.968627, 0.741176)
+
+[node name="Lungs" type="Sprite2D" parent="."]
+position = Vector2(573, 204)
+scale = Vector2(0.54328, 0.489882)
+texture = ExtResource("3_f3toj")
+hframes = 4
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lungs"]
+libraries = {
+&"": SubResource("AnimationLibrary_0hub4")
+}
+
+[node name="BreathingWarning" type="Label" parent="."]
+offset_left = 205.0
+offset_top = 419.0
+offset_right = 959.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "Hold       space        to breathe at the correct timings
+
+ Be careful to not overdo it"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Space" type="Sprite2D" parent="BreathingWarning"]
+position = Vector2(192, 21)
+scale = Vector2(5.4375, 5.4375)
+texture = ExtResource("5_6puiw")
+hframes = 4
+vframes = 8
+frame = 10
+
+[node name="ExitInstructions" type="Label" parent="."]
+offset_left = 205.0
+offset_top = 604.0
+offset_right = 959.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "Press    B    to exit"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="B" type="Sprite2D" parent="ExitInstructions"]
+position = Vector2(368, 19)
+scale = Vector2(4.9375, 4.9375)
+texture = ExtResource("4_0hub4")
+hframes = 8
+vframes = 14
+frame = 17

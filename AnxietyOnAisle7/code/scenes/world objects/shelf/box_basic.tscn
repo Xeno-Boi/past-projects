@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7352xu8ufq2p"]
+
+[ext_resource type="PackedScene" uid="uid://byxd7es53km2i" path="res://scenes/world objects/shelf/shelf.tscn" id="1_e4e0j"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="2_midoa"]
+[ext_resource type="Texture2D" uid="uid://dgpqia47m3xia" path="res://assets/tiles/vegetables_map.png" id="3_agsbf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34xhv"]
+resource_local_to_scene = true
+shader = ExtResource("2_midoa")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjq38"]
+resource_local_to_scene = true
+size = Vector2(64, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn40n"]
+resource_local_to_scene = true
+size = Vector2(64, 60)
+
+[node name="Shelf2" instance=ExtResource("1_e4e0j")]
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_34xhv")
+position = Vector2(0, -32)
+texture = ExtResource("3_agsbf")
+hframes = 4
+vframes = 2
+
+[node name="Hitbox" parent="." index="1"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_gjq38")
+
+[node name="IndicatorArrow" parent="." index="2"]
+position = Vector2(0, -54)
+
+[node name="Hitbox" parent="SelectHitbox" index="0"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_mn40n")
+
+[node name="Cross" parent="." index="4"]
+position = Vector2(0, -29)

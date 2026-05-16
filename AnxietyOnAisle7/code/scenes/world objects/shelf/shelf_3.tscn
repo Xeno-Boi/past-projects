@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bea440ar1bqeh"]
+
+[ext_resource type="PackedScene" uid="uid://dym15mg77s3sr" path="res://scenes/world objects/shelf/shelf_1.tscn" id="1_igd4i"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="2_i716o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ao50g"]
+resource_local_to_scene = true
+shader = ExtResource("2_i716o")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i716o"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q23ks"]
+resource_local_to_scene = true
+size = Vector2(64, 12)
+
+[node name="Shelf1" instance=ExtResource("1_igd4i")]
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_ao50g")
+frame = 2
+
+[node name="Hitbox" parent="." index="1"]
+position = Vector2(0, -33)
+shape = SubResource("RectangleShape2D_i716o")
+
+[node name="Hitbox" parent="SelectHitbox" index="0"]
+shape = SubResource("RectangleShape2D_q23ks")

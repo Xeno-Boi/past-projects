@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvuey1vpdkicj"]
+
+[ext_resource type="Texture2D" uid="uid://dtnxnpx7pd24x" path="res://assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="1_jrl7i"]
+[ext_resource type="Script" uid="uid://cf4u4y4n8w87y" path="res://scripts/minigames/check_out.gd" id="1_veytd"]
+[ext_resource type="Texture2D" uid="uid://hfhc84pqmxho" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="2_6jdki"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_veytd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 426.0
+offset_bottom = 240.0
+texture = ExtResource("1_jrl7i")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 426.0
+offset_bottom = 240.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="rotate_left" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "LEFT"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="rotate_up" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "UP"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_6jdki")
+
+[node name="rotate_down" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "DOWN"
+
+[node name="rotate_right" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "RIGHT"
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "SCAN"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+max_value = 1000.0
+fill_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/rotate_left" to="." method="_on_rotate_left_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/rotate_up" to="." method="_on_rotate_up_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/rotate_down" to="." method="_on_rotate_down_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/rotate_right" to="." method="_on_rotate_right_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5wym7euvrfow"]
+
+[ext_resource type="Texture2D" uid="uid://cu384k2epe5e8" path="res://assets/other/notebook.png" id="1_adetl"]
+[ext_resource type="Script" uid="uid://x8yujiaasnti" path="res://scripts/helpers/to_do_list.gd" id="1_aeqd1"]
+
+[sub_resource type="SystemFont" id="SystemFont_aeqd1"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_q2h3s"]
+default_font = SubResource("SystemFont_aeqd1")
+default_font_size = 30
+Label/colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ToDoList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 277.0
+offset_bottom = 348.0
+script = ExtResource("1_aeqd1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 344.0
+texture = ExtResource("1_adetl")
+region_rect = Rect2(0, 0, 192, 192)
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+offset_left = 170.0
+offset_top = 30.0
+offset_right = 255.0
+offset_bottom = 45.0
+theme = SubResource("Theme_q2h3s")
+theme_override_font_sizes/font_size = 10
+text = "Press 'M' to close"
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 28.0
+offset_right = 256.0
+offset_bottom = 328.0
+
+[node name="ToDoLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = SubResource("Theme_q2h3s")
+text = "To Do:"
+autowrap_mode = 2
+
+[node name="ToDoSeparator" type="HSeparator" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TaskItemContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShowTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="ShowTimer" to="." method="_on_show_timer_timeout"]

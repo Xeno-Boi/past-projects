@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://v4m1mlcftg0s"]
+
+[ext_resource type="StyleBox" uid="uid://bjv63p83t4crt" path="res://assets/themes/yellow.tres" id="1_725r1"]
+[ext_resource type="StyleBox" uid="uid://cvgqebih2iva7" path="res://assets/themes/orange.tres" id="2_ifxto"]
+
+[resource]
+ProgressBar/styles/background = ExtResource("1_725r1")
+ProgressBar/styles/fill = ExtResource("2_ifxto")

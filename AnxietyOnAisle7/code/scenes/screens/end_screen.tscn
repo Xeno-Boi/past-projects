@@ -1,0 +1,193 @@
+[gd_scene load_steps=4 format=3 uid="uid://kg4i6lp6sp2e"]
+
+[ext_resource type="Script" uid="uid://cyix77ujgdnal" path="res://scripts/screens/end_screen.gd" id="1_iwfcn"]
+[ext_resource type="Texture2D" uid="uid://dfr1c6brdrhp1" path="res://assets/ui/Keyboard Letters and Symbols.png" id="2_e2sy2"]
+[ext_resource type="Texture2D" uid="uid://c8765w8e1vmcn" path="res://assets/other/panel-border-001.png" id="2_rm8x0"]
+
+[node name="End_Screen" type="Node2D"]
+visible = false
+script = ExtResource("1_iwfcn")
+
+[node name="WinScreen" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="WinScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = -1240.0
+offset_bottom = -681.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(32.0836, 18.0551)
+color = Color(0, 0.513002, 1.92523e-07, 1)
+
+[node name="Label2" type="Label" parent="WinScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 426.0
+offset_top = 210.0
+offset_right = -60.0
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 160
+text = "You Did It!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WinScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 855.0
+offset_top = 497.0
+offset_right = 3685.0
+offset_bottom = 1787.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 200
+text = "Even a seemingly trivial task like grocery shopping can be overwhelming for someone with an anxiety disorder.
+
+ The fear of being watched, judged, or simply navigating the environment can become a major emotional hurdle."
+horizontal_alignment = 1
+
+[node name="LoseScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Background" type="ColorRect" parent="LoseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = -1240.0
+offset_bottom = -681.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(32.0836, 18.0551)
+color = Color(0.423185, 9.08468e-07, 3.1285e-07, 1)
+
+[node name="Label" type="Label" parent="LoseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 108.0
+offset_right = 911.0
+offset_bottom = -393.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 160
+text = "Anxiety overwhelmed you!"
+
+[node name="Label2" type="Label" parent="LoseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 230.0
+offset_right = 1208.0
+offset_bottom = -380.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "You ran out of the store empty-handed..."
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LoseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 855.0
+offset_top = 497.0
+offset_right = 3685.0
+offset_bottom = 1787.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 200
+text = "Even a seemingly trivial task like grocery shopping can be overwhelming for someone with an anxiety disorder.
+
+ The fear of being watched, judged, or simply navigating the environment can become a major emotional hurdle."
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="LoseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 299.0
+offset_top = 254.0
+offset_right = 6249.0
+offset_bottom = 1614.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 300
+text = "
+Try to use coping mechanisms
+such as breathing techniques      
+to try to calm yourself down and refocus on the task at hand!"
+horizontal_alignment = 1
+
+[node name="B" type="Sprite2D" parent="LoseScreen"]
+position = Vector2(891, 358)
+scale = Vector2(3.625, 3.625)
+texture = ExtResource("2_e2sy2")
+hframes = 8
+vframes = 14
+frame = 17
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RestartButton" type="Button" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 527.0
+offset_top = 562.0
+offset_right = -521.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="Decoration" type="NinePatchRect" parent="UI/RestartButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -156.0
+offset_bottom = -65.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_rm8x0")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]

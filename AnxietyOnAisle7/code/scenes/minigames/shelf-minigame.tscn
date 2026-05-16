@@ -1,0 +1,221 @@
+[gd_scene load_steps=19 format=3 uid="uid://cilp0n7v8rcwk"]
+
+[ext_resource type="Script" uid="uid://1sqxv4a5xqxg" path="res://scripts/minigames/shelf_minigame.gd" id="1_8su7t"]
+[ext_resource type="Texture2D" uid="uid://dxy8ud66umk14" path="res://assets/items/shopping_basket.png" id="2_25245"]
+[ext_resource type="Texture2D" uid="uid://54cfw711jdnx" path="res://assets/tiles/shelves_transparent.png" id="2_er2gl"]
+[ext_resource type="Texture2D" uid="uid://dv6q42l04mww8" path="res://assets/items/item1_side1.png" id="4_er2gl"]
+[ext_resource type="Script" uid="uid://cmpun5jp74j3w" path="res://scripts/minigames/shelf_minigame_item.gd" id="4_tp7ek"]
+[ext_resource type="Texture2D" uid="uid://cb1hd0qjxtbmx" path="res://assets/items/item2_side1.png" id="5_tp7ek"]
+[ext_resource type="Texture2D" uid="uid://cbjsnw3umcsx6" path="res://assets/items/item3_side1.png" id="6_sdr1s"]
+[ext_resource type="Texture2D" uid="uid://cvgrkmwhpxugj" path="res://assets/items/item4_side1.png" id="7_kopb3"]
+[ext_resource type="Texture2D" uid="uid://bfnab4hqowbm6" path="res://assets/items/item5_side1.png" id="8_tgosu"]
+[ext_resource type="Texture2D" uid="uid://g4r2ixsp3bdl" path="res://assets/ui/Keyboard Extras.png" id="10_sdr1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp7ek"]
+bg_color = Color(0.822783, 0.718067, 0.54109, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8su7t"]
+size = Vector2(101.5, 4.28572)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mgjd"]
+size = Vector2(1292, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5qy3"]
+size = Vector2(64, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbvg2"]
+size = Vector2(80, 118.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwat7"]
+size = Vector2(218, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mcsh"]
+size = Vector2(57, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paq8b"]
+size = Vector2(80, 104)
+
+[node name="Shelf-minigame" type="Node2D" node_paths=PackedStringArray("spawning_items")]
+script = ExtResource("1_8su7t")
+spawning_items = [NodePath("JarItem"), NodePath("PeanutItem"), NodePath("MuffinItem"), NodePath("CornItem"), NodePath("FlourItem")]
+min_spawn_time = 0.2
+gravity = 600.0
+items_needed = 30
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1283.0
+offset_bottom = 856.0
+texture = ExtResource("2_er2gl")
+
+[node name="ScoreBox" type="PanelContainer" parent="."]
+z_index = 100
+offset_left = 768.0
+offset_top = 55.0
+offset_right = 1149.0
+offset_bottom = 139.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tp7ek")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreBox/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScoreBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Items Collected :"
+
+[node name="ScoreLabel" type="Label" parent="ScoreBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Label2" type="Label" parent="ScoreBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = " / "
+
+[node name="NeededLabel" type="Label" parent="ScoreBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = " 0"
+
+[node name="SpawnLine" type="Line2D" parent="."]
+position = Vector2(0, -30)
+points = PackedVector2Array(40, 0, 1050, 0)
+
+[node name="basket" type="Sprite2D" parent="."]
+position = Vector2(161, 624)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("2_25245")
+
+[node name="Hitbox" type="Area2D" parent="basket"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basket/Hitbox"]
+position = Vector2(1.52588e-05, -20.3571)
+shape = SubResource("RectangleShape2D_8su7t")
+
+[node name="BottomHitbox" type="Area2D" parent="."]
+position = Vector2(639, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHitbox"]
+shape = SubResource("RectangleShape2D_6mgjd")
+
+[node name="JarItem" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(-824, 120)
+collision_mask = 0
+script = ExtResource("4_tp7ek")
+
+[node name="sprite" type="Sprite2D" parent="JarItem"]
+texture = ExtResource("4_er2gl")
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="JarItem"]
+shape = SubResource("RectangleShape2D_v5qy3")
+metadata/_edit_lock_ = true
+
+[node name="PeanutItem" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(-703, 116)
+collision_mask = 0
+script = ExtResource("4_tp7ek")
+
+[node name="sprite" type="Sprite2D" parent="PeanutItem"]
+texture = ExtResource("5_tp7ek")
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="PeanutItem"]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_kbvg2")
+metadata/_edit_lock_ = true
+
+[node name="MuffinItem" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(-513, 124)
+collision_mask = 0
+script = ExtResource("4_tp7ek")
+
+[node name="sprite" type="Sprite2D" parent="MuffinItem"]
+texture = ExtResource("6_sdr1s")
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="MuffinItem"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_rwat7")
+metadata/_edit_lock_ = true
+
+[node name="CornItem" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(-758, 286)
+collision_mask = 0
+script = ExtResource("4_tp7ek")
+
+[node name="sprite" type="Sprite2D" parent="CornItem"]
+texture = ExtResource("7_kopb3")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CornItem"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_4mcsh")
+metadata/_edit_lock_ = true
+
+[node name="FlourItem" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(-553, 284)
+collision_mask = 0
+script = ExtResource("4_tp7ek")
+
+[node name="sprite" type="Sprite2D" parent="FlourItem"]
+texture = ExtResource("8_tgosu")
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="FlourItem"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_paq8b")
+metadata/_edit_lock_ = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ExitInstructions" type="Label" parent="."]
+z_index = 100
+offset_left = 589.0
+offset_top = 155.0
+offset_right = 1343.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "Press    B    to exit"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Ecs" type="Sprite2D" parent="ExitInstructions"]
+position = Vector2(367, 22)
+scale = Vector2(3.36458, 3.36458)
+texture = ExtResource("10_sdr1s")
+hframes = 4
+vframes = 8
+frame = 1
+
+[connection signal="body_entered" from="basket/Hitbox" to="." method="_on_basket_hitbox_body_entered"]
+[connection signal="body_entered" from="BottomHitbox" to="." method="_on_bottom_hitbox_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

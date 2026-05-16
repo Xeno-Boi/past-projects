@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://gr7dh5r3bnvn"]
+
+[ext_resource type="PackedScene" uid="uid://csp2y7p0ccrnp" path="res://scenes/world objects/shelf/fridge_basic.tscn" id="1_uen24"]
+[ext_resource type="Shader" uid="uid://dd3ev68b6sxtk" path="res://shaders/world_objects/selectable_object.gdshader" id="2_gxv0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lc3s1"]
+resource_local_to_scene = true
+shader = ExtResource("2_gxv0x")
+shader_parameter/highlight = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mop74"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5s3r"]
+resource_local_to_scene = true
+size = Vector2(64, 12)
+
+[node name="Shelf3" instance=ExtResource("1_uen24")]
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_lc3s1")
+frame = 1
+
+[node name="Hitbox" parent="." index="1"]
+shape = SubResource("RectangleShape2D_mop74")
+
+[node name="Hitbox" parent="SelectHitbox" index="0"]
+shape = SubResource("RectangleShape2D_n5s3r")

@@ -1,0 +1,1 @@
+This is created so that GitHub creates the addons folder in the push

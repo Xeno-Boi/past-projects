@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://dfck3y220xan6"]
+
+[ext_resource type="Theme" uid="uid://blvhkq53li83s" path="res://assets/themes/anxous-ui_theme.tres" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://crtiesmfl2061" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="PackedScene" uid="uid://c5wym7euvrfow" path="res://scenes/helpers/to_do_list.tscn" id="3_gdt2y"]
+[ext_resource type="Shader" uid="uid://cx0ccp6m2bm5l" path="res://shaders/world_objects/anxiety_bar.gdshader" id="3_p7vwb"]
+[ext_resource type="Script" uid="uid://belkywmkfiql3" path="res://scripts/helpers/indicator_bounding_box.gd" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://blqog700xli5f" path="res://assets/other/notebook_icon.png" id="5_8dubc"]
+[ext_resource type="Texture2D" uid="uid://bdngdrb4kmvq1" path="res://assets/other/breathing_icon.png" id="6_p7vwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yev5y"]
+bg_color = Color(0.94902, 0.988235, 0.580392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.54902, 0.223529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktti3"]
+shader = ExtResource("3_p7vwb")
+shader_parameter/anxiety = 0
+shader_parameter/max_anxiety = 1000
+shader_parameter/speed = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
+bg_color = Color(1, 0.54902, 0.223529, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("anxiety_bar")]
+script = ExtResource("1_x4jx1")
+anxiety_bar = NodePath("MarginContainer/VBoxContainer/ShaderContainer/MarginContainer/AnxietyBar")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_nt7q6")
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_yev5y")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.54902, 0.223529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Anxiety"
+
+[node name="ShaderContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_ktti3")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4jx1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShaderContainer"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="AnxietyBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/ShaderContainer/MarginContainer"]
+use_parent_material = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 1
+fill_mode = 3
+show_percentage = false
+
+[node name="BreathingWarning" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 368.0
+offset_top = 640.0
+offset_right = -375.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "\"Press 'B' to lower your anxiety\""
+uppercase = true
+
+[node name="IndicatorBoundingBox" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 108.0
+offset_top = 45.0
+offset_right = -116.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.517647)
+script = ExtResource("3_yev5y")
+
+[node name="ToDoList" parent="." instance=ExtResource("3_gdt2y")]
+z_index = 100
+offset_left = 905.0
+offset_top = 349.0
+offset_right = 1182.0
+offset_bottom = 697.0
+
+[node name="icon_tray" type="ColorRect" parent="."]
+offset_left = 10.0
+offset_top = 525.0
+offset_right = 98.0
+offset_bottom = 709.0
+color = Color(0.277528, 0.277528, 0.277528, 0.721569)
+
+[node name="notebook_icon" type="TextureRect" parent="icon_tray"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 78.0
+offset_bottom = 81.0
+texture = ExtResource("5_8dubc")
+expand_mode = 1
+
+[node name="breathing_icon" type="TextureProgressBar" parent="icon_tray"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 99.0
+offset_right = 199.0
+offset_bottom = 291.0
+scale = Vector2(0.4, 0.4)
+max_value = 5.0
+step = 0.01
+fill_mode = 4
+texture_under = ExtResource("6_p7vwb")
+texture_progress = ExtResource("6_p7vwb")
+tint_under = Color(0.169245, 0.169245, 0.169245, 1)
+
+[connection signal="mouse_entered" from="icon_tray/notebook_icon" to="." method="_on_notebook_icon_mouse_entered"]
+[connection signal="mouse_exited" from="icon_tray/notebook_icon" to="." method="_on_notebook_icon_mouse_exited"]
+[connection signal="mouse_entered" from="icon_tray/breathing_icon" to="." method="_on_breathing_icon_mouse_entered"]
+[connection signal="mouse_exited" from="icon_tray/breathing_icon" to="." method="_on_breathing_icon_mouse_exited"]

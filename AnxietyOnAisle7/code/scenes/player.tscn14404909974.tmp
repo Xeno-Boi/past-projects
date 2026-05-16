@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1dtps6sxg2ff"]
+
+[ext_resource type="Script" uid="uid://dh5x7t6221otm" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cqmaa5to3ndq2" path="res://assets/Cute_Fantasy_Free/Player/Player.png" id="2_g2els"]
+
+[sub_resource type="Animation" id="Animation_y4r1p"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2wvv"]
+_data = {
+&"new_animation": SubResource("Animation_y4r1p")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g2els")
+hframes = 6
+vframes = 10
+frame = 1
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
+
+[node name="InteractHitBox" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="InteractHitBox"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d2wvv")
+}

@@ -1,0 +1,38 @@
+res://assets/themes/anxous-ui_theme.tres::271ad9aeac63dc1acb99a60ddd6e1449::1744150324::res://.godot/exported/133200997/export-4b321887dbadb6602ca3d9e8f24bab1e-anxous-ui_theme.res
+res://assets/themes/bright-orange.tres::fbe473ee0cf7ba45c178dfa7bcad90e2::1743844975::res://.godot/exported/133200997/export-b62c871d01cd4317ffc27b4521f167c6-bright-orange.res
+res://assets/themes/grey.tres::56880b5cc42506b67c63dcee48132d84::1743500516::res://.godot/exported/133200997/export-8bb9e86ac0cd43473e928e42d795a092-grey.res
+res://assets/themes/orange.tres::f92830d9448f31385bdd692dc0dc67b6::1743844975::res://.godot/exported/133200997/export-6a1eaf9a99e4c457b369b2f43182fec7-orange.res
+res://assets/themes/progress_bar_theme.tres::a1f5bdc93de97e2de59fe19b12c45bbb::1743500516::res://.godot/exported/133200997/export-5feb1a72d3b615f617ddeaf184bcc9e2-progress_bar_theme.res
+res://assets/themes/yellow.tres::f94f891874c4536e3390b528c5c29fc5::1743844975::res://.godot/exported/133200997/export-499d56538cbdd2fb7cde15ffb3abedd2-yellow.res
+res://scenes/helpers/indicator_arrow.tscn::f5f2762c4f952c9acbacbd3b14a8aea9::1744156228::res://.godot/exported/133200997/export-a0177c7a085ba03e25b55deaf5868ed2-indicator_arrow.scn
+res://scenes/helpers/to_do_list.tscn::44666f08b12754a93f628d804e8ac2e4::1744156227::res://.godot/exported/133200997/export-c62ee02616d5ab65488b4f91505ad7bf-to_do_list.scn
+res://scenes/minigames/breathing.tscn::33942df3e4f13adeaf4f15c699811bba::1744156228::res://.godot/exported/133200997/export-cbc5bc742741042b712fe41704297884-breathing.scn
+res://scenes/minigames/check-out.tscn::1ab686f9933b4c350b0f57a973ee61db::1744156228::res://.godot/exported/133200997/export-69062596c758f7c85d700a5f51be9bb1-check-out.scn
+res://scenes/minigames/shelf-minigame.tscn::ab2100ff354fcfc9078947ddf7155855::1744156228::res://.godot/exported/133200997/export-d902c0bd3c8bf43148d79d6f4a519992-shelf-minigame.scn
+res://scenes/screens/end_screen.tscn::63d941cb3951e3ee17ffe360bae31947::1744156227::res://.godot/exported/133200997/export-bb4807a1bff4dc990a0790eb4afb08f9-end_screen.scn
+res://scenes/screens/start_screen.tscn::4617062d20d89948cfd2721b3be2aa77::1744156227::res://.godot/exported/133200997/export-4017c5cb8ccb377d1c5cda5939d76bea-start_screen.scn
+res://scenes/world objects/shelf/box_basic.tscn::3d761fccadf63695e9a154cc68f8d081::1744156228::res://.godot/exported/133200997/export-1edb7ab722e7283cabd9822c820595e7-box_basic.scn
+res://scenes/world objects/shelf/box_carrot.tscn::0296dbf4a80227939bc017beedbe9141::1744094002::res://.godot/exported/133200997/export-bb748a4282c7d558bf37d30b325403a9-box_carrot.scn
+res://scenes/world objects/shelf/box_corn.tscn::8f78580c0e9d75ed54fd4d9f7246fe20::1744094002::res://.godot/exported/133200997/export-4f267637aef0cf5806a1c7737b0eeb36-box_corn.scn
+res://scenes/world objects/shelf/box_cucumber.tscn::912201c7aacb903fe0bcddaa17e5cb45::1744094132::res://.godot/exported/133200997/export-fa04fe1cebc6f30fbe2c2281b380173e-box_cucumber.scn
+res://scenes/world objects/shelf/box_eggplant.tscn::cdf91bea76c987a0d2c702a1f86ee2e8::1744094002::res://.godot/exported/133200997/export-f9d6c5529a57062c88f6f9de935fcd58-box_eggplant.scn
+res://scenes/world objects/shelf/box_pineapple.tscn::227d75986f1393b41b80c5fc725a4290::1744094002::res://.godot/exported/133200997/export-d362cc42480327cd92308212293f036d-box_pineapple.scn
+res://scenes/world objects/shelf/box_potato.tscn::f343b91224828577e41b519933505c87::1744094002::res://.godot/exported/133200997/export-e822dd3dde021fadfc5d076d115c7514-box_potato.scn
+res://scenes/world objects/shelf/box_strawberry.tscn::35df5e7d38cb30b8027c4303fbc16f76::1744094002::res://.godot/exported/133200997/export-6ff76f75b04f8e97f3238a6eece189ba-box_strawberry.scn
+res://scenes/world objects/shelf/box_tomato.tscn::2c835f83c7c4146455e85e69776d68bd::1744094002::res://.godot/exported/133200997/export-3fbf38edb3bb47fd54e28b9465bbd152-box_tomato.scn
+res://scenes/world objects/shelf/fridge_1.tscn::807836637b44f2b295f6a7bb0a2ec420::1744156228::res://.godot/exported/133200997/export-ea674421bdf9498cb34e2cd50c817687-fridge_1.scn
+res://scenes/world objects/shelf/fridge_2.tscn::9226a1d4328df35a4ce0f125f6adac12::1744156228::res://.godot/exported/133200997/export-ec7b0cd11ef731becfa4203e28363310-fridge_2.scn
+res://scenes/world objects/shelf/fridge_basic.tscn::2c4f9ef49030b17ed7fab077907c37af::1744156228::res://.godot/exported/133200997/export-d2ccf202263ff3bcbc59cd2c6b2a4c00-fridge_basic.scn
+res://scenes/world objects/shelf/shelf.tscn::a61056c86db9c9c7a94a4a579950cf17::1744156228::res://.godot/exported/133200997/export-450922a45f1a852467cbc4f63dae85fb-shelf.scn
+res://scenes/world objects/shelf/shelf_1.tscn::23580249efbe6a916056c22b2c98952a::1744156228::res://.godot/exported/133200997/export-a9cfbc54c92c1e612598aa83ff6bd279-shelf_1.scn
+res://scenes/world objects/shelf/shelf_2.tscn::7591990f7e08ae7aad19c21642a6e356::1744156228::res://.godot/exported/133200997/export-51e10871f247b07c357d9561c243cd24-shelf_2.scn
+res://scenes/world objects/shelf/shelf_3.tscn::f296bc09851a2b23af0d93a0052eb05b::1744156229::res://.godot/exported/133200997/export-f7f8519b1b3ba6fec29f3e1ed5c64d4c-shelf_3.scn
+res://scenes/world objects/checkout_machine.tscn::e5979df8ff9d0052b0b700c86d0e896f::1744156228::res://.godot/exported/133200997/export-9645f8e3e3427facee7fb2f3e8977279-checkout_machine.scn
+res://scenes/world objects/exit.tscn::e4c661f0dcd338046ba635d37591e917::1744156228::res://.godot/exported/133200997/export-33f2c36a7ccb44ded3bfab664ae4d327-exit.scn
+res://scenes/world objects/no_person.tscn::c3f91c1b4bf6966238d10317116b5e55::1744156228::res://.godot/exported/133200997/export-72531e004313ad78ef518f2183b0a84c-no_person.scn
+res://scenes/world objects/selectable_object.tscn::8d619ab50917eda5a2970e699f7cb29f::1744156227::res://.godot/exported/133200997/export-f5aeef4d28957bc13bd925e5ce4aea8c-selectable_object.scn
+res://scenes/world objects/sibling.tscn::c0fa01d25ee451e0f04185b42b6f074b::1744156227::res://.godot/exported/133200997/export-97f2c596c65e11914109cb56ceee5f78-sibling.scn
+res://scenes/main.tscn::683408106a55ae61327ea8b776837637::1744156227::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/player.tscn::49381abfbae9d39e7922e7efd812291d::1744156227::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/ui.tscn::5dec44ff7d246c3f681688380c7abb97::1744156228::res://.godot/exported/133200997/export-9211dc52ac9df169ba4fe77cbc1dc833-ui.scn
+res://scenes/world.tscn::3de467f6319f3f6663b073b528369471::1744156228::res://.godot/exported/133200997/export-6b9c1b1fd6ae6f795188dfdc89e222b0-world.scn
