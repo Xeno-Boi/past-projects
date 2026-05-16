@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dslfg1vjl7uhb"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_ag1s2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ag1s2")
+
+[node name="MenuContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.5
+offset_top = -46.595
+offset_right = 124.5
+offset_bottom = -15.595
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="MarketButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Market"
+
+[node name="TaskButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Task"
+
+[node name="WorkBenchButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Work Shop"
+
+[node name="ExitButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Exit"

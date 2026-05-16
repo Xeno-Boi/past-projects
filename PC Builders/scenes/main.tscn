@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpj7ywxrus12e"]
+
+[ext_resource type="Script" uid="uid://cakojcdr5syjs" path="res://scripts/main.gd" id="1_ag1s2"]
+[ext_resource type="PackedScene" uid="uid://dslfg1vjl7uhb" path="res://scenes/tabs/menu.tscn" id="2_xgb5s"]
+[ext_resource type="PackedScene" uid="uid://blllpmu6sgqfa" path="res://scenes/tabs/task.tscn" id="4_s14xx"]
+[ext_resource type="PackedScene" uid="uid://opxa5bpm3lic" path="res://scenes/tabs/workbench.tscn" id="5_mhs3y"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ag1s2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Menu" parent="UI" instance=ExtResource("2_xgb5s")]
+
+[node name="Scenes" type="Node2D" parent="."]
+
+[node name="Task" parent="Scenes" instance=ExtResource("4_s14xx")]
+
+[node name="WorkBench" parent="Scenes" instance=ExtResource("5_mhs3y")]
+
+[connection signal="taskCompleteResult" from="Scenes/Task" to="." method="_on_task_task_complete_result"]

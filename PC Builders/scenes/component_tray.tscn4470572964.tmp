@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://ceel6nw4w7ks2"]
+
+[ext_resource type="PackedScene" uid="uid://hf4sh57v7dgp" path="res://scenes/components/slot.tscn" id="1_j8yq7"]
+[ext_resource type="Script" uid="uid://nbops5a3yq8u" path="res://scenes/component_tray.gd" id="1_pevoe"]
+[ext_resource type="PackedScene" uid="uid://bt8mps2sqbv6l" path="res://scenes/selectable_label.tscn" id="2_7dwp3"]
+[ext_resource type="Texture2D" uid="uid://6yfcv2bphags" path="res://assets/down_arrow.png" id="3_ulx5q"]
+[ext_resource type="Texture2D" uid="uid://d11ygx7xg8s8r" path="res://assets/down_arrow_select.png" id="4_enad6"]
+[ext_resource type="Texture2D" uid="uid://bfh8sdrmmogei" path="res://assets/cpu.png" id="6_8unry"]
+[ext_resource type="Texture2D" uid="uid://c37kebmi0xs7e" path="res://assets/motherboard.png" id="7_rjrqn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dwp3"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pevoe"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 1)
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pevoe"]
+
+[node name="ComponentTray" type="Node2D"]
+script = ExtResource("1_pevoe")
+
+[node name="Component_holder" type="PanelContainer" parent="."]
+offset_right = 284.0
+offset_bottom = 135.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dwp3")
+
+[node name="Component_slot" parent="Component_holder" instance=ExtResource("1_j8yq7")]
+position = Vector2(90, 95)
+
+[node name="SelectableLabel" parent="." instance=ExtResource("2_7dwp3")]
+position = Vector2(84, 31)
+scale = Vector2(0.345, 0.345)
+label = "SomeText"
+description = "This is the description for this label"
+
+[node name="Shelf_button" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 204.0
+offset_top = 61.0
+offset_right = 244.0
+offset_bottom = 101.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_ulx5q")
+texture_hover = ExtResource("4_enad6")
+stretch_mode = 0
+
+[node name="Component_Shelf" type="PanelContainer" parent="."]
+offset_top = 57.0
+offset_right = 284.0
+offset_bottom = 135.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pevoe")
+
+[node name="HShelf" type="HBoxContainer" parent="Component_Shelf"]
+layout_mode = 2
+
+[node name="Component_Shelf_Hitbox" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="Component_Shelf_Hitbox"]
+shape = SubResource("RectangleShape2D_pevoe")
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 27.0
+offset_top = 58.0
+offset_right = 227.0
+offset_bottom = 241.0
+item_count = 2
+item_0/icon = ExtResource("6_8unry")
+item_1/icon = ExtResource("7_rjrqn")
+
+[connection signal="pressed" from="Shelf_button" to="." method="_on_shelf_button_pressed"]
+[connection signal="mouse_entered" from="Component_Shelf_Hitbox" to="." method="_on_component_shelf_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Component_Shelf_Hitbox" to="." method="_on_component_shelf_hitbox_mouse_exited"]

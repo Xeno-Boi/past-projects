@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://tm1dtdvq81bg"]
+
+[ext_resource type="Script" uid="uid://cjcur71e13nvh" path="res://scripts/selectable_object.gd" id="1_ktvos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hda0h"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[node name="SelectableObject" type="Node2D"]
+script = ExtResource("1_ktvos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+
+[node name="hitbox" type="Area2D" parent="."]
+scale = Vector2(3.5, 3.5)
+collision_layer = 128
+
+[node name="InstallCollisionShape" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-2.17983e-06, 2.17983e-06)
+shape = SubResource("RectangleShape2D_hda0h")
+
+[connection signal="mouse_entered" from="hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="hitbox" to="." method="_on_hitbox_mouse_exited"]

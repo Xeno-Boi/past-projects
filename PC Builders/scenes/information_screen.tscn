@@ -1,0 +1,1317 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmlmebxc0cw1x"]
+
+[ext_resource type="Script" uid="uid://be7bkot4y6gg2" path="res://scripts/information_screen.gd" id="1_8h2ly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1su08"]
+bg_color = Color(0.269765, 0.652054, 0.790657, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1su08"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h2ly"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djahb"]
+bg_color = Color(1.28509e-05, 0.737774, 0.157048, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InformationScreen" type="Control"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8h2ly")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -350.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = 350.0
+pivot_offset = Vector2(350, 350)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1su08")
+
+[node name="Name_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -271.0
+offset_top = -332.0
+offset_right = 275.0
+offset_bottom = -262.208
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Computer Information"
+
+[node name="Info_scroll_list" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = -300.0
+offset_top = -262.0
+offset_right = 300.0
+offset_bottom = 320.0
+
+[node name="Item_list" type="VBoxContainer" parent="Info_scroll_list"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Overall" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Overall"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Overall/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Overall"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Overall"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Overall/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Total Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Overall/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Total Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power" type="HBoxContainer" parent="Info_scroll_list/Item_list/Overall/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Power"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Power"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Provided"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Overall/Info/Power"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Overall/Info/Power"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Motherboard" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Motherboard"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Motherboard     (Required)"
+
+[node name="Missing_label" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Missing"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Motherboard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Model" type="HBoxContainer" parent="Info_scroll_list/Item_list/Motherboard/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Model"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Model"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Motherboard"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Model"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Motherboard/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Rating" type="HBoxContainer" parent="Info_scroll_list/Item_list/Motherboard/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Rating"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Rating"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Rating"
+
+[node name="value_bar" type="ProgressBar" parent="Info_scroll_list/Item_list/Motherboard/Info/Rating"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_styles/background = SubResource("StyleBoxFlat_8h2ly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_djahb")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Rating"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Motherboard/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Motherboard/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Motherboard/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Cpu" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Cpu/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Processor     (Required)"
+
+[node name="Missing_label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Missing"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Cpu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Model" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Model"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Model"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Cpu"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Model"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Rating" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Rating"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Rating"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Rating"
+
+[node name="value_bar" type="ProgressBar" parent="Info_scroll_list/Item_list/Cpu/Info/Rating"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_styles/background = SubResource("StyleBoxFlat_8h2ly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_djahb")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Rating"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Total_core" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Total_core"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Total_core"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Core Count"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Total_core"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Total_core"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Clockrate" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Clockrate"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Clockrate"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Clockrate"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Clockrate"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 GHz"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Clockrate"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption_turbo" type="HBoxContainer" parent="Info_scroll_list/Item_list/Cpu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption_turbo"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption_turbo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Power Consumption (Turbo)"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption_turbo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Cpu/Info/Power_consumption_turbo"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Gpu1" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Graphics Card 1"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Gpu1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Model" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Model"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Model"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Gpu"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Model"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Raytracing" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Raytracing"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Raytracing"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Raytracing"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Raytracing"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "False"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Raytracing"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="VRam" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/VRam"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/VRam"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "VRam"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/VRam"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 GB"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/VRam"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Memory_type" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Memory_type"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Memory_type"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Memory Type"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Memory_type"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "GDDR5"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Memory_type"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Rating" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu1/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Rating"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu1/Info/Rating"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Rating"
+
+[node name="value_bar" type="ProgressBar" parent="Info_scroll_list/Item_list/Gpu1/Info/Rating"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_styles/background = SubResource("StyleBoxFlat_8h2ly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_djahb")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu1/Info/Rating"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Gpu2" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Graphics Card 2"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Gpu2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Model" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Model"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Model"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Gpu"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Model"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Raytracing" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Raytracing"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Raytracing"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Raytracing"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Raytracing"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "False"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Raytracing"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="VRam" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/VRam"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/VRam"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "VRam"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/VRam"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 GB"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/VRam"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Memory_type" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Memory_type"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Memory_type"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Memory Type"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Memory_type"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "GDDR5"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Memory_type"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Rating" type="HBoxContainer" parent="Info_scroll_list/Item_list/Gpu2/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Rating"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Gpu2/Info/Rating"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Rating"
+
+[node name="value_bar" type="ProgressBar" parent="Info_scroll_list/Item_list/Gpu2/Info/Rating"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_styles/background = SubResource("StyleBoxFlat_8h2ly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_djahb")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Gpu2/Info/Rating"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Ram" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Ram"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Ram/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Ram     (Required)"
+
+[node name="Missing_label" type="Label" parent="Info_scroll_list/Item_list/Ram/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Missing"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Ram"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Ram/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Total Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Size" type="HBoxContainer" parent="Info_scroll_list/Item_list/Ram/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Size"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Size"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Total Size"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Size"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 GB"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Size"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Rating" type="HBoxContainer" parent="Info_scroll_list/Item_list/Ram/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Rating"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Rating"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Average Rating"
+
+[node name="value_bar" type="ProgressBar" parent="Info_scroll_list/Item_list/Ram/Info/Rating"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_styles/background = SubResource("StyleBoxFlat_8h2ly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_djahb")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Rating"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Ram/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Ram/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Ram/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Psu" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Psu"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Psu/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Power Supply     (Required)"
+
+[node name="Missing_label" type="Label" parent="Info_scroll_list/Item_list/Psu/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Missing"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Psu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Model" type="HBoxContainer" parent="Info_scroll_list/Item_list/Psu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Model"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Model"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Model"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Gpu"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Model"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Psu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power" type="HBoxContainer" parent="Info_scroll_list/Item_list/Psu/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Power"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Power"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Psu/Info/Power"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Psu/Info/Power"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Harddisk" type="VBoxContainer" parent="Info_scroll_list/Item_list"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name_box" type="HBoxContainer" parent="Info_scroll_list/Item_list/Harddisk"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Harddisk     (Required)"
+
+[node name="Missing_label" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Name_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Missing"
+
+[node name="Info" type="VBoxContainer" parent="Info_scroll_list/Item_list/Harddisk"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Price" type="HBoxContainer" parent="Info_scroll_list/Item_list/Harddisk/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Price"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Price"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "$ 0"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Price"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Size" type="HBoxContainer" parent="Info_scroll_list/Item_list/Harddisk/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Size"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Size"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Size"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Size"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 GB"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Size"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Power_consumption" type="HBoxContainer" parent="Info_scroll_list/Item_list/Harddisk/Info"]
+layout_mode = 2
+
+[node name="Spacer" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Power_consumption"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[node name="Label" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Power Consumption"
+
+[node name="Value" type="Label" parent="Info_scroll_list/Item_list/Harddisk/Info/Power_consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 W"
+
+[node name="Spacer2" type="VSeparator" parent="Info_scroll_list/Item_list/Harddisk/Info/Power_consumption"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1su08")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck4hcd8frkpud"]
+
+[ext_resource type="PackedScene" uid="uid://tm1dtdvq81bg" path="res://scenes/selectable_object.tscn" id="1_c3ukb"]
+[ext_resource type="Script" uid="uid://b41mr6on580vi" path="res://scripts/components/component.gd" id="2_bo1cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ukb"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1cv"]
+size = Vector2(96, 113.571)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3ukb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.321728, 0.321728, 0.321728, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3ukb"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bo1cv"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Component" node_paths=PackedStringArray("slots") instance=ExtResource("1_c3ukb")]
+script = ExtResource("2_bo1cv")
+type = 0
+slots = []
+draggable = true
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+shape = SubResource("RectangleShape2D_c3ukb")
+disabled = true
+
+[node name="DisplayColiisionShape" type="CollisionShape2D" parent="hitbox" index="1"]
+position = Vector2(0, 1.08991e-06)
+shape = SubResource("RectangleShape2D_bo1cv")
+
+[node name="info_box" type="PanelContainer" parent="." index="2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 119.0
+offset_right = 150.0
+offset_bottom = 166.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(150, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c3ukb")
+
+[node name="box_margin" type="MarginContainer" parent="info_box" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="items_list" type="VBoxContainer" parent="info_box/box_margin" index="0"]
+layout_mode = 2
+
+[node name="model" type="HBoxContainer" parent="info_box/box_margin/items_list" index="0"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/model" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Model"
+label_settings = SubResource("LabelSettings_c3ukb")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/model" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "Component"
+label_settings = SubResource("LabelSettings_c3ukb")
+horizontal_alignment = 2
+
+[node name="price" type="HBoxContainer" parent="info_box/box_margin/items_list" index="1"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/price" index="0"]
+layout_mode = 2
+text = "Price"
+label_settings = SubResource("LabelSettings_bo1cv")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/price" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "$ 0"
+label_settings = SubResource("LabelSettings_bo1cv")
+horizontal_alignment = 2
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

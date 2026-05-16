@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdlyv3q8i8r10"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hcd8frkpud" path="res://scenes/components/component.tscn" id="1_vxp3m"]
+[ext_resource type="Script" uid="uid://dijuojs13c5du" path="res://scripts/components/gpu.gd" id="2_k6ncb"]
+[ext_resource type="Texture2D" uid="uid://cc4njm3xqbt5r" path="res://assets/newSprites/GPU_RTX2070.png" id="3_k6ncb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6ncb"]
+resource_local_to_scene = true
+size = Vector2(73.4286, 12.2857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft1cc"]
+size = Vector2(75.1429, 26.5714)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3ukb"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6ncb"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft1cc"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbg3u"]
+bg_color = Color(1.28509e-05, 0.737774, 0.157048, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Gpu" instance=ExtResource("1_vxp3m")]
+script = ExtResource("2_k6ncb")
+type = 5
+height = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.4)
+texture = ExtResource("3_k6ncb")
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(-0.142853, 0.142857)
+shape = SubResource("RectangleShape2D_k6ncb")
+
+[node name="DisplayColiisionShape" parent="hitbox" index="1"]
+position = Vector2(-0.142855, 0.142856)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_ft1cc")
+
+[node name="info_box" parent="." index="2"]
+offset_top = 62.0
+offset_bottom = 295.0
+
+[node name="label" parent="info_box/box_margin/items_list/model" index="0"]
+size_flags_horizontal = 1
+
+[node name="raytracing" type="HBoxContainer" parent="info_box/box_margin/items_list" index="1"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/raytracing" index="0"]
+layout_mode = 2
+text = "RayTracing"
+label_settings = SubResource("LabelSettings_c3ukb")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/raytracing" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "False"
+label_settings = SubResource("LabelSettings_c3ukb")
+horizontal_alignment = 2
+
+[node name="rating" type="HBoxContainer" parent="info_box/box_margin/items_list" index="2"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/rating" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rating"
+label_settings = SubResource("LabelSettings_k6ncb")
+
+[node name="value_bar" type="ProgressBar" parent="info_box/box_margin/items_list/rating" index="1"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ft1cc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fbg3u")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="vram" type="HBoxContainer" parent="info_box/box_margin/items_list" index="3"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/vram" index="0"]
+layout_mode = 2
+text = "VRam"
+label_settings = SubResource("LabelSettings_k6ncb")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/vram" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_k6ncb")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/vram" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "GB"
+label_settings = SubResource("LabelSettings_k6ncb")
+horizontal_alignment = 2
+
+[node name="memory_type" type="HBoxContainer" parent="info_box/box_margin/items_list" index="4"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/memory_type" index="0"]
+layout_mode = 2
+text = "Memory Type"
+label_settings = SubResource("LabelSettings_c3ukb")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/memory_type" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "GDDR5"
+label_settings = SubResource("LabelSettings_c3ukb")
+horizontal_alignment = 2
+
+[node name="power_consumption" type="HBoxContainer" parent="info_box/box_margin/items_list" index="5"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="0"]
+layout_mode = 2
+text = "Power Consumption"
+label_settings = SubResource("LabelSettings_k6ncb")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_k6ncb")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "W"
+label_settings = SubResource("LabelSettings_k6ncb")
+horizontal_alignment = 2

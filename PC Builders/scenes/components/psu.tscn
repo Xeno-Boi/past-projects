@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cihrv27u1m57c"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hcd8frkpud" path="res://scenes/components/component.tscn" id="1_k3bak"]
+[ext_resource type="Script" uid="uid://dwfhcnny37pqv" path="res://scripts/components/psu.gd" id="2_rcsnl"]
+[ext_resource type="Texture2D" uid="uid://djx0ki0q6v07s" path="res://assets/newSprites/powerSupply1200W.png" id="3_0x15q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsnl"]
+resource_local_to_scene = true
+size = Vector2(78.2857, 29.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgcvy"]
+size = Vector2(78.2857, 29.7143)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rcsnl"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Psu" instance=ExtResource("1_k3bak")]
+script = ExtResource("2_rcsnl")
+type = 7
+height = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_0x15q")
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(4.08718e-06, 0.285714)
+shape = SubResource("RectangleShape2D_rcsnl")
+
+[node name="DisplayColiisionShape" parent="hitbox" index="1"]
+position = Vector2(-1.08991e-06, 0.285715)
+shape = SubResource("RectangleShape2D_bgcvy")
+
+[node name="info_box" parent="." index="2"]
+offset_top = 60.0
+offset_bottom = 107.0
+
+[node name="power" type="HBoxContainer" parent="info_box/box_margin/items_list" index="1"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/power" index="0"]
+layout_mode = 2
+text = "Power"
+label_settings = SubResource("LabelSettings_rcsnl")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/power" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_rcsnl")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/power" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "W"
+label_settings = SubResource("LabelSettings_rcsnl")
+horizontal_alignment = 2

@@ -1,0 +1,239 @@
+[gd_scene load_steps=8 format=3 uid="uid://blllpmu6sgqfa"]
+
+[ext_resource type="Script" uid="uid://dkex1iqektim0" path="res://scripts/tabs/task.gd" id="1_dqgo1"]
+[ext_resource type="Script" uid="uid://bb674es6jhqwt" path="res://scripts/task_board.gd" id="2_ai8gp"]
+[ext_resource type="Texture2D" uid="uid://xy7yvpyydybi" path="res://assets/board_background.png" id="2_g0m4l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai8gp"]
+bg_color = Color(0.809649, 0.531634, 0.168772, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.432542, 0.293329, 0.11294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0m4l"]
+bg_color = Color(0.670588, 0.552941, 0.360784, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob3ky"]
+bg_color = Color(0.793334, 0.672332, 0.477321, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqgo1"]
+bg_color = Color(0.662837, 0.413806, 0.234877, 1)
+
+[node name="Task" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dqgo1")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_g0m4l")
+
+[node name="CurrentTask" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 85.0
+offset_right = 1081.0
+offset_bottom = 667.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ai8gp")
+
+[node name="Box" type="Control" parent="CurrentTask"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TaskListLabel" type="Label" parent="CurrentTask/Box"]
+layout_mode = 2
+offset_left = 231.0
+offset_top = 6.0
+offset_right = 480.0
+offset_bottom = 61.8333
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Current Task"
+
+[node name="InfoLabel" type="Label" parent="CurrentTask/Box"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 90.0
+offset_right = 257.0
+offset_bottom = 124.896
+theme_override_font_sizes/font_size = 25
+text = "Task Information"
+
+[node name="TaskInfo" type="VBoxContainer" parent="CurrentTask/Box"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 136.0
+offset_right = 285.0
+offset_bottom = 474.0
+
+[node name="NameLabel" type="Label" parent="CurrentTask/Box/TaskInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 21
+text = "Task Name:"
+
+[node name="NameText" type="Label" parent="CurrentTask/Box/TaskInfo"]
+layout_mode = 2
+text = "No active task."
+
+[node name="Rewards" type="HSplitContainer" parent="CurrentTask/Box/TaskInfo"]
+layout_mode = 2
+split_offset = 85
+dragging_enabled = false
+
+[node name="Label" type="Label" parent="CurrentTask/Box/TaskInfo/Rewards"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 21
+text = "Budget:"
+
+[node name="Value" type="Label" parent="CurrentTask/Box/TaskInfo/Rewards"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$ 0"
+
+[node name="InfoLabel" type="Label" parent="CurrentTask/Box/TaskInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 21
+text = "Requirements:"
+
+[node name="InfoText" type="RichTextLabel" parent="CurrentTask/Box/TaskInfo"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.87
+text = "No active task."
+
+[node name="Description" type="Panel" parent="CurrentTask/Box"]
+layout_mode = 2
+offset_left = 298.0
+offset_top = 88.0
+offset_right = 664.0
+offset_bottom = 521.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0m4l")
+
+[node name="Label" type="Label" parent="CurrentTask/Box/Description"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 354.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 21
+text = "Description"
+horizontal_alignment = 1
+
+[node name="DescriptionContent" type="RichTextLabel" parent="CurrentTask/Box/Description"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 42.0
+offset_right = 358.0
+offset_bottom = 422.0
+text = "Click on task in Task Board to accept a new task!"
+
+[node name="GiveUpButton" type="Button" parent="CurrentTask/Box"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 486.0
+offset_right = 230.0
+offset_bottom = 527.0
+text = "Give Up Task"
+
+[node name="OpenTaskBoardButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1095.0
+offset_top = 70.0
+offset_right = 1265.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 30
+text = "Task Board"
+
+[node name="MessageBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 113.0
+offset_right = 348.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ob3ky")
+
+[node name="Label" type="Label" parent="MessageBox"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 313.0
+offset_bottom = 37.3125
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 21
+text = "Message Box"
+horizontal_alignment = 1
+
+[node name="MessageContent" type="RichTextLabel" parent="MessageBox"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 42.0
+offset_right = 311.0
+offset_bottom = 486.0
+
+[node name="TaskBoard" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 43.0
+offset_right = 1254.0
+offset_bottom = 706.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ai8gp")
+script = ExtResource("2_ai8gp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TaskBoard"]
+layout_mode = 2
+
+[node name="UI" type="Control" parent="TaskBoard/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="TaskBoard/VBoxContainer/UI"]
+z_index = 10
+layout_mode = 0
+offset_left = 870.0
+offset_top = 12.0
+offset_right = 971.0
+offset_bottom = 53.0
+text = "Close Board"
+
+[node name="TaskListLabel" type="Label" parent="TaskBoard/VBoxContainer/UI"]
+layout_mode = 2
+offset_left = 384.0
+offset_top = 3.0
+offset_right = 599.0
+offset_bottom = 58.8333
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Task Board"
+
+[node name="Background" type="PanelContainer" parent="TaskBoard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqgo1")
+
+[node name="TaskScroller" type="ScrollContainer" parent="TaskBoard/VBoxContainer/Background"]
+layout_mode = 2
+
+[node name="TaskList" type="VBoxContainer" parent="TaskBoard/VBoxContainer/Background/TaskScroller"]
+layout_mode = 2
+alignment = 1
+
+[connection signal="pressed" from="OpenTaskBoardButton" to="TaskBoard" method="_on_open_task_board_button_pressed"]
+[connection signal="pressed" from="TaskBoard/VBoxContainer/UI/CloseButton" to="TaskBoard" method="_on_close_button_pressed"]

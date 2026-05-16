@@ -1,0 +1,161 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfpntswvg72p8"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hcd8frkpud" path="res://scenes/components/component.tscn" id="1_0y24f"]
+[ext_resource type="Script" uid="uid://deuo7im287f73" path="res://scripts/components/cpu.gd" id="2_axs8g"]
+[ext_resource type="Texture2D" uid="uid://dktpyiy8o1fpq" path="res://assets/newSprites/i7.png" id="3_l3tlu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axs8g"]
+resource_local_to_scene = true
+size = Vector2(17.1429, 17.4286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lidwg"]
+size = Vector2(17.1429, 17.4286)
+
+[sub_resource type="LabelSettings" id="LabelSettings_axs8g"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lidwg"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egtxj"]
+bg_color = Color(1.28509e-05, 0.737774, 0.157048, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Cpu" instance=ExtResource("1_0y24f")]
+script = ExtResource("2_axs8g")
+type = 4
+height = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1.90735e-06, -0.249998)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("3_l3tlu")
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(1.08991e-06, -0.142858)
+shape = SubResource("RectangleShape2D_axs8g")
+
+[node name="DisplayColiisionShape" parent="hitbox" index="1"]
+position = Vector2(-1.08991e-06, -0.142857)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_lidwg")
+
+[node name="info_box" parent="." index="2"]
+offset_top = 34.0
+offset_bottom = 174.0
+
+[node name="label" parent="info_box/box_margin/items_list/model" index="0"]
+size_flags_horizontal = 1
+
+[node name="clockrate" type="HBoxContainer" parent="info_box/box_margin/items_list" index="1"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/clockrate" index="0"]
+layout_mode = 2
+text = "Clockrate"
+label_settings = SubResource("LabelSettings_axs8g")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/clockrate" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/clockrate" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "GHz"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="rating" type="HBoxContainer" parent="info_box/box_margin/items_list" index="2"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/rating" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rating"
+label_settings = SubResource("LabelSettings_axs8g")
+
+[node name="value_bar" type="ProgressBar" parent="info_box/box_margin/items_list/rating" index="1"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_lidwg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_egtxj")
+max_value = 10.0
+rounded = true
+show_percentage = false
+
+[node name="total_cores" type="HBoxContainer" parent="info_box/box_margin/items_list" index="3"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/total_cores" index="0"]
+layout_mode = 2
+text = "Core Count"
+label_settings = SubResource("LabelSettings_axs8g")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/total_cores" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="power_consumption" type="HBoxContainer" parent="info_box/box_margin/items_list" index="4"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="0"]
+layout_mode = 2
+text = "Power Consumption"
+label_settings = SubResource("LabelSettings_axs8g")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "W"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="power_consumption_turbo" type="HBoxContainer" parent="info_box/box_margin/items_list" index="5"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/power_consumption_turbo" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Power Consumption (Turbo)"
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/power_consumption_turbo" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/power_consumption_turbo" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "W"
+label_settings = SubResource("LabelSettings_axs8g")
+horizontal_alignment = 2

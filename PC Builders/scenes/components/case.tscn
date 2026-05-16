@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4x7urndef7tf"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hcd8frkpud" path="res://scenes/components/component.tscn" id="1_3fkgt"]
+[ext_resource type="Script" uid="uid://lwqhr0pchyx5" path="res://scripts/components/case.gd" id="2_qavfg"]
+[ext_resource type="Texture2D" uid="uid://b2wiigoe7yoqo" path="res://assets/newSprites/case.png" id="3_eorwx"]
+[ext_resource type="PackedScene" uid="uid://hf4sh57v7dgp" path="res://scenes/components/slot.tscn" id="3_qavfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th138"]
+resource_local_to_scene = true
+size = Vector2(128, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qavfg"]
+size = Vector2(128, 162.286)
+
+[node name="Case" node_paths=PackedStringArray("slots") instance=ExtResource("1_3fkgt")]
+script = ExtResource("2_qavfg")
+type = 2
+slots = [NodePath("motherboard_slot"), NodePath("psu_slot"), NodePath("harddisk_slot"), NodePath("harddisk_slot2"), NodePath("harddisk_slot3"), NodePath("harddisk_slot4")]
+accessible = false
+draggable = false
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_eorwx")
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(-0.285713, 0.142853)
+shape = SubResource("RectangleShape2D_th138")
+
+[node name="DisplayColiisionShape" parent="hitbox" index="1"]
+position = Vector2(-0.285711, 0.28571)
+shape = SubResource("RectangleShape2D_qavfg")
+
+[node name="motherboard_slot" parent="." index="2" instance=ExtResource("3_qavfg")]
+position = Vector2(-55, -43)
+scale = Vector2(7.6, 9.5)
+type = 3
+
+[node name="psu_slot" parent="." index="3" instance=ExtResource("3_qavfg")]
+position = Vector2(-54, 197)
+scale = Vector2(7, 2.5)
+type = 7
+
+[node name="harddisk_slot" parent="." index="4" instance=ExtResource("3_qavfg")]
+position = Vector2(148, -46)
+scale = Vector2(2.9, 0.678)
+type = 8
+
+[node name="harddisk_slot2" parent="." index="5" instance=ExtResource("3_qavfg")]
+position = Vector2(148, 5.96046e-08)
+scale = Vector2(2.9, 0.678)
+type = 8
+
+[node name="harddisk_slot3" parent="." index="6" instance=ExtResource("3_qavfg")]
+position = Vector2(147, 40)
+scale = Vector2(2.9, 0.678)
+type = 8
+
+[node name="harddisk_slot4" parent="." index="7" instance=ExtResource("3_qavfg")]
+position = Vector2(147, 89)
+scale = Vector2(2.9, 0.678)
+type = 8
+
+[node name="info_box" parent="." index="8"]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 232.0
+offset_right = 296.0
+offset_bottom = 284.0
+grow_horizontal = 1

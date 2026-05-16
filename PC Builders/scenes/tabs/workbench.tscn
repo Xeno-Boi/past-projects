@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://opxa5bpm3lic"]
+
+[ext_resource type="Script" uid="uid://dquyc4y6hla1x" path="res://scripts/tabs/workbench.gd" id="1_wgtqs"]
+[ext_resource type="Texture2D" uid="uid://cak2tasdmqklt" path="res://assets/table_background.png" id="2_6pvch"]
+[ext_resource type="PackedScene" uid="uid://cmlmebxc0cw1x" path="res://scenes/information_screen.tscn" id="4_cokqo"]
+[ext_resource type="PackedScene" uid="uid://b4x7urndef7tf" path="res://scenes/components/case.tscn" id="8_kkj74"]
+[ext_resource type="PackedScene" uid="uid://ceel6nw4w7ks2" path="res://scenes/component_tray.tscn" id="9_ucgon"]
+
+[node name="WorkBench" type="Node2D"]
+script = ExtResource("1_wgtqs")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = -1
+anchor_right = 1.004
+anchor_bottom = 1.006
+offset_right = -0.120117
+offset_bottom = -0.320007
+texture = ExtResource("2_6pvch")
+
+[node name="ComponentGroup" type="Node2D" parent="."]
+
+[node name="Case" parent="ComponentGroup" instance=ExtResource("8_kkj74")]
+position = Vector2(321, 335)
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 161.0
+offset_top = 640.0
+offset_right = 227.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 20
+text = "Reset"
+
+[node name="InfoButton" type="Button" parent="."]
+offset_left = 271.0
+offset_top = 639.0
+offset_right = 348.0
+offset_bottom = 681.0
+theme_override_font_sizes/font_size = 20
+text = "PC Info"
+
+[node name="TurnInButton" type="Button" parent="."]
+offset_left = 396.0
+offset_top = 627.0
+offset_right = 485.0
+offset_bottom = 691.0
+theme_override_font_sizes/font_size = 20
+text = "Turn In
+For Task"
+
+[node name="Component_shelf" type="Node2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="MotherboardTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(619, 21)
+type = 3
+
+[node name="CpuTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(928, 21)
+type = 4
+
+[node name="GpuTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(619, 219)
+type = 5
+component_scale = 0.5
+
+[node name="RamTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(928, 219)
+type = 6
+component_scale = 0.7
+
+[node name="PsuTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(619, 417)
+type = 7
+component_scale = 0.65
+
+[node name="HarddiskTray" parent="Component_shelf" instance=ExtResource("9_ucgon")]
+position = Vector2(928, 417)
+type = 8
+
+[node name="InformationScreen" parent="." instance=ExtResource("4_cokqo")]
+offset_left = 922.0
+offset_top = 364.0
+offset_right = 922.0
+offset_bottom = 364.0
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="TurnInButton" to="." method="_on_turn_in_button_pressed"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmfqget3t4lho"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hcd8frkpud" path="res://scenes/components/component.tscn" id="1_n8qku"]
+[ext_resource type="Script" uid="uid://cujjwvrwl5x66" path="res://scripts/components/harddisk.gd" id="2_rc0pm"]
+[ext_resource type="Texture2D" uid="uid://gsaucfmpxbih" path="res://assets/newSprites/HDD2TB.png" id="3_oivyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc0pm"]
+resource_local_to_scene = true
+size = Vector2(31.7143, 7.42857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yy25"]
+size = Vector2(31.7143, 7.42858)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rc0pm"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Harddisk" instance=ExtResource("1_n8qku")]
+script = ExtResource("2_rc0pm")
+type = 8
+height = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.42, 0.313)
+texture = ExtResource("3_oivyi")
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(-0.142855, -9.96249e-07)
+shape = SubResource("RectangleShape2D_rc0pm")
+
+[node name="DisplayColiisionShape" parent="hitbox" index="1"]
+position = Vector2(-0.142859, 0)
+shape = SubResource("RectangleShape2D_6yy25")
+
+[node name="info_box" parent="." index="2"]
+offset_top = 30.0
+offset_bottom = 77.0
+
+[node name="label" parent="info_box/box_margin/items_list/model" index="0"]
+size_flags_horizontal = 1
+
+[node name="size" type="HBoxContainer" parent="info_box/box_margin/items_list" index="1"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/size" index="0"]
+layout_mode = 2
+text = "Size"
+label_settings = SubResource("LabelSettings_rc0pm")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/size" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/size" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "TB"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2
+
+[node name="speed" type="HBoxContainer" parent="info_box/box_margin/items_list" index="2"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/speed" index="0"]
+layout_mode = 2
+text = "Read/Write Speed"
+label_settings = SubResource("LabelSettings_rc0pm")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/speed" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/speed" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "MB/s"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2
+
+[node name="power_consumption" type="HBoxContainer" parent="info_box/box_margin/items_list" index="3"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="0"]
+layout_mode = 2
+text = "Power Consumption"
+label_settings = SubResource("LabelSettings_rc0pm")
+
+[node name="value" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2
+
+[node name="unit" type="Label" parent="info_box/box_margin/items_list/power_consumption" index="2"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "W"
+label_settings = SubResource("LabelSettings_rc0pm")
+horizontal_alignment = 2

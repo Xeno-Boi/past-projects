@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://jtf71l2ul6gv"]
+
+[ext_resource type="PackedScene" uid="uid://b4x7urndef7tf" path="res://scenes/components/case.tscn" id="1_0n47i"]
+[ext_resource type="Script" uid="uid://dquyc4y6hla1x" path="res://scripts/tabs/workbench.gd" id="1_5ylgl"]
+
+[node name="MyPC" type="Node2D"]
+script = ExtResource("1_5ylgl")
+scene_type = "mypc"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.239216, 0.713726, 0.796078, 0.592157)
+
+[node name="ComponentGroup" type="Node2D" parent="."]
+
+[node name="Case" parent="ComponentGroup" instance=ExtResource("1_0n47i")]
+position = Vector2(288, 298)

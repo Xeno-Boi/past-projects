@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt8mps2sqbv6l"]
+
+[ext_resource type="PackedScene" uid="uid://tm1dtdvq81bg" path="res://scenes/selectable_object.tscn" id="1_0wxyc"]
+[ext_resource type="Script" uid="uid://chpq6j357rm66" path="res://scripts/selectable_label.gd" id="2_wibvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibvn"]
+resource_local_to_scene = true
+size = Vector2(114.286, 28.2857)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emri4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.321728, 0.321728, 0.321728, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_jsgxp"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="SelectableLabel" instance=ExtResource("1_0wxyc")]
+script = ExtResource("2_wibvn")
+label = ""
+description = ""
+height = 90.0
+
+[node name="InstallCollisionShape" parent="hitbox" index="0"]
+position = Vector2(-5.44957e-06, 0.142857)
+shape = SubResource("RectangleShape2D_wibvn")
+
+[node name="Label_panel" type="PanelContainer" parent="." index="2"]
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+pivot_offset = Vector2(200, 50)
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Label_panel" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "SomeText"
+
+[node name="info_box" type="PanelContainer" parent="." index="3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 107.917
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(100, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emri4")
+
+[node name="box_margin" type="MarginContainer" parent="info_box" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Description" type="Label" parent="info_box/box_margin" index="0"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_jsgxp")
