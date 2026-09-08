@@ -1,0 +1,38 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Java Calculator",
+        "description": "A simple Java-based calculator application",
+        "customer": "Alice",
+        "start_date": "2026-03-15",
+        "deadline": "2026-03-27",
+        "location": "Office",
+        "status": "In Progress",
+        "notes": "Initial notes for the project",
+        "priority": "High"
+    },
+    "2": {
+        "id": 2,
+        "name": "Java 3D Game",
+        "description": "A 3D game built using Java",
+        "customer": "Jane Smith",
+        "start_date": "2026-02-02",
+        "deadline": "2026-02-10",
+        "location": "Office",
+        "status": "On Hold",
+        "notes": "On hold due to pending approvals",
+        "priority": "High"
+    },
+    "3": {
+        "id": 3,
+        "name": "Python AI App",
+        "description": "An AI application built using Python",
+        "customer": "Alice Johnson",
+        "start_date": "2026-04-01",
+        "deadline": null,
+        "location": "Remote",
+        "status": "In Progress",
+        "notes": "Testing phase for the AI application",
+        "priority": "Medium"
+    }
+}
