@@ -11,7 +11,7 @@ Vincent Vogl (101141514)
 
 --- Instructions to run the code ---
 
-1. install all packages with the appropriate versions from 'requirements.txt'
+1. install python 3.11.x and all packages with the appropriate versions from 'requirements.txt'
 	Make sure jax and jaxlib use the same version
 2. in 'interface.py', select the appropriate function to run in "main"
 3. Set the parameters in the startGame() function in 'interface.py'
